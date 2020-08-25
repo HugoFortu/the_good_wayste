@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  color: MyString
+  place: one
+  accepted_materials: MyString
+
+two:
+  color: MyString
+  place: two
+  accepted_materials: MyString
