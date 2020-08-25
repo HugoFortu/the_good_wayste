@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+@import "pages";
+
+body {
+  width: 380px;
+  height: 760px;
+  border: solid 1px black;
+}

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/home'
   get 'scan', to: 'products#scan', as: 'scan'
 
   resources :products, only: [:show] do
