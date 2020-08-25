@@ -18,4 +18,7 @@ require("channels")
 
 import { quaggaScanner } from '../scanner/scanner'
 
-quaggaScanner();
+document.addEventListener('turbolinks:load', () => {
+  quaggaScanner()
+})
+
