@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'components/new'
   get '/scan', to: 'products#scan', as: 'scan'
   post '/scan/barcode', to: 'products#barcode'
 
