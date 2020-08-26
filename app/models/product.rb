@@ -13,7 +13,6 @@ class Product < ApplicationRecord
       name: off_data.product_name_fr,
       barcode: off_data.code,
       brand: off_data.brands
-      # off: off_data
     )
     product.save!
   end
@@ -23,36 +22,26 @@ class Product < ApplicationRecord
   def set_clean_status
     off_data = Openfoodfacts::Product.get(barcode, locale: 'fr')
     materials = off_data.packaging.split(',').map(&:parameterize)
-    #.length ?
-    # materials = self.off['packaging'].split(',').map(&:parameterize)
     data_check = []
     materials.each do |material|
       Material.find_by(slug: material).nil? ? data_check << false : data_check << true
     end
     if data_check.include?(false)
-      update(clean: false)
+      update_columns(clean: false)
     else
-      puts "je suis dans set_clean_status"
-      puts "id -produit : #{id}"
       create_product_components(materials)
-      update(clean: true)
+      update_columns(clean: true)
     end
   end
 
   def create_product_components(materials)
-    puts "Je suis dans create_product_components "
-    puts "id -produit : #{self.id}"
-    puts '------------------------------------'
     materials.each do |material|
-      puts "je suis dans l'itération"
       c = Component.new(
-        name: 'Un composant',
+        name: 'Composant',
         product_id: self.id,
         material_id: Material.find_by(slug: material).id
       )
       c.save
-      ap c
-      puts "je sors de la méthode"
     end
   end
 end
