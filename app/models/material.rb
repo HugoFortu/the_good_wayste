@@ -1,9 +1,4 @@
 class Material < ApplicationRecord
-
-  # def slugged
-  #   s = @name.downcase.gsub(/\s/, '-')
-  #   @slug = s
-  #   self.save!
-  # end
-
+  has_many :components
+  has_many :products, through: :components
 end

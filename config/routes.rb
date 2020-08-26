@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+# <<<<<<< HEAD
+#   get 'products/show'
+#   get 'scan', to: 'products#scan', as: 'scan'
+# =======
   get '/scan', to: 'products#scan', as: 'scan'
 
   resources :products, only: [:show] do
