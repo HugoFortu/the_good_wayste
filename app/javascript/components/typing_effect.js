@@ -1,14 +1,11 @@
-var x = 0;
-var textEffect = "SCANNEZ         JOUEZ         SCANNEZ";
-var container = document.getElementById('typing-effect');
+import Typed from 'typed.js';
 
-function animate() {
-  if(x < textEffect.length){
-  container.innerHTML += textEffect.charAt(x);
-  x ++
-  setTimeout(animate, 80);
-  }
+const loadDynamicBannerText = () => {
+  new Typed('#banner-typed-text', {
+    strings: ["SCANNEZ", "JOUEZ", "TRIEZ"],
+    typeSpeed: 50,
+    loop: true
+  });
 }
-animate();
 
-export {animate};
+export { loadDynamicBannerText };

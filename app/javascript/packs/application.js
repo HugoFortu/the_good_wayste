@@ -18,4 +18,15 @@ require("channels")
 
 import '../stylesheets/application.scss';
 
-import { animate } from '../components/typing_effect';
+import { quaggaScanner } from '../scanner/scanner'
+
+document.addEventListener('turbolinks:load', () => {
+  quaggaScanner()
+})
+
+
+import { loadDynamicBannerText } from '../components/typing_effect';
+
+document.addEventListener('turbolinks:load', () => {
+  loadDynamicBannerText();
+});

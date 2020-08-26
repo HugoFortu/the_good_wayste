@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+# <<<<<<< HEAD
   get 'pages/home'
-  get 'scan', to: 'products#scan', as: 'scan'
+#   get 'scan', to: 'products#scan', as: 'scan'
+# =======
+  # get '/scan', to: 'products#scan', as: 'scan'
 
   resources :products, only: [:show] do
     resources :components, only: [:new, :create]
