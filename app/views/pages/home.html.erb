@@ -1,3 +1,42 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div>
+  <p>Bienvenue à ...</p>
+  <p>Vous n'êtes plus à ...</p>
 
+  <%= render 'shared/postcode_input' %>
+
+  <br>
+  <div id='typing-effect' class='text-center'></div>
+  <br>
+  <p class='text-center'>Souriez, le tri diffcile c'est fini!</p>
+  <br>
+  <p class='text-center'>The Good Wayste, vous simplifie la vie: apprennez à trier vite et bien quelle que soit votre localisation !</p>
+</div>
+
+<script>
+  var x = 0;
+  var textEffect = "SCANNEZ         JOUEZ         SCANNEZ";
+  var container = document.getElementById('typing-effect');
+
+  function animate() {
+    if(x < textEffect.length){
+    container.innerHTML += textEffect.charAt(x);
+    x ++
+    setTimeout(animate, 80);
+    }
+  }
+  animate();
+</script>
+
+
+<!-- GEOCODING OBJECTS -->
+
+
+<!-- Trouver la localisation à partir de l'IP -->
+results = Geocoder.search("172.56.21.89")
+results.first.coordinates
+<!-- => [30.267153, -97.7430608] -->
+results.first.country
+<!-- => "United States" -->
+
+<!-- Obtenir l'adresse ip du client à l'aide de la commande:  -->
+request.remote_ip

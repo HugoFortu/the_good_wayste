@@ -17,3 +17,5 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import '../stylesheets/application.scss';
+
+import { animate } from '../components/typing_effect';
