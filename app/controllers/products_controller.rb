@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
 
+
   def show
     barcode = "3564700661420"
     @product = Product.from_barcode(barcode)
@@ -11,6 +12,8 @@ class ProductsController < ApplicationController
     end
   end
 
+  def scan
+
+  end
+
 end
-
-
