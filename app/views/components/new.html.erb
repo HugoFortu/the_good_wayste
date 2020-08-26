@@ -1,2 +1,21 @@
-<h1>Components#new</h1>
-<p>Find me in app/views/components/new.html.erb</p>
+<p>Combien de composants dans le produit ?</p>
+<!--
+# Je diplay une grid d'icônes, toutes reliées à un nom en data-attribute
+# lorsque je clique sur une icône, j'ai une modale qui se crée en JS
+# en JS, je récupere le nom de l'icône en data-attribute
+# sur la modal, je propose l'ensemble de nos matériaux
+# je choisis le matériau, et je valide => component.save
+# je reviens sur le grid d'icônes
+# Je peux valider ou créer d'autre components
+# Si je valide, j'arrive à la page produit -->
+
+<div class="w-3/4 m-auto">
+  <div class="flex justify-between items-end flex-wrap ">
+
+    <% components_name = %w[bouchon canette aerosol pot] %>
+    <% components_name.each do |name| %>
+      <%= render 'component', name: name %>
+    <% end %>
+
+  </div>
+</div>
