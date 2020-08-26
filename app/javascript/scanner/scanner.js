@@ -10,7 +10,7 @@ const quaggaScanner = () => {
         target: scanDiv  // Or '#yourElement' (optional)
       },
       decoder : {
-        readers : ["code_128_reader", "ean_reader", "ean_8_reader", "code_39_reader", "code_39_vin_reader", "codabar_reader", "upc_reader", "upc_e_reader", "i2of5_reader", "2of5_reader","code_93_reader"],
+        readers : ["ean_reader"],
         debug: {
           drawBoundingBox: true,
           drawScanline: true,
@@ -28,6 +28,15 @@ const quaggaScanner = () => {
     Quagga.onDetected(function(result) {
       const barcode = result.codeResult.code;
       Quagga.stop();
+      fetch('http://localhost:3000/scan/barcode', {
+        headers: {"Content-Type": "application/json" },
+        method: 'POST',
+        body: JSON.stringify({val_barcode: barcode})
+      })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data);
+      });
     });
   }
 };
