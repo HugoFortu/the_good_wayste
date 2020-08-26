@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
-  before_save :set_clean_status
+  after_save :set_clean_status
+  has_many :components
+  has_many :materials, through: :components
 
   def self.from_barcode(barcode)
     Product.find_by(barcode: barcode) || create_product_from(barcode)
@@ -16,10 +18,6 @@ class Product < ApplicationRecord
     product.save!
   end
 
-  def clean?
-    self.clean
-  end
-
   private
 
   def set_clean_status
@@ -32,12 +30,12 @@ class Product < ApplicationRecord
       Material.find_by(slug: material).nil? ? data_check << false : data_check << true
     end
     if data_check.include?(false)
-      self.clean = false
+      update(clean: false)
     else
       puts "je suis dans set_clean_status"
-      puts "id -produit : #{@product.id}"
+      puts "id -produit : #{id}"
       create_product_components(materials)
-      self.clean = true
+      update(clean: true)
     end
   end
 

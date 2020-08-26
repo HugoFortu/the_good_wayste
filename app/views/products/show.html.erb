@@ -1,2 +1,4 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+
+<% @product.components.each do |component| %>
+  <%= render 'shared/card-show' , component: component.name, material: component.material.name.downcase %>
+<% end %>
