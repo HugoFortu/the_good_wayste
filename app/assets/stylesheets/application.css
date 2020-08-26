@@ -17,10 +17,45 @@
 @import "pages";
 
 
-body{
+body {
   background-color: #319795;
-  background-image: url('logo.png');
-  background-size: cover;
+  padding-top: 80px;
+}
+
+body .img {
+  content: '';
   background-repeat: no-repeat;
-  background-position: center 200px !important;
+  position: absolute;
+  left: 200px;
+  top: 900px;
+  opacity: 0.2;
+}
+
+/* Pour la font-weight vous pouvez rajouter ça direct
+dans votre class html*/
+/*
+<h1 class="font-black">Souriez, Scannez, Triez</h1>
+<h2 class="font-medium"> Here, is TGW </h2>
+<h3 class="font-normal"> Let's code </h3>
+<p class="font-light"> Chez TGW on met tout en oeuvre pour vous servir </p>
+*/
+
+h1 {
+ font-family: 'Poppins', sans-serif;
+ font-size: 100px !important;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 80px !important;
+}
+
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 60px !important;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px !important;
 }
