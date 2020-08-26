@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def show
-    barcode = "5053990123834"
+    barcode = "3564700661420"
     @product = Product.from_barcode(barcode)
 
     if @product.clean?
@@ -12,3 +12,5 @@ class ProductsController < ApplicationController
   end
 
 end
+
+
