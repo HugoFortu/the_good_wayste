@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-# <<<<<<< HEAD
-#   get 'products/show'
-#   get 'scan', to: 'products#scan', as: 'scan'
-# =======
+
   get '/scan', to: 'products#scan', as: 'scan'
+
 
   resources :products, only: [:show] do
     resources :components, only: [:new, :create]
@@ -17,5 +15,6 @@ Rails.application.routes.draw do
       get 'map', to: 'places#map', as: 'map'
     end
   end
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

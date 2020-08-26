@@ -16,6 +16,7 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+import '../stylesheets/application.scss';
 
 import { quaggaScanner } from '../scanner/scanner'
 
@@ -24,5 +25,8 @@ document.addEventListener('turbolinks:load', () => {
 })
 
 
-import '../stylesheets/application.scss';
+import { loadDynamicBannerText } from '../components/typing_effect';
 
+document.addEventListener('turbolinks:load', () => {
+  loadDynamicBannerText();
+});

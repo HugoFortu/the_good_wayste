@@ -40,7 +40,6 @@ les_rousses.save!
 honfleur = Place.new(name: 'Honfleur', postcode: '14600')
 honfleur.save!
 
-
 # BORDEAUX - Garbadge
 slugged_mats = ["pet-1", "pehd-2", "pvc-3", "ldpe-4", "pp-5", "ps--6", "brique-alimentaire", "metal", "carton-fin", "carton-épais", "film-plastique", "aluminium", "papier", "papier-plastifié", "acier", "verre", "liège", "fer", "carton-ondulé"]
 
@@ -143,5 +142,3 @@ slugged_mats.each do |mat|
     h_grey.save!
   end
 end
-
-
