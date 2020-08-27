@@ -66,7 +66,7 @@ b_grey = Garbadge.new(
 
 b_grey.save!
 slugged_mats.each do |mat|
-  if !b_green.accepted_materials.include?(mat) || !b_glass.accepted_materials.include?(mat)
+  unless b_green.accepted_materials.include?(mat) || b_glass.accepted_materials.include?(mat)
     b_grey.accepted_materials << mat
     b_grey.save!
   end
@@ -97,7 +97,7 @@ lr_blue = Garbadge.new(
 lr_blue.save!
 
 slugged_mats.each do |mat|
-  if !lr_paper.accepted_materials.include?(mat) || !lr_glass.accepted_materials.include?(mat) || !mat == 'liège'
+  unless lr_paper.accepted_materials.include?(mat) || lr_glass.accepted_materials.include?(mat) || mat == 'liège'
     lr_blue.accepted_materials << mat
     lr_blue.save!
   end
@@ -137,7 +137,7 @@ h_grey = Garbadge.new(
 h_grey.save!
 
 slugged_mats.each do |mat|
-  if !h_blue.accepted_materials.include?(mat) || !h_green.accepted_materials.include?(mat) || !h_yellow .accepted_materials.include?(mat)
+  unless h_blue.accepted_materials.include?(mat) || h_green.accepted_materials.include?(mat) || h_yellow .accepted_materials.include?(mat)
     h_grey.accepted_materials << mat
     h_grey.save!
   end
