@@ -53,16 +53,6 @@ const quaggaScanner = () => {
         Quagga.stop();
         window.locaton.href = `/scan/barcode?val_barcode=${barcode}`;
       }
-
-      // fetch('http://localhost:3000/scan/barcode', {
-      //   headers: {"Content-Type": "application/json" },
-      //   method: 'POST',
-      //   body: JSON.stringify({val_barcode: barcode})
-      // })
-      // .then(response => response.json())
-      // .then((data) => {
-      //   console.log(data);
-      // });
     });
   }
 };
