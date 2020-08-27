@@ -14,23 +14,24 @@
  *= require_self
  */
 
-@import 'component/index';
+@import "component/index";
 @import "pages";
 
 
 body {
   background-color: #319795;
   padding-top: 80px;
+
+  img {
+    content: "";
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 200px;
+    top: 900px;
+    opacity: 0.2;
+  }
 }
 
-body .img {
-  content: '';
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 200px;
-  top: 900px;
-  opacity: 0.2;
-}
 
 /* Pour la font-weight vous pouvez rajouter ça direct
 dans votre class html*/
