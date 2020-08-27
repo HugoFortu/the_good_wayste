@@ -1,8 +1,16 @@
 <div class="city-banner relative">
     <div class="container">
-      <h2 class='font-black text-6xl text-white ml-20 pt-40'>Bienvenue à Besançon</h2>
-<!-- To be continued: adding a search bar -->
-      <div class="inner">
+      <h2 class='font-black text-6xl text-white ml-20 pt-40'>Bienvenue à Variable</h2>
+      <div id='btn-input-block'>
+        <button class="active btn-location ml-32 mt-10 text-4xl bg-rose hover:bg-fushia text-white font-light hover:font-bold py-4 px-6 rounded-full">
+          <%= action %>
+        </button>
+        <div class='hidden input-search postcode-input pl-32 pt-10'>
+          <input id="input-search-style" type="text" value="Ville, code postale ..." class="pl-8">
+          <input id="input-submit" type="submit" class="bg-rose text-3xl text-white pb-4 pt-4 px-6 rounded-full" value="Ok">
+        </div>
       </div>
+      <div class="inner"></div>
+      <div class="minilogo"><%= image_tag "logo.png", alt: "alttext" %></div>
     </div>
 </div>
