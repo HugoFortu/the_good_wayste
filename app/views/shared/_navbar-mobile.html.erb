@@ -1,7 +1,24 @@
-<nav class="navbar bg-creme fixed-bottom h-40 m-5 rounded-lg shadow-xl">
-  <%= link_to '', root_path %><i class="fas fa-stream text-5xl text-sleep"></i>
-  <%= link_to '', root_path %><i class="fas fa-map-pin text-5xl text-sleep"></i>
-  <%= link_to '', root_path %><i class="fas fa-barcode text-5xl text-sleep"></i>
-  <%= link_to '', root_path %><i class="far fa-star text-5xl text-sleep"></i>
-  <%= link_to '', root_path %><i class="fas fa-home mr-16 text-5xl text-active"></i>
-</nav>
+<div id="myNav" >
+  <nav class="navbar bg-creme fixed-bottom h-48 m-5 rounded-lg shadow-xl">
+    <%= link_to '', root_path, class: "#{'active' if params[:controller] == 'Places' && params[:action] == '#show'}" %>
+    <div class="flex flex-col"><i class="icon fas fa-stream text-5xl"></i><p class="text-base text-sleep mt-3" >Guide</p></div>
+
+    <%= link_to '', root_path, class: "#{'active' if params[:controller] == 'Places' && params[:action] == '#map'}" %>
+    <div class="flex flex-col"><i class="icon fas fa-map-pin text-5xl"></i><p class="text-base text-sleep mt-3">Map</p></div>
+
+    <%= link_to '', root_path, class: "#{'active' if params[:controller] == 'Products' && params[:action] == '#scan'}" %>
+    <div class="flex flex-col"><i class="icon fas fa-barcode text-5xl"></i><p class="text-base text-sleep mt-3">Scan</p></div>
+
+    <%= link_to '', root_path, class: "#{'active' if params[:controller] == 'Favorites' && params[:action] == '#index'}" %>
+    <div class="flex flex-col"><i class="icon far fa-star text-5xl"></i><p class="text-base text-sleep mt-3">Favoris</p></div>
+
+    <%= link_to '', root_path, class: "#{'active' if params[:controller] == 'Pages' && params[:action] == '#home'}" %>
+    <div class="flex flex-col"><i class="icon active fas fa-home mr-16 text-5xl"></i><p class="text-base text-sleep mt-3">Home</p></div>
+  </nav>
+</div>
+
+<!-- place_path(@place) -->
+<!-- map_place_path -->
+<!-- scan_path -->
+<!-- favorites_path -->
+<!-- root_path -->

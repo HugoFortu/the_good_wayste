@@ -24,9 +24,9 @@ document.addEventListener('turbolinks:load', () => {
   quaggaScanner()
 })
 
-
 import { loadDynamicBannerText } from '../components/typing_effect';
 
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
 });
+
