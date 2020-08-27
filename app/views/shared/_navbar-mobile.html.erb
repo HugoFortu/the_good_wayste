@@ -1,20 +1,27 @@
 
 <div id="myNav" >
   <nav class="navbar bg-creme fixed-bottom h-48 m-5 rounded-lg shadow-xl">
-    <%= link_to '', root_path, class: "#{'active' if params[:controller] == 'Places' && params[:action] == '#show'}" %>
-    <div class="flex flex-col"><i class="icon fas fa-stream text-5xl"></i><p class="text-base text-sleep mt-3" >Guide</p></div>
 
-    <%= link_to '', root_path, class: "#{'active' if params[:controller] == 'Places' && params[:action] == '#map'}" %>
-    <div class="flex flex-col"><i class="icon fas fa-map-pin text-5xl"></i><p class="text-base text-sleep mt-3">Map</p></div>
+    <%= link_to root_path, class: "#{ params[:controller] == 'places' && params[:action] == 'show' ? 'active-nav' : 'sleep-nav'}" do %>
+      <div class="flex flex-col ml-12"><i class="fas fa-stream text-5xl"></i><p class="text-base text-sleep mt-3" >Guide</p></div>
+    <%  end %>
 
-    <%= link_to '', root_path, class: "#{'active' if params[:controller] == 'Products' && params[:action] == '#scan'}" %>
-    <div class="flex flex-col"><i class="icon fas fa-barcode text-5xl"></i><p class="text-base text-sleep mt-3">Scan</p></div>
+    <%= link_to root_path, class: "#{ params[:controller] == 'places' && params[:action] == 'map' ? 'active-nav' : 'sleep-nav'}" do %>
+      <div class="flex flex-col"><i class="fas fa-map-pin text-5xl"></i><p class="text-base text-sleep mt-3">Map</p></div>
+    <% end %>
 
-    <%= link_to '', root_path, class: "#{'active' if params[:controller] == 'Favorites' && params[:action] == '#index'}" %>
-    <div class="flex flex-col"><i class="icon far fa-star text-5xl"></i><p class="text-base text-sleep mt-3">Favoris</p></div>
+    <%= link_to scan_path, class: "#{ params[:controller] == 'products' && params[:action] == 'scan' ? 'active-nav' : 'sleep-nav'}" do %>
+      <div class="flex flex-col"><i class="fas fa-barcode text-5xl"></i><p class="text-base text-sleep mt-3">Scan</p></div>
+    <% end %>
 
-    <%= link_to '', root_path, class: "#{'active' if params[:controller] == 'Pages' && params[:action] == '#home'}" %>
-    <div class="flex flex-col"><i class="icon active fas fa-home mr-16 text-5xl"></i><p class="text-base text-sleep mt-3">Home</p></div>
+    <%= link_to favorites_path, class: "#{ params[:controller] == 'favorites' && params[:action] == 'index' ? 'active-nav' : 'sleep-nav'}" do %>
+      <div class="flex flex-col"><i class="fas fa-star text-5xl"></i><p class="text-base text-sleep mt-3">Favoris</p></div>
+    <% end %>
+
+    <%= link_to root_path, class: "#{ params[:controller] == 'pages' && params[:action] == 'home' ? 'active-nav' : 'sleep-nav'}" do %>
+      <div class="flex flex-col"><i class="fas fa-home mr-16 text-5xl"></i><p class="text-base text-sleep mt-3">Home</p></div>
+    <% end %>
+
   </nav>
 </div>
 
