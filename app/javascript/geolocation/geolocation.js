@@ -17,7 +17,8 @@ const currentLocation = () => {
   function error(err) {
     console.warn(`ERREUR (${err.code}): ${err.message}`);
   }
-
-  navigator.geolocation.getCurrentPosition(success, error, options);
+  if (document.querySelector('#banner-typed-text')) {
+    navigator.geolocation.getCurrentPosition(success, error, options);
+  };
 };
 export { currentLocation }
