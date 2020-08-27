@@ -4,15 +4,20 @@ const createComponentFromForm = () => {
 
   clickables.forEach((clickable) =>
     clickable.addEventListener('click', (event) => {
-      console.log(clickable.querySelector('img').dataset.component )
 
-      let background = document.querySelector('#components_form').firstChild;
-      background.classList.add('components_form_blur');
-      console.log('je blur le fond')
+      let name = clickable.querySelector('img').dataset.component
+      let modal = document.querySelector('.modale');
+      let image = document.querySelector('#component_image');
+      let name_space = document.querySelector('#component_name');
+      let background = document.querySelector('.full_width_modal');
 
-      let modal = document.querySelector('#material_form');
-      background.classList.remove('hidden_first');
-      console.log('j\'affiche la modal')
+      modal.classList.add('open');
+      background.classList.add('blurred')
+      image.innerHTML = `<img src="/assets/${name}.png" alt="" style="width:90px">` ;
+      name_space.innerText = name;
+
+
+      // après validation => clear image, name_space, add class hidden
     })
   )
 };

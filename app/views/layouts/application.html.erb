@@ -19,6 +19,12 @@
     </div>
     <%= render 'shared/top-bar' %>
     <%= yield %>
+
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
     <%= render 'shared/navbar-mobile' %>
   </body>
 </html>

@@ -21,7 +21,6 @@ import '../stylesheets/application.scss';
 import { quaggaScanner } from '../scanner/scanner'
 import { loadDynamicBannerText } from '../components/typing_effect';
 import { createComponentFromForm  } from '../components/form_component'
-import { modalOnComponents  } from '../components/modal'
 
 document.addEventListener('turbolinks:load', () => {
   quaggaScanner();

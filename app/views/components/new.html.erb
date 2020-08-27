@@ -1,35 +1,29 @@
-<div id="components_form">
-<!--
-Je diplay une grid d'icônes, toutes reliées à un nom en data-attribute
-# lorsque je clique sur une icône, j'ai une modale qui se crée en JS
-# en JS, je récupere le nom de l'icône en data-attribute
-# sur la modal, je propose l'ensemble de nos matériaux
-# je choisis le matériau, et je valide => component.save
-# je reviens sur le grid d'icônes
-# Je peux valider ou créer d'autre components
-# Si je valide, j'arrive à la page produit -->
+<%= simple_form_for [@product, @component] do |f| %>
+  <div id="components_form">
+    <div class="w-3/4 mx-auto mt-64">
+      <p>Combien de composants dans le produit ?</p>
+      <div class="flex justify-between items-end flex-wrap ">
 
+        <% components_name = %w[bouchon canette aerosol pot] %>
+        <% components_name.each do |name| %>
+          <%= render 'component', name: name %>
+        <% end %>
 
-  <div class="w-3/4 mx-auto my-64">
-    <p>Combien de composants dans le produit ?</p>
-    <div class="flex justify-between items-end flex-wrap ">
-
-      <% components_name = %w[bouchon canette aerosol pot] %>
-      <% components_name.each do |name| %>
-        <%= render 'component', name: name %>
-      <% end %>
-
+      </div>
     </div>
+
+    <div class="full_width_modal fixed-top pt-64" >
+      <div class="modale relative z-10 mx-auto">
+        <p>display de l'icone + nom du composant</p>
+        <div id="component_image" > </div>  <!-- #innerHTML src recuperé un JS d'ans le clickable -->
+        <h2 id="component_name"></h2> <!-- #innerText recuperé un JS d'ans le clickable -->
+
+          <%= f.association :material %>
+          <%= f.submit "Valider" %>
+      </div>
+    </div>
+
+    <%= link_to 'Je n\'ai plus de composants à ajouter', product_path(@product) %>
+
   </div>
-
-  <div id="material_form" > <!-- class="hidden_first" -->
-    <p>display de l'icone + nom du composant</p>
-    <%= simple_form_for [@product, @component] do |f| %>
-      <%= f.association :material %>
-      <%= f.submit "Valider" %>
-
-    <% end %>
-  </div>
-
-</div>
-
+<% end %>

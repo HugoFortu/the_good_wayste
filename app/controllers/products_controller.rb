@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
     skip_before_action :verify_authenticity_token, only: [:barcode]
 
   def show
+    @product = Product.find(params[:id])
   end
 
   def scan
