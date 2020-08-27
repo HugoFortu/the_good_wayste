@@ -2,7 +2,24 @@
     <div class="container">
       <h2 class='font-black text-6xl text-white ml-20 pt-40'>Bienvenue à Besançon</h2>
 <!-- To be continued: adding a search bar -->
-      <div class="inner">
+      <button class="ml-32 mt-10 text-4xl bg-rose hover:bg-fushia text-white font-light hover:font-bold py-4 px-6 rounded-full">
+        <%= action %>
+      </button>
+      <!-- Input à afficher en JS - voir commentaires ci-dessous -->
+<!--       <div class='postcode-input pl-32'>
+        <input id="input-search" type="text" value="Entrez votre code postal ou ville">
+        <input id="input-submit" type="submit" class="bg-rose" value="Ok">
+      </div> -->
+      <div class="inner"></div>
+      <div class="logo-menu-back"></div>
+      <div class="img-logo">
+        <%= image_tag "logo.png", alt: "alttext" %>
       </div>
     </div>
 </div>
+
+
+<!-- On clique sur le bouton "Vous n'êtes plus à VILLE ACTUELLE" -->
+<!-- Input active et "vous n'êtes plus à VILLE ACTUELLE" inactive  -->
+<!-- On rentre NOUVELLE VILLE et clique sur Ok -->
+<!-- Input inactive et "vous n'êtes plus à NOUVELLE VILLE" active-->
