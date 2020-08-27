@@ -40,17 +40,17 @@ les_rousses.save!
 honfleur = Place.new(name: 'Honfleur', postcode: '14600')
 honfleur.save!
 
-# BORDEAUX - Garbadge
+# BORDEAUX - Garbage
 slugged_mats = ["pet-1", "pehd-2", "pvc-3", "ldpe-4", "pp-5", "ps--6", "brique-alimentaire", "metal", "carton-fin", "carton-épais", "film-plastique", "aluminium", "papier", "papier-plastifié", "acier", "verre", "liège", "fer", "carton-ondulé"]
 
-b_green = Garbadge.new(
+b_green = Garbage.new(
   place_id: bordeaux.id,
   color: "verte",
   accepted_materials: ["pet-1", "pehd-2", "brique-alimentaire", "metal", "carton-fin", "aluminium", "carton-fin", "carton-ondulé", "fer", "acier" ]
 )
 b_green.save!
 
-b_glass = Garbadge.new(
+b_glass = Garbage.new(
   place_id: bordeaux.id,
   color: "borne de tri - verre",
   accepted_materials: ["verre"]
@@ -58,7 +58,7 @@ b_glass = Garbadge.new(
 
 b_glass.save
 
-b_grey = Garbadge.new(
+b_grey = Garbage.new(
   place_id: bordeaux.id,
   color: "grise",
   accepted_materials: []
@@ -72,23 +72,23 @@ slugged_mats.each do |mat|
   end
 end
 
-# Les Rousses - Garbadges
+# Les Rousses - garbages
 
-lr_paper = Garbadge.new(
+lr_paper = Garbage.new(
   place_id: les_rousses.id,
   color: 'borne de tri - papier',
   accepted_materials: ['papier']
 )
 lr_paper.save!
 
-lr_glass = Garbadge.new(
+lr_glass = Garbage.new(
   place_id: les_rousses.id,
   color: 'borne de tri - verre',
   accepted_materials: ['verre']
 )
 lr_glass.save!
 
-lr_blue = Garbadge.new(
+lr_blue = Garbage.new(
   place_id: les_rousses.id,
   color: 'bleue',
   accepted_materials: []
@@ -103,8 +103,8 @@ slugged_mats.each do |mat|
   end
 end
 
-# Honfleur-Garbadge
-h_yellow = Garbadge.new(
+# Honfleur-Garbage
+h_yellow = Garbage.new(
   place_id: honfleur.id,
   color: 'jaune',
   accepted_materials: ["pet-1", "pehd-2", "brique-alimentaire", "metal", "aluminium", "acier", "fer"]
@@ -112,7 +112,7 @@ h_yellow = Garbadge.new(
 
 h_yellow.save!
 
-h_blue = Garbadge.new(
+h_blue = Garbage.new(
   place_id: honfleur.id,
   color: 'bleue',
   accepted_materials: ['carton-ondulé', 'carton-fin', 'papier']
@@ -120,7 +120,7 @@ h_blue = Garbadge.new(
 
 h_blue.save!
 
-h_green = Garbadge.new(
+h_green = Garbage.new(
   place_id: honfleur.id,
   color: 'verte',
   accepted_materials: ['verre']
@@ -128,7 +128,7 @@ h_green = Garbadge.new(
 
 h_green.save!
 
-h_grey = Garbadge.new(
+h_grey = Garbage.new(
   place_id: honfleur.id,
   color: 'grise',
   accepted_materials: []
