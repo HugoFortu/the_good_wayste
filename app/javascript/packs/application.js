@@ -18,18 +18,16 @@ require("channels")
 
 import '../stylesheets/application.scss';
 
-import { quaggaScanner } from '../scanner/scanner'
-import { currentLocation } from '../geolocation/geolocation'
-
-document.addEventListener('turbolinks:load', () => {
-  quaggaScanner()
-})
-document.addEventListener('turbolinks:load', () => {
-  currentLocation()
-})
-
+import { quaggaScanner } from '../scanner/scanner';
+import { currentLocation } from '../geolocation/geolocation';
+import { buttonInputSwitch } from '../components/postcode-input';
 import { loadDynamicBannerText } from '../components/typing_effect';
 
+
+
 document.addEventListener('turbolinks:load', () => {
+  quaggaScanner();
+  currentLocation();
+  buttonInputSwitch();
   loadDynamicBannerText();
-});
+})
