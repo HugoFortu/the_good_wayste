@@ -1,4 +1,12 @@
-.divScan {
-  width: 100%;
-  height: 100%;
+#barcode-scanner {
+  width: 100vw;
+  height: 100vh;
+  canvas {
+    height: 100vh;
+    width: 100%;
+  }
+  video {
+    width: 100%;
+    height: 100vh;
+  }
 }

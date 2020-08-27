@@ -7,7 +7,11 @@ const quaggaScanner = () => {
       inputStream : {
         name : "Live",
         type : "LiveStream",
-        target: scanDiv  // Or '#yourElement' (optional)
+        target: scanDiv,  // Or '#yourElement' (optional)
+        constraints: {
+          width: 640,
+          height: 2000,
+        },
       },
       decoder : {
         readers : ["ean_reader"],
