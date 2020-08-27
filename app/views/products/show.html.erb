@@ -5,16 +5,16 @@
   <% material = component.material %>
   <% material_name = material.name.downcase %>
   <%
-    garbadge = Garbadge.
+    garbage = Garbage.
       where(place: city).
-      where("? = ANY (garbadges.accepted_materials)", material.slug).
+      where("? = ANY (garbages.accepted_materials)", material.slug).
       first
   %>
 
-  <% if garbadge.color.include?("borne") %>
-    <% sorting_instructions = " Rendez-vous à la #{garbadge.color} la plus proche pour le jeter" %>
+  <% if garbage.color.include?("borne") %>
+    <% sorting_instructions = " Rendez-vous à la #{garbage.color} la plus proche pour le jeter" %>
   <% else %>
-    <% sorting_instructions = "Jetez-le dans la poubelle #{garbadge.color}" %>
+    <% sorting_instructions = "Jetez-le dans la poubelle #{garbage.color}" %>
   <% end %>
 
 

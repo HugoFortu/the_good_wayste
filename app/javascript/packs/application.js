@@ -19,9 +19,11 @@ require("channels")
 import '../stylesheets/application.scss';
 
 import { quaggaScanner } from '../scanner/scanner'
+import { currentLocation } from '../geolocation/geolocation'
 
 document.addEventListener('turbolinks:load', () => {
   quaggaScanner()
+  currentLocation()
 })
 
 import { loadDynamicBannerText } from '../components/typing_effect';
