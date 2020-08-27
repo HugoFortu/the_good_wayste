@@ -27,16 +27,19 @@ const quaggaScanner = () => {
     });
     Quagga.onDetected(function(result) {
       const barcode = result.codeResult.code;
+      console.log(barcode);
       Quagga.stop();
-      fetch('http://localhost:3000/scan/barcode', {
-        headers: {"Content-Type": "application/json" },
-        method: 'POST',
-        body: JSON.stringify({val_barcode: barcode})
-      })
-      .then(response => response.json())
-      .then((data) => {
-        console.log(data);
-      });
+
+      window.location.href = `/scan/barcode?val_barcode=${barcode}`;
+      // fetch('/scan/barcode', {
+      //   headers: {"Content-Type": "application/json" },
+      //   method: 'POST',
+      //   body: JSON.stringify({val_barcode: barcode})
+      // })
+      // .then(response => response.text())
+      // .then((data) => {
+      //   console.log(data);
+      // });
     });
   }
 };
