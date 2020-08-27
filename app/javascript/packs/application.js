@@ -23,8 +23,6 @@ import { currentLocation } from '../geolocation/geolocation'
 
 document.addEventListener('turbolinks:load', () => {
   quaggaScanner()
-})
-document.addEventListener('turbolinks:load', () => {
   currentLocation()
 })
 
@@ -33,3 +31,4 @@ import { loadDynamicBannerText } from '../components/typing_effect';
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
 });
+
