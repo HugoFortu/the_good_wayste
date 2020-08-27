@@ -1,0 +1,28 @@
+<%= simple_form_for [@product, @component] do |f| %>
+  <div id="components_form">
+    <div class="w-3/4 mx-auto mt-64">
+      <p>Sélectionnez les composants de votre emballage </p>
+      <div class="flex justify-between items-end flex-wrap ">
+
+        <% components_name = %w[bouchon canette aerosol pot] %>
+        <% components_name.each do |name| %>
+          <%= render 'component', name: name %>
+        <% end %>
+
+      </div>
+    </div>
+
+    <div class="overlay hidden fixed inset-0">
+      <div class="modale relative z-10 m-20 bg-white">
+        <div id="component_image" > </div>  <!-- #innerHTML src recuperé un JS d'ans le clickable -->
+        <h2 id="component_name"></h2> <!-- #innerText recuperé un JS d'ans le clickable -->
+
+          <%= f.association :material %>
+          <%= f.submit "Valider" %>
+      </div>
+    </div>
+
+    <%= render 'shared/boutons', title: 'Je n\'ai plus de composants à ajouter', direction: product_path(@product) %>
+
+  </div>
+<% end %>

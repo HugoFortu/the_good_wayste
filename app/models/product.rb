@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   has_many :components
   has_many :materials, through: :components
 
+
   def self.from_barcode(barcode)
     Product.find_by(barcode: barcode) || create_product_from(barcode)
   end

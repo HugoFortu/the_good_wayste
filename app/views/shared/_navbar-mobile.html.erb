@@ -1,7 +1,33 @@
-<nav class="navbar bg-creme fixed-bottom h-40 m-5 rounded-lg shadow-xl">
-  <%= link_to '', root_path %><i class="fas fa-stream text-5xl text-sleep"></i>
-  <%= link_to '', root_path %><i class="fas fa-map-pin text-5xl text-sleep"></i>
-  <%= link_to '', root_path %><i class="fas fa-barcode text-5xl text-sleep"></i>
-  <%= link_to '', root_path %><i class="far fa-star text-5xl text-sleep"></i>
-  <%= link_to '', root_path %><i class="fas fa-home mr-16 text-5xl text-active"></i>
-</nav>
+
+<div id="myNav" >
+  <nav class="navbar bg-creme fixed-bottom h-48 m-5 rounded-lg shadow-xl">
+
+    <%= link_to root_path, class: "#{ params[:controller] == 'places' && params[:action] == 'show' ? 'active-nav' : 'sleep-nav'}" do %>
+      <div class="flex flex-col ml-12"><i class="fas fa-stream text-5xl"></i><p class="text-base text-sleep mt-3" >Guide</p></div>
+    <%  end %>
+
+    <%= link_to root_path, class: "#{ params[:controller] == 'places' && params[:action] == 'map' ? 'active-nav' : 'sleep-nav'}" do %>
+      <div class="flex flex-col"><i class="fas fa-map-pin text-5xl"></i><p class="text-base text-sleep mt-3">Map</p></div>
+    <% end %>
+
+    <%= link_to scan_path, class: "#{ params[:controller] == 'products' && params[:action] == 'scan' ? 'active-nav' : 'sleep-nav'}" do %>
+      <div class="flex flex-col"><i class="fas fa-barcode text-5xl"></i><p class="text-base text-sleep mt-3">Scan</p></div>
+    <% end %>
+
+    <%= link_to favorites_path, class: "#{ params[:controller] == 'favorites' && params[:action] == 'index' ? 'active-nav' : 'sleep-nav'}" do %>
+      <div class="flex flex-col"><i class="fas fa-star text-5xl"></i><p class="text-base text-sleep mt-3">Favoris</p></div>
+    <% end %>
+
+    <%= link_to root_path, class: "#{ params[:controller] == 'pages' && params[:action] == 'home' ? 'active-nav' : 'sleep-nav'}" do %>
+      <div class="flex flex-col"><i class="fas fa-home mr-16 text-5xl"></i><p class="text-base text-sleep mt-3">Home</p></div>
+    <% end %>
+
+  </nav>
+</div>
+
+<!-- place_path(@place) -->
+<!-- map_place_path -->
+<!-- scan_path -->
+<!-- favorites_path -->
+<!-- root_path -->
+
