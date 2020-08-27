@@ -3,7 +3,10 @@
 //   filter: blur(5px);
 // }
 
-
+.overlay {
+  z-index: 1040;
+  backdrop-filter: blur(5px);
+}
 // #material_form {
 
 // }

@@ -6,13 +6,12 @@ const createComponentFromForm = () => {
     clickable.addEventListener('click', (event) => {
 
       let name = clickable.querySelector('img').dataset.component
-      let modal = document.querySelector('.modale');
       let image = document.querySelector('#component_image');
       let name_space = document.querySelector('#component_name');
-      let background = document.querySelector('.full_width_modal');
+      let background = document.querySelector('.overlay');
 
-      modal.classList.add('open');
-      background.classList.add('blurred')
+      background.classList.remove('hidden');
+      // background.classList.add('blurred')
       image.innerHTML = `<img src="/assets/${name}.png" alt="" style="width:90px">` ;
       name_space.innerText = name;
 
