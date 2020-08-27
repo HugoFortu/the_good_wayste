@@ -1,0 +1,7 @@
+const modalOnComponents = () => {
+
+
+}
+
+
+export { modalOnComponents }

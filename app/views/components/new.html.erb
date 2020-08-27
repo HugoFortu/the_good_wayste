@@ -1,6 +1,6 @@
-<p>Combien de composants dans le produit ?</p>
+<div id="components_form">
 <!--
-# Je diplay une grid d'icônes, toutes reliées à un nom en data-attribute
+Je diplay une grid d'icônes, toutes reliées à un nom en data-attribute
 # lorsque je clique sur une icône, j'ai une modale qui se crée en JS
 # en JS, je récupere le nom de l'icône en data-attribute
 # sur la modal, je propose l'ensemble de nos matériaux
@@ -9,13 +9,27 @@
 # Je peux valider ou créer d'autre components
 # Si je valide, j'arrive à la page produit -->
 
-<div class="w-3/4 m-auto">
-  <div class="flex justify-between items-end flex-wrap ">
 
-    <% components_name = %w[bouchon canette aerosol pot] %>
-    <% components_name.each do |name| %>
-      <%= render 'component', name: name %>
-    <% end %>
+  <div class="w-3/4 mx-auto my-64">
+    <p>Combien de composants dans le produit ?</p>
+    <div class="flex justify-between items-end flex-wrap ">
 
+      <% components_name = %w[bouchon canette aerosol pot] %>
+      <% components_name.each do |name| %>
+        <%= render 'component', name: name %>
+      <% end %>
+
+    </div>
   </div>
+
+  <div id="material_form" > <!-- class="hidden_first" -->
+    <p>display de l'icone + nom du composant</p>
+    <%= simple_form_for [@product, @component] do |f| %>
+      <%= f.association :material %>
+      <%= f.submit "Valider" %>
+
+    <% end %>
+  </div>
+
 </div>
+
