@@ -51,7 +51,7 @@ const quaggaScanner = () => {
         last_result = [];
         console.log(barcode);
         Quagga.stop();
-        window.locaton.href = `/scan/barcode?val_barcode=${barcode}`;
+        window.location.href = `/scan/barcode?val_barcode=${barcode}`;
       }
     });
   }
