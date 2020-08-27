@@ -1,7 +1,8 @@
 <nav class="navbar bg-creme fixed-bottom h-40 m-5 rounded-lg shadow-xl">
   <%= link_to '', root_path %><i class="fas fa-stream text-5xl text-sleep"></i>
   <%= link_to '', root_path %><i class="fas fa-map-pin text-5xl text-sleep"></i>
-  <%= link_to '', root_path %><i class="fas fa-barcode text-5xl text-sleep"></i>
+  <%= link_to scan_path do%><i class="fas fa-barcode text-5xl text-sleep"></i>
+  <% end %>
   <%= link_to '', root_path %><i class="far fa-star text-5xl text-sleep"></i>
   <%= link_to '', root_path %><i class="fas fa-home mr-16 text-5xl text-active"></i>
 </nav>

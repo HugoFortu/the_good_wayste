@@ -20,13 +20,15 @@ import '../stylesheets/application.scss';
 
 import { quaggaScanner } from '../scanner/scanner'
 import { currentLocation } from '../geolocation/geolocation'
+import { orderByOccurrence } from '../scanner/scanner'
 
 document.addEventListener('turbolinks:load', () => {
   quaggaScanner()
-})
-document.addEventListener('turbolinks:load', () => {
   currentLocation()
 })
+
+
+
 
 import { loadDynamicBannerText } from '../components/typing_effect';
 
