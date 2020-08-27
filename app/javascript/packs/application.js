@@ -19,6 +19,8 @@ require("channels")
 import '../stylesheets/application.scss';
 
 import { quaggaScanner } from '../scanner/scanner'
+import { currentLocation } from '../geolocation/geolocation'
+
 import { loadDynamicBannerText } from '../components/typing_effect';
 import { createComponentFromForm  } from '../components/form_component'
 
@@ -27,5 +29,6 @@ document.addEventListener('turbolinks:load', () => {
   createComponentFromForm();
   // laisser fonction à la fin (ou corriger :) )
   loadDynamicBannerText();
+  currentLocation();
 })
 
