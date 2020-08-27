@@ -11,6 +11,7 @@ const currentLocation = () => {
     console.log('Votre position actuelle est :');
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude : ${crd.longitude}`);
+    console.log(`city : ${crd.city}`)
     console.log(`La précision est de ${crd.accuracy} mètres.`);
   }
 
