@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class GarbadgeTest < ActiveSupport::TestCase
+class GarbageTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
