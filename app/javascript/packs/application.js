@@ -37,5 +37,6 @@ document.addEventListener('turbolinks:load', () => {
 
   // laisser fonction à la fin (ou corriger :) )
   loadDynamicBannerText();
+
 });
 

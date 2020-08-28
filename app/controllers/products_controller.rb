@@ -11,7 +11,10 @@ class ProductsController < ApplicationController
   def barcode
     @barcode = params[:val_barcode]
     @product = Product.from_barcode(@barcode)
-    if @product.clean
+
+    if @product == nil
+      redirect_to scan_path, notice: "Try again"
+    elsif @product.clean
       redirect_to product_path(@product)
     else
       redirect_to new_product_component_path(@product)
