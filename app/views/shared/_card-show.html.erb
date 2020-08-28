@@ -15,11 +15,10 @@
   <% end %>
 
 
-  <%= image_tag "#{image_name}.png", width:'70',class: 'w-1/4 max-h-full m-10 rounded-lg m-2' %>
+  <%= image_tag "#{image_name}.png", width:'70', height: 'auto' ,class: 'w-1/4 max-h-full m-10 rounded-lg m-2' %>
   <div class="card-product-infos m-20 ml-5">
-    <h2 class="mb-4 font-bold"><%= component %> en <%= material %></h2>
-    <p> <%= sorting_instructions %></p>
-    <p></p>
+    <p class="mb-4 font-bold"><%= component %> en <%= material %></p>
+    <p> <strong> <%= sorting_instructions %></strong></p>
   </div>
 </div>
 

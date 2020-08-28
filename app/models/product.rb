@@ -10,6 +10,8 @@ class Product < ApplicationRecord
 
   def self.create_product_from(barcode)
     off_data = Openfoodfacts::Product.get(barcode, locale: 'fr')
+
+    redirect_to scan_path, notice: 'Votre scan n\' a pas foncitonné'  if off_data == nil
     product = Product.new(
       name: off_data.product_name_fr,
       barcode: off_data.code,
