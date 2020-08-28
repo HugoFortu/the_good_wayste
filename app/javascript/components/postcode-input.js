@@ -16,4 +16,3 @@ inputButton.addEventListener('click', toggle)
 }
 
 export { buttonInputSwitch };
-

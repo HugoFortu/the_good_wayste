@@ -25,13 +25,16 @@ import { orderByOccurrence } from '../scanner/scanner'
 import { loadDynamicBannerText } from '../components/typing_effect';
 import { createComponentFromForm  } from '../components/form_component'
 import { buttonInputSwitch } from '../components/postcode-input';
+import { crossAlertQuit } from '../components/alert-quit';
 
 
 document.addEventListener('turbolinks:load', () => {
   quaggaScanner();
   createComponentFromForm();
   currentLocation();
+  crossAlertQuit();
   buttonInputSwitch();
+
   // laisser fonction à la fin (ou corriger :) )
   loadDynamicBannerText();
 

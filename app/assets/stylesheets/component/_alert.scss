@@ -1,0 +1,24 @@
+.flash {
+  padding: 16px 24px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  width: 938px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin: 8px;
+}
+
+
+.flash-warning {
+  border: 2px solid #ffb55c;
+}
+
+
+.fixed-position-alert {
+  position: absolute;
+  top: 85%;
+  left: 1.5%;
+}
