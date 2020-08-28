@@ -3,6 +3,7 @@
 <div class="scrolling-wrapper">
 
   <div class="card-scroll">
+    <h1>Consignes de tri</h1>
     <% @product.components.each do |component| %>
     <% component_name = component.name %>
     <% material = component.material %>
@@ -26,6 +27,11 @@
   </div>
 
   <div class="card-scroll">
-    <p>test</p>
+    <h1>Infos sur les matériaux</h1>
+    <% @product.materials.each do |material| %>
+      <h2> <%= material.name %></h2>
+      <p><%= material.description %></p>
+    <% end %>
   </div>
 </div>
+
