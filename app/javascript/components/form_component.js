@@ -1,5 +1,4 @@
 const createComponentFromForm = () => {
-  console.log('coucou');
   const clickables = document.querySelectorAll('.clickable_components')
 
   clickables.forEach((clickable) =>
