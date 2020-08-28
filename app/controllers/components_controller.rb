@@ -12,7 +12,7 @@ class ComponentsController < ApplicationController
     # @material = Material.find(params[:material_id])
     # @components.product = @product
     # @component.material = @material
-
+    # passer en force et changer le statut clean du produit
     if @component.save
       redirect_to new_product_component_path(@product) ,notice: "Le composant est bien créé"
     else
