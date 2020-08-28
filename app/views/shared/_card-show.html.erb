@@ -1,5 +1,21 @@
 <div class="card-product bg-creme bg-opacity-75 h-64 rounded-lg flex content-center mx-10 my-10 shadow-">
-  <%= image_tag 'garbage.png', class: 'w-1/4 max-h-full m-10 rounded-lg m-2' %>
+  <% case color %>
+    <% when 'verte' %>
+      <% image_name = "green-trash" %>
+    <% when 'bleue' %>
+      <% image_name = "blue-trash" %>
+    <% when 'jaune' %>
+      <% image_name = "yellow-trash" %>
+    <% when 'grise' %>
+      <% image_name = "grey-trash" %>
+    <% when 'borne de tri - papier' %>
+      <% image_name = "blue-borne" %>
+    <% when 'borne de tri - verre' %>
+      <% image_name = "grey-borne" %>
+  <% end %>
+
+
+  <%= image_tag "#{image_name}.png", width:'70',class: 'w-1/4 max-h-full m-10 rounded-lg m-2' %>
   <div class="card-product-infos m-20 ml-5">
     <h2 class="mb-4 font-bold"><%= component %> en <%= material %></h2>
     <p> <%= sorting_instructions %></p>
