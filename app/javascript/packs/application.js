@@ -34,5 +34,6 @@ document.addEventListener('turbolinks:load', () => {
   buttonInputSwitch();
   // laisser fonction à la fin (ou corriger :) )
   loadDynamicBannerText();
+
 });
 
