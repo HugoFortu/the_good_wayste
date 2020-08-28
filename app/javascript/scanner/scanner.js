@@ -8,10 +8,10 @@ const orderByOccurrence = (arr) => {
       }
       counts[value]++;
   });
-
-  return Object.keys(counts).sort(function(curKey,nextKey) {
-      return counts[curKey] < counts[nextKey];
+  const foo = Object.keys(counts).sort(function(curKey,nextKey) {
+      return counts[nextKey] - counts[curKey];
   });
+  return foo;
 }
 
 
@@ -26,7 +26,8 @@ const quaggaScanner = () => {
         target: scanDiv  // Or '#yourElement' (optional)
       },
       decoder : {
-        readers : ["code_128_reader", "ean_reader", "ean_8_reader", "code_39_reader", "code_39_vin_reader", "codabar_reader", "upc_reader", "upc_e_reader", "i2of5_reader", "2of5_reader","code_93_reader"],
+        // readers : ["code_128_reader", "ean_reader", "ean_8_reader", "code_39_reader", "code_39_vin_reader", "codabar_reader", "upc_reader", "upc_e_reader", "i2of5_reader", "2of5_reader","code_93_reader"],
+        readers : ["ean_reader"],
         debug: {
           drawBoundingBox: true,
           drawScanline: true,
@@ -43,11 +44,11 @@ const quaggaScanner = () => {
     });
     var last_result = [];
     Quagga.onDetected(function(result) {
-      const last_code = result.codeResult.code;
+      let last_code = result.codeResult.code;
       last_result.push(last_code);
       console.log(last_code);
       if (last_result.length > 35) {
-        barcode = orderByOccurrence(last_result)[0];
+        var barcode = orderByOccurrence(last_result)[0];
         last_result = [];
         console.log(barcode);
         Quagga.stop();
