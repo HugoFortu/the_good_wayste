@@ -32,11 +32,12 @@ document.addEventListener('turbolinks:load', () => {
   quaggaScanner();
   createComponentFromForm();
   currentLocation();
-  crossAlertQuit();
-  buttonInputSwitch();
+
 
   // laisser fonction à la fin (ou corriger :) )
   loadDynamicBannerText();
 
 });
 
+  buttonInputSwitch();
+  crossAlertQuit();
