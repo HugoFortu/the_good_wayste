@@ -12,7 +12,6 @@ class ProductsController < ApplicationController
     @barcode = params[:val_barcode]
     @product = Product.from_barcode(@barcode)
 
-    # redirect_to scan_path, notice: "Try again" unless @product
     if @product == nil
       redirect_to scan_path, notice: "Try again"
     elsif @product.clean

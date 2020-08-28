@@ -6,7 +6,7 @@ class Product < ApplicationRecord
 
   def self.from_barcode(barcode)
     Product.find_by(barcode: barcode) || create_product_from(barcode)
-  end
+    end
 
   def self.create_product_from(barcode)
     off_data = Openfoodfacts::Product.get(barcode, locale: 'fr')
