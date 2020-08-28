@@ -15,17 +15,23 @@
   </head>
 
   <body>
-    <div id="logobody">
+<!--     <div id="logobody">
       <%= image_tag "logo.png", alt: "alttext" %>
-    </div>
+    </div> -->
     <%= render 'shared/top-bar' %>
     <%= yield %>
 
-    <% flash.each do |type, msg| %>
-      <div>
-        <%= msg %>
-      </div>
-    <% end %>
+    <div class='fixed-position-alert'>
+      <% flash.each do |type, msg| %>
+        <div class="flash flash-warning alert alert-dismissible fade show" role="alert">
+          <span><%= msg %></span>
+          <a data-dismiss="alert" aria-label="Close">
+            <i class="fas fa-times"></i>
+          </a>
+        </div>
+      <% end %>
+    </div>
+
     <%= render 'shared/navbar-mobile' %>
   </body>
 </html>
