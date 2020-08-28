@@ -1,7 +1,7 @@
 <label class="w-56 flex flex-col ml-5 clickable_components">
   <%#= link_to '' do %>
-    <div><%= image_tag("#{name}.png", data: {component: name }) %></div>
-    <div><p><%= name %></p></div>
+    <div><%= image_tag("#{name}.png", width:'70', data: {component: name }) %></div>
+    <div><p class="component_name"><%= name %></p></div>
     <input type="radio" class="hidden" name="component[name]" value="<%= name %>">
   <% #end %>
 </label>
