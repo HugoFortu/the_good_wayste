@@ -3,18 +3,23 @@ class Product < ApplicationRecord
   has_many :components
   has_many :materials, through: :components
 
+
   def self.from_barcode(barcode)
     Product.find_by(barcode: barcode) || create_product_from(barcode)
   end
 
   def self.create_product_from(barcode)
     off_data = Openfoodfacts::Product.get(barcode, locale: 'fr')
+
+    return nil unless off_data
+
     product = Product.new(
       name: off_data.product_name_fr,
       barcode: off_data.code,
       brand: off_data.brands
     )
     product.save!
+    product
   end
 
   private

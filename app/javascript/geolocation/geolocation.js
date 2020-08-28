@@ -11,13 +11,15 @@ const currentLocation = () => {
     console.log('Votre position actuelle est :');
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude : ${crd.longitude}`);
+    console.log(`city : ${crd.city}`)
     console.log(`La précision est de ${crd.accuracy} mètres.`);
   }
 
   function error(err) {
     console.warn(`ERREUR (${err.code}): ${err.message}`);
   }
-
-  navigator.geolocation.getCurrentPosition(success, error, options);
+  if (document.querySelector('#banner-typed-text')) {
+    navigator.geolocation.getCurrentPosition(success, error, options);
+  };
 };
 export { currentLocation }

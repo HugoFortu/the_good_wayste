@@ -1,5 +1,7 @@
-#barcode-scanner {
+
+#barcode-scanner video, canvas {
   width: 100vw;
+
   height: 100vh;
   position: relative;
   canvas {
@@ -15,6 +17,10 @@
     padding-right: 30px !important;
     padding-left: 30px !important;
   }
+}
+
+#barcode-scanner video.drawingBuffer, canvas.drawingBuffer {
+  display: none;
 }
 .consigne {
   position: absolute;

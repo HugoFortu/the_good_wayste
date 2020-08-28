@@ -1,8 +1,11 @@
 .city-banner {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1582444520839-8c72f8721245?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(Besançon.jpg);
+  background-size: cover;
   width: 100% !important;
   height: 700px !important;
+
 }
+
 .inner {
   position: absolute;
   background: #319795;
@@ -10,8 +13,16 @@
   width: 100%;
   bottom: -1px;
   left: -1px;
-  border-left: #000 1px solid;
-  border-top: #000 1px solid;
-  border-right: #319795 1px solid;
   border-radius: 50% 50% 0% 0% / 100% 100% 0% 0% ;
+}
+
+.minilogo {
+  position: absolute;
+  background-color: #319795;
+  bottom: 40px;
+  right: 40%;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  z-index: 5;
 }
