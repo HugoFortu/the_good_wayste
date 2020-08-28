@@ -25,8 +25,8 @@
       <% flash.each do |type, msg| %>
         <div class="flash flash-warning alert alert-dismissible fade show" role="alert">
           <span><%= msg %></span>
-          <a data-dismiss="alert" aria-label="Close">
-            <i class="fas fa-times"></i>
+          <a class='alert-quit' data-dismiss="alert" aria-label="Close">
+            <i class="alert-quit fas fa-times"></i>
           </a>
         </div>
       <% end %>
