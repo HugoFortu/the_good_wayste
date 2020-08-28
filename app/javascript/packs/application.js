@@ -31,8 +31,9 @@ document.addEventListener('turbolinks:load', () => {
   quaggaScanner();
   createComponentFromForm();
   currentLocation();
-   buttonInputSwitch();
+  buttonInputSwitch();
   // laisser fonction à la fin (ou corriger :) )
   loadDynamicBannerText();
-  });
+
+});
 
