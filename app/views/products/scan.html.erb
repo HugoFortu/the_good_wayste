@@ -6,8 +6,12 @@
   <h1 class="text-left text-gray-600 font-black mt-24">Scannez l'emballage</h1>
   <p class="text-4xl text-white font-normal pt-10 text-gray-600"> Positionnez le code-barre immobile au centre de l'écran et patientez quelques instants</p>
 
+  <div class= 'divScan mt-10 relative' id="barcode-scanner"></div>
+  <div class="scan-t-l"><%= image_tag "top-left-scan.png", alt: "alttext" %></div>
+  <div class="scan-t-r"><%= image_tag "top-right-scan.png", alt: "alttext" %></div>
+  <div class="scan-b-l"><%= image_tag "bottom-left-scan.png", alt: "alttext" %></div>
+  <div class="scan-b-r"><%= image_tag "bottom-right-scan.png", alt: "alttext" %></div>
 
-  <div class= 'divScan mt-10' id="barcode-scanner"></div>
 
     <div class="mx-32 mt-10">
       <div class="btn-green-js mb-6 rounded text-center">

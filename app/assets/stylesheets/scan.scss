@@ -1,4 +1,3 @@
-
 #barcode-scanner video, canvas {
   width: 100vw;
 
@@ -11,19 +10,34 @@
     left: 10px;
     bottom: 525px;
   }
-  video {
-    width: 100%;
-    height: 100vh;
-    padding-right: 30px !important;
-    padding-left: 30px !important;
-  }
 }
 
 #barcode-scanner video.drawingBuffer, canvas.drawingBuffer {
   display: none;
 }
-.consigne {
 
-  top: 10px;
+.scan-t-l {
+  position: absolute;
+  top: 720px;
+  left: 40px;
 }
+
+.scan-t-r {
+  position: absolute;
+  top: 725px;
+  right: 50px;
+}
+
+.scan-b-l {
+  position: absolute;
+  top: 1225px;
+  left: 55px;
+}
+
+.scan-b-r {
+  position: absolute;
+  top: 1217px;
+  right: 49px;
+}
+
 
