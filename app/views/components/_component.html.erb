@@ -1,8 +1,16 @@
 
   <label class="w-56 flex flex-col ml-5 mb-5 clickable_components m-auto text-center">
     <%#= link_to '' do %>
-      <div class="m-auto"><%= image_tag("#{name}.png", width:'70', data: {component: name }) %></div>
-      <div><p class="component_name m-auto"><%= name %></p></div>
+    <% if name == "boîte de conserve"  %>
+      <% img_name = "boite-de-conserve" %>
+      <div class="m-auto"><%= image_tag("#{img_name}.png", width:'100', data: {component: name }) %></div>
+    <% elsif name == "brique alimentaire"  %>
+      <% img_name = "brique-alimentaire" %>
+      <div class="m-auto"><%= image_tag("#{img_name}.png", width:'100', data: {component: name }) %></div>
+    <% else %>
+      <div class="m-auto"><%= image_tag("#{name}.png", width:'100', data: {component: name }) %></div>
+    <% end %>
+      <div><p class="component_name m-auto pt-3 text-3xl leading-none"><%= name %></p></div>
       <input type="radio" class="hidden" name="component[name]" value="<%= name %>">
     <% #end %>
   </label>
