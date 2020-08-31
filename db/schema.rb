@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_141018) do
     t.string "postcode"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "photo_url"
   end
 
   create_table "products", force: :cascade do |t|
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_141018) do
     t.string "brand"
     t.jsonb "off"
     t.boolean "clean"
+    t.string "photo_url"
   end
 
   add_foreign_key "components", "materials"
