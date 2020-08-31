@@ -21,6 +21,7 @@ import '../stylesheets/application.scss';
 
 import { quaggaScanner } from '../scanner/scanner'
 import { currentLocation } from '../geolocation/geolocation'
+import { newLocation } from '../components/city_choice'
 import { orderByOccurrence } from '../scanner/scanner'
 import { loadDynamicBannerText } from '../components/typing_effect';
 import { createComponentFromForm  } from '../components/form_component'
@@ -41,3 +42,4 @@ document.addEventListener('turbolinks:load', () => {
 
   buttonInputSwitch();
   crossAlertQuit();
+  newLocation();
