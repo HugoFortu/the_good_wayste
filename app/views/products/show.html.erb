@@ -5,27 +5,29 @@
 <div class="scrolling-wrapper">
 
   <div class="card-scroll">
-    <h1>Consignes de tri</h1>
-    <% @product.components.each do |component| %>
-    <% component_name = component.name %>
-    <% material = component.material %>
-    <% material_name = material.name.downcase %>
-    <%
-      garbage = Garbage.
-        where(place: city).
-        where("? = ANY (garbages.accepted_materials)", material.slug).
-        first
-    %>
+    <div class="container">
+      <h1>Consignes de tri à <%= city.name %></h1>
+      <% @product.components.each do |component| %>
+      <% component_name = component.name %>
+      <% material = component.material %>
+      <% material_name = material.name.downcase %>
+      <%
+        garbage = Garbage.
+          where(place: city).
+          where("? = ANY (garbages.accepted_materials)", material.slug).
+          first
+      %>
 
-    <% if garbage.color.include?("borne") %>
-      <% sorting_instructions = " Rendez-vous à la #{garbage.color} la plus proche pour le jeter" %>
-    <% else %>
-      <% sorting_instructions = "Jetez-le dans la poubelle #{garbage.color}" %>
-    <% end %>
+      <% if garbage.color.include?("borne") %>
+        <% sorting_instructions = " Rendez-vous à la #{garbage.color} la plus proche pour le jeter" %>
+      <% else %>
+        <% sorting_instructions = "Jetez-le dans la poubelle #{garbage.color}" %>
+      <% end %>
 
 
-   <%= render 'shared/card-show' , component: component_name , material: material_name, sorting_instructions: sorting_instructions, color: garbage.color%>
-    <% end %>
+     <%= render 'shared/card-show' , component: component_name , material: material_name, sorting_instructions: sorting_instructions, color: garbage.color%>
+      <% end %>
+    </div>
   </div>
 
   <div class="card-scroll">

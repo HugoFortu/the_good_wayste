@@ -211,3 +211,8 @@ slugged_mats.each do |mat|
     h_grey.save!
   end
 end
+
+Material.all.each do |material|
+  material.slug = material.name.parameterize
+  material.save
+end
