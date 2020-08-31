@@ -6,10 +6,12 @@ const newLocation = () => {
   }
   const btnInput = document.querySelector("#input-submit");
   const input = document.querySelector("#input-search-style");
-  btnInput.addEventListener("click", () => {
-    setCookie(input.value);
-    console.log(document.cookie);
-  });
+  if (btnInput){
+    btnInput.addEventListener("click", () => {
+      setCookie(input.value);
+      console.log(document.cookie);
+    });
+  };
 };
 
 export { newLocation }
