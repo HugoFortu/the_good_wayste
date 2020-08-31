@@ -33,6 +33,7 @@ const currentLocation = () => {
       } else {
           const city = response.body.features[0].context[2].text;
           setCookie(city);
+          document.location.reload(true);
       }
     })
   }
