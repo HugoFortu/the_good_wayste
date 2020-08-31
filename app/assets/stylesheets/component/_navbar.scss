@@ -1,7 +1,26 @@
 .sleep-nav {
   color: #718096;
 }
+
 .active-nav {
   color: #319795 !important;
   font-size: 50px !important;
+}
+
+#top-banner-arch{
+  position: absolute;
+  height: 50px;
+  width: 200px;
+  top: -60px;
+  left: -70px;
+  border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
+}
+
+#bottom-banner-arch{
+  position: absolute;
+  height: 50px;
+  width: 200px;
+  top: 125px;
+  left: -70px;
+  border-radius: 50% 50% 50% 50% / 0% 0% 100% 100% ;
 }
