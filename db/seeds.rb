@@ -97,14 +97,17 @@ metal = Material.new(name: "Métal", long_name:"",
 metal.save!
 
 # PLACES
-bordeaux = Place.new(name: 'Bordeaux', postcode: '33000')
+bordeaux = Place.new(name: 'Bordeaux', postcode: '33000', photo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Place_de_la_Bourse%2C_Bordeaux%2C_France.jpg/1920px-Place_de_la_Bourse%2C_Bordeaux%2C_France.jpg")
 bordeaux.save!
 
-les_rousses = Place.new(name: 'Les Rousses', postcode: '39600')
+les_rousses = Place.new(name: 'Les Rousses', postcode: '39600', photo_url: "https://www.jura-tourism.com/wp-content/uploads/wpetourisme/les-rousses-ete-290161.jpg")
 les_rousses.save!
 
-honfleur = Place.new(name: 'Honfleur', postcode: '14600')
+honfleur = Place.new(name: 'Honfleur', postcode: '14600', photo_url: "https://www.normandie-tourisme.fr/wp-content/uploads/2020/02/6993-Vieux-bassin-dHonfleur-%C2%A9-aterrom-Fotolia.com-%C2%A9-aterrom-Fotolia.com_-1600x900.jpg")
 honfleur.save!
+
+lyon = Place.new(name: 'Lyon', postcode: '69000', photo_url: "https://www.myexpat.fr/wp-content/uploads/panorama-immobilier-lyon.jpeg" )
+lyon.save!
 
 # BORDEAUX - Garbage
 slugged_mats = ["pet-1", "pehd-2", "pvc-3", "ldpe-4", "pp-5", "ps--6", "brique-alimentaire", "metal", "carton-fin", "carton-épais", "film-plastique", "aluminium", "papier", "papier-plastifié", "acier", "verre", "liège", "fer", "carton-ondulé"]
