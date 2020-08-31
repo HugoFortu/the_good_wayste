@@ -34,8 +34,11 @@ const currentLocation = () => {
           } else {
               console.log(response.body.features[0].context[2].text);
               const results = document.querySelector("#city");
-              const location = `<h2>Bienvenue à ${response.body.features[0].context[2].text}</h2>`;
+              const results2 = document.querySelector("#btn-city");
+              const location = `<h2 class='font-black text-6xl text-white shadow pt-40'>Bienvenue à ${response.body.features[0].context[2].text}</h2>`;
               results.insertAdjacentHTML("beforeend", location);
+              const location2 = `<button class="active btn-location mt-3 text-3xl text-white font-light hover:bold rounded underline">Vous n'êtes plus à ${response.body.features[0].context[2].text} ?`
+              results2.insertAdjacentHTML("beforeend", location2);
           }
       })
     }
