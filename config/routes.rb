@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
 
   get '/favorites', to: 'favorites#index', as: 'favorites'
-  get 'favorites/:id', to: 'favorites#show', as: 'favorite'
   get '/scan', to: 'products#scan', as: 'scan'
   post '/scan/barcode', to: 'products#barcode'
   get '/scan/barcode', to: 'products#barcode'
 
   resources :products, only: [:show] do
     resources :components, only: [:new, :create]
-    resources :favorites, only: [:create, :delete]
+    resources :favorites, only: [:create, :destroy]
   end
 
   resources :favorites, only: [:index]

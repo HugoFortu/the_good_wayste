@@ -18,21 +18,16 @@
 # Arriver a faire le lien avec la current_loc ?
 
 class FavoritesController < ApplicationController
-
+  skip_before_action :verify_authenticity_token
   # GET "/favorites", to: "favorites#index", as: 'favorites'
   def index
     # Si on a deja des produits en favoris :
     if cookies[:favorites].present?
       # on affiche tous les product qui ont un params
-      @products = Product.find(cookies[:favorites])
+      @products = Product.where(id: cookies[:favorites])
       # sinon on affiche "Sorry you have not product in favorites yet"
       # (dans le html)
     end
-  end
-
-  # GET "/favorites/:id", to: "favorites#index", as: 'favorites'
-  def show
-    @favorites = Favorites.find(params[:id])
   end
 
   #POST 'products/product_id/favorites'
@@ -44,7 +39,7 @@ class FavoritesController < ApplicationController
       cookies[:favorites] << params[:product_id]
     else
       # Sinon, je cree une valeur pour la cle "favorites" = params[:product_id]
-      cookies[:favorites] = params[:product_id]
+      cookies[:favorites] = [params[:product_id]].to_json
     end
   end
 
@@ -53,4 +48,4 @@ class FavoritesController < ApplicationController
     @favorites = Favorites.find(params[:id])
     @favorites.delete
   end
-
+end

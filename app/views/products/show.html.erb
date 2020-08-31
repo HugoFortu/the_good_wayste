@@ -1,9 +1,10 @@
+<%= render 'shared/banner-simple' %>
 <% city = Place.find(1) %>
 
 <div class="scrolling-wrapper">
 
   <div class="card-scroll">
-    <h1>Consignes de tri</h1>
+    <h2 class="font-black ml-16 my-10">Consignes de tri</h2>
     <% @product.components.each do |component| %>
     <% component_name = component.name %>
     <% material = component.material %>

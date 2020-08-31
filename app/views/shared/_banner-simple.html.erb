@@ -1,12 +1,13 @@
 <div class="city-banner relative">
     <div class="container">
       <h2 class='font-black text-6xl text-white ml-20 pt-40'> <%#= phrase %> Bienvenue à Besançon</h2>
-      <div class="inner">
+
+      <div class="btn-star-block">
+        <div id="star-empty" data-favorited="<%= in_favorite?(@product.id) %>" data-id="<%= @product.id %>" class="<%= 'hidden' if in_favorite?(@product.id) %> text-6xl text-body"><i class="far fa-star"></i></div>
+        <div id="star-full" class="<%= 'hidden' unless in_favorite?(@product.id) %> text-6xl text-body"><i class="fas fa-star"></i></div>
       </div>
+
       <div class="inner"></div>
-      <div class="logo-menu-back"></div>
-      <div class="img-logo">
-        <%= image_tag "logo.png", alt: "alttext" %>
-      </div>
+      <div class="minilogo"><%= image_tag "logo.png", alt: "alttext"%></div>
     </div>
 </div>
