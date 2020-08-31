@@ -9,7 +9,8 @@ module.exports = {
         fushia:   '#FF9F9C',
         navbar:   '#b2f5ea',
         rose:     '#F27875',
-        sleep:    '#718096'
+        sleep:    '#718096',
+        typo:     '#505050'
       }
     }
   },

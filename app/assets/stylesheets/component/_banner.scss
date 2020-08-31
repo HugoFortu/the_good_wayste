@@ -3,31 +3,32 @@
   background-size: cover;
   width: 100% !important;
   height: 700px !important;
-
-  h2, button {
-    text-shadow: 3px 3px 10px #505050;
-  }
+    h2, button {
+      text-shadow: 3px 3px 10px #505050;
+    }
 }
+
 
 .inner {
   position: absolute;
-  background: #F4F5F6;
+  background: #f0f1f2;
   height: 150px;
   width: 100%;
   bottom: -1px;
   left: -1px;
   border-radius: 50% 50% 0% 0% / 100% 100% 0% 0% ;
+  box-shadow: 4px -10px 11px 0px #505050;
   // box-shadow: 3px 3px 10px #505050
 }
 
 .minilogo {
   position: absolute;
-  background-color: #F4F5F6;
-  bottom: 40px;
-  right: 40%;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  z-index: 5;
+  background-color: #f0f1f2;
+  bottom: 120px;
+  right: 375px;
+  width: 220px;
+  height: 110px;
+  border-radius: 50% 50% 0% 0% / 100% 100% 0% 0% ;
+  box-shadow: 4px -10px 11px 0px #505050;
   // box-shadow: 3px 3px 10px #505050
 }
