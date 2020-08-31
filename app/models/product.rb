@@ -16,7 +16,8 @@ class Product < ApplicationRecord
     product = Product.new(
       name: off_data.product_name_fr,
       barcode: off_data.code,
-      brand: off_data.brands
+      brand: off_data.brands,
+      photo_url: off_data.image_url
     )
     product.save!
     product

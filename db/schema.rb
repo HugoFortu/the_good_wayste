@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_144151) do
+ActiveRecord::Schema.define(version: 2020_08_31_145332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,13 +25,13 @@ ActiveRecord::Schema.define(version: 2020_08_25_144151) do
     t.index ["product_id"], name: "index_components_on_product_id"
   end
 
-  create_table "garbadges", force: :cascade do |t|
+  create_table "garbages", force: :cascade do |t|
     t.string "color"
     t.bigint "place_id", null: false
     t.string "accepted_materials", array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["place_id"], name: "index_garbadges_on_place_id"
+    t.index ["place_id"], name: "index_garbages_on_place_id"
   end
 
   create_table "materials", force: :cascade do |t|
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_144151) do
     t.string "postcode"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "photo_url"
   end
 
   create_table "products", force: :cascade do |t|
@@ -58,9 +59,10 @@ ActiveRecord::Schema.define(version: 2020_08_25_144151) do
     t.string "brand"
     t.jsonb "off"
     t.boolean "clean"
+    t.string "photo_url"
   end
 
   add_foreign_key "components", "materials"
   add_foreign_key "components", "products"
-  add_foreign_key "garbadges", "places"
+  add_foreign_key "garbages", "places"
 end
