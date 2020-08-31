@@ -6,8 +6,9 @@ let alertQuit = document.querySelector('.alert-quit');
 const hide = () => {
   fixedPositionAlert.classList.add("hidden");
 }
-
-alertQuit.addEventListener('click', hide);
+if (alertQuit){
+  alertQuit.addEventListener('click', hide);
+}
 
 }
 
