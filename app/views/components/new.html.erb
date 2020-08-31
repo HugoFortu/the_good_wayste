@@ -15,14 +15,14 @@
     <!-- MODAL -->
 
     <div class="overlay hidden fixed inset-0">
-      <div class="modale relative z-10 m-20 mt-64 p-3 bg-white rounded-lg shadow-lg">
-        <button class="absolute top-0 right-0 p-4 text-4xl text-right">X</button>
-        <div class=" flex flex-col items-center mb-10">
+      <div class="modale relative z-10 m-20 mt-64 p-5 bg-white rounded-lg shadow-lg">
+        <button class="absolute top-0 right-0 p-4 text-4xl text-right"><i class="fas fa-times"></i></button>
+        <div class=" flex flex-col items-center">
           <div id="component_image" class="mb-5" ></div>
           <div><p>Choisissez le matériau de </p></div>
           <div><h2 id="component_name"></h2></div>
-          <div class="flex bg-white rounded-r-full mt-3">
-            <%= f.association :material, label: false, input_html: {class: 'input-component-form'} %>
+          <div class="flex bg-white rounded-r-full mt-3 form-component justify-between">
+            <%= f.association :material, label: false, input_html: {class: 'flex-grow bg-white w-48 h-8'} %>
             <%= f.submit "OK", class: "rounded-full btn-component-form" %>
         </div>
         </div>
