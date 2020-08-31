@@ -1,17 +1,46 @@
-<p class="consigne mt-24 mx-24 text-center text-creme">Placer le code-barre de votre produit dans l'espace dédié ci-dessous</p>
-<div class= 'divScan w-screen' id="barcode-scanner"></div>
-<div>
-  <h3>Le scan se passe mal? </h3>
-  <form action= '/scan/barcode?val_barcode=' method="get" class= "flex">
-    <div>
-      <label for="val_barcode">numéro du code barre</label>
-      <input type="text" id="val_barcode" name="val_barcode">
-    </div>
 
-    <div class="button">
-      <label for="name">Numero
-      <div class="btn">
-        <button type="submit">Rechercher</button>
+<div class="container">
+
+  <!-- <p class="consigne mt-24 mx-24 text-center text-creme">Placer le code-barre de votre produit dans l'espace dédié ci-dessous</p>
+   -->
+  <h1 class="text-left text-gray-600 font-black mt-24">Scannez l'emballage</h1>
+  <p class="text-4xl text-white font-normal pt-10 text-gray-600"> Positionnez le code-barre immobile au centre de l'écran et patientez quelques instants</p>
+
+
+  <div class= 'divScan mt-10' id="barcode-scanner"></div>
+
+    <div class="mx-32 mt-10">
+      <div class="btn-green-js mb-6 rounded text-center">
+        <button class="green-btn text-4xl text-white font-light py-4 px-6 rounded-lg ">
+          Impossible de scanner ?
+        </button>
       </div>
-  </form>
+  <!-- ajout class hidden -->
+      <div class="hidden form-green-js text-4xl text-white font-light py-4 px-6 rounded-lg text-center ">
+        <form action= '/scan/barcode?val_barcode=' method="get">
+          <label for="val_barcode">Saisissez le code-barre</label>
+
+          <div class="flex bg-white rounded-r-full">
+            <input type="text" id="val_barcode" name="val_barcode" class="rounded flex-grow">
+            <button class="rounded-full w-20">OK</button>
+            <!-- <button type="submit" class="rounded-full px-6 py-3">OK</button> -->
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
+
