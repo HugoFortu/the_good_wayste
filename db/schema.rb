@@ -25,13 +25,13 @@ ActiveRecord::Schema.define(version: 2020_08_25_144151) do
     t.index ["product_id"], name: "index_components_on_product_id"
   end
 
-  create_table "garbages", force: :cascade do |t|
+  create_table "garbadges", force: :cascade do |t|
     t.string "color"
     t.bigint "place_id", null: false
     t.string "accepted_materials", array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["place_id"], name: "index_garbages_on_place_id"
+    t.index ["place_id"], name: "index_garbadges_on_place_id"
   end
 
   create_table "materials", force: :cascade do |t|
@@ -62,5 +62,5 @@ ActiveRecord::Schema.define(version: 2020_08_25_144151) do
 
   add_foreign_key "components", "materials"
   add_foreign_key "components", "products"
-  add_foreign_key "garbages", "places"
+  add_foreign_key "garbadges", "places"
 end
