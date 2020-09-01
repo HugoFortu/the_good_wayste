@@ -40,13 +40,13 @@ const map = () => {
     if (divMap){
       const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
+        style: 'mapbox://styles/hugofortu/ckejqlw6608n41anypufqo3jc',
         center: [long, lat],
         zoom: 13
       });
-      const marker = new mapboxgl.Marker()
-      .setLngLat([long, lat])
-      .addTo(map);
+      // const marker = new mapboxgl.Marker()
+      // .setLngLat([long, lat])
+      // .addTo(map);
     };
   }
   const divMap = document.querySelector('#map');
