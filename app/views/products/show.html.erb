@@ -1,4 +1,4 @@
-<% city = Place.find_by(name: cookies[:city]) %>
+<% city = Place.find_by_name_without_case(cookies[:city]) %>
 
 <%= render 'shared/banner-product', product: @product %>
 
