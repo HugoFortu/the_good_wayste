@@ -13,7 +13,9 @@ const buttonInputSwitch = () => {
     button.addEventListener('click', toggle)
   }
 
-  if (inputButton) {
+
+  if (inputDiv){
+    button.addEventListener('click', toggle)
     inputButton.addEventListener('click', toggle)
   }
 }

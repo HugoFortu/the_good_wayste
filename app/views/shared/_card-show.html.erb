@@ -1,4 +1,4 @@
-<div class="relative card-product bg-white flex content-center shadow-2xl mx-10 my-20 shadow-">
+<div class="card-product bg-white flex my-10 items-center p-3">
   <% case color %>
     <% when 'verte' %>
       <% image_name = "green-trash" %>
@@ -14,11 +14,12 @@
       <% image_name = "grey-borne" %>
   <% end %>
 
-  <div class="card-product-infos m-20 mr-5">
-    <h3 class="mb-4 font-normal">Bouchon <%#= component %> en <%#= material %>Plastique</h3>
-    <p>Jeter dans la poubelle <strong> <%#= sorting_instructions %>verte</strong></p>
+  <div class="card-product-infos flex-grow ml-5">
+    <p class="mb-4 font-bold text-3xl"><%= component.capitalize %> en <%= material %></p>
+    <p class="text-2xl"> <%= sorting_instructions %> </p>
   </div>
-  <%= image_tag "#{image_name}.png", width:'70', height: 'auto' ,class: 'w-1/4 max-h-full m-10 rounded-lg m-2 py-10' %>
+  <%= image_tag "#{image_name}.png", width:'50', height: 'auto' ,class: 'w-1/6 max-h-full m-auto p-3 rounded-lg m-2' %>
+
 </div>
 
 

@@ -1,7 +1,15 @@
-<label class="w-56 flex flex-col ml-5 clickable_components">
-  <%#= link_to '' do %>
-    <div><%= image_tag("#{name}.png", width:'70', data: {component: name }) %></div>
-    <div><p class="component_name"><%= name %></p></div>
-    <input type="radio" class="hidden" name="component[name]" value="<%= name %>">
-  <% #end %>
-</label>
+
+  <label class="w-56 h-56 flex flex-col mx-auto mb-5 clickable_components m-auto text-center">
+    <% if name == "boîte de conserve"  %>
+      <% img_name = "boite-de-conserve" %>
+      <div class="m-auto"><%= image_tag("#{img_name}.png", width:'90', data: {component: name }) %></div>
+    <% elsif name == "brique alimentaire"  %>
+      <% img_name = "brique-alimentaire" %>
+      <div class="m-auto"><%= image_tag("#{img_name}.png", width:'90', data: {component: name }) %></div>
+    <% else %>
+      <div class="m-auto"><%= image_tag("#{name}.png", width:'90', data: {component: name }) %></div>
+    <% end %>
+      <div><p class="component_name m-auto pt-3 text-2xl w-32 leading-none"><%= name %></p></div>
+      <input type="radio" class="hidden" name="component[name]" value="<%= name %>">
+  </label>
+

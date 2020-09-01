@@ -21,6 +21,7 @@ import '../stylesheets/application.scss';
 
 import { quaggaScanner } from '../scanner/scanner'
 import { currentLocation } from '../geolocation/geolocation'
+import { newLocation } from '../components/city_choice'
 import { orderByOccurrence } from '../scanner/scanner'
 import { loadDynamicBannerText } from '../components/typing_effect';
 import { createComponentFromForm  } from '../components/form_component'
@@ -28,13 +29,17 @@ import { buttonInputSwitch } from '../components/postcode-input';
 import { crossAlertQuit } from '../components/alert-quit';
 import { scanButtonClick } from '../components/scan_button';
 import { fillStar } from '../cookies/cookies';
+import { map } from '../components/map';
+
 
 document.addEventListener('turbolinks:load', () => {
   quaggaScanner();
   createComponentFromForm();
   currentLocation();
+  newLocation();
   scanButtonClick();
   fillStar();
+  map();
 
   // laisser fonction à la fin (ou corriger :) )
   loadDynamicBannerText();

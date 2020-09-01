@@ -43,6 +43,9 @@ const quaggaScanner = () => {
         Quagga.start();
     });
     var last_result = [];
+    document.addEventListener('turbolinks:load', function(){
+          Quagga.stop();
+        })
     Quagga.onDetected(function(result) {
       let last_code = result.codeResult.code;
       last_result.push(last_code);

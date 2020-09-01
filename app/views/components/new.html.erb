@@ -1,10 +1,10 @@
 <%= simple_form_for [@product, @component] do |f| %>
   <div id="components_form">
-    <div class="w-3/4 mx-auto mt-64">
-      <p class="text-center">Sélectionnez les composants de votre emballage </p>
+    <div class="w-4/5 mx-auto ">
+      <p class="text-center my-24">Sélectionnez les composants de votre emballage </p>
       <div class="flex justify-between items-end flex-wrap my-6">
 
-        <% components_name = %w[bouchon boite canette aerosol bocal boite-de-conserve bouteille brique-alimentaire canette flacon sachet] %>
+        <% components_name = ["aerosol", "bocal", "boîte", "boîte de conserve", "bouchon", "bouteille", "brique alimentaire", "canette", "flacon", "sachet", "aerosol", "bocal", "boîte", "boîte de conserve", "bouchon", "bouteille"] %>
         <% components_name.each do |name| %>
           <%= render 'component', name: name %>
         <% end %>
@@ -12,20 +12,33 @@
       </div>
     </div>
 
+    <!-- MODAL -->
+
     <div class="overlay hidden fixed inset-0">
-      <div class="modale relative z-10 m-20 mt-64 bg-white rounded text-center">
-        <div id="component_image" class="" > </div>  <!-- #innerHTML src recuperé un JS d'ans le clickable -->
-        <h2 id="component_name"></h2> <!-- #innerText recuperé un JS d'ans le clickable -->
-
-
-          <%= f.association :material %>
-          <%= f.submit "Valider" %>
+      <div class="modale relative z-10 m-20 mt-64 p-5 bg-white rounded-lg shadow-lg">
+        <button class="absolute top-0 right-0 p-4 text-4xl text-right"><i class="fas fa-times"></i></button>
+        <div class=" flex flex-col items-center">
+          <div id="component_image" class="mb-5" ></div>
+          <div><p>Choisissez le matériau de </p></div>
+          <div><h2 id="component_name"></h2></div>
+          <div class="flex bg-white rounded-r-full mt-3 form-component justify-between">
+            <%= f.association :material, label: false, input_html: {class: 'flex-grow bg-white w-48 h-8'} %>
+            <%= f.submit "OK", class: "rounded-full btn-component-form" %>
+          </div>
+          <div >
+            <p class="text-lg mt-8"><em><strong>TIP :</strong> Pour les matériaux en plastique, cherchez le symbole <i class="fas fa-recycle"></i> sur l'emballage</em> 😉</p>
+          </div>
+        </div>
       </div>
     </div>
 
+
+
 <!-- fixed button si trop de components and scroll -->
-    <div class="mx-48">
-      <%#= render 'shared/boutons', title: 'Je n\'ai plus de composants à ajouter', direction: product_path(@product) %>
-    </div>
+    <% unless @product.components.nil? %>
+      <div class="mx-48" id="btn-no-more">
+        <%= render 'shared/pink_button', title: 'Je n\'ai plus de composants à ajouter', direction: product_path(@product) %>
+      </div>
+    <% end %>
   </div>
 <% end %>s
