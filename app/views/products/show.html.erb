@@ -1,4 +1,4 @@
-<% city = Place.find(1) %>
+<% city = Place.find_by(name: cookies[:city]) %>
 
 <%= render 'shared/banner-product', product: @product %>
 
@@ -21,9 +21,9 @@
 
 
       <% if garbage.color.include?("borne") %>
-        <% sorting_instructions = " Rendez-vous à la #{garbage.color} la plus proche pour le jeter" %>
+        <% sorting_instructions = " Rendez-vous à la #{garbage.color}" %>
       <% else %>
-        <% sorting_instructions = "Jetez-le dans la poubelle #{garbage.color}" %>
+        <% sorting_instructions = "Poubelle #{garbage.color}" %>
       <% end %>
 
 
