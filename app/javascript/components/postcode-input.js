@@ -1,5 +1,4 @@
 const buttonInputSwitch = () => {
-  let activeButton = document.querySelector('.active');
   let button = document.querySelector('.btn-location');
   let inputDiv = document.querySelector('.input-search');
   let inputButton = document.querySelector('#input-submit');
@@ -12,7 +11,6 @@ const buttonInputSwitch = () => {
 if (inputDiv){
     button.addEventListener('click', toggle)
 
-    inputButton.addEventListener('click', toggle)
   }
 }
 

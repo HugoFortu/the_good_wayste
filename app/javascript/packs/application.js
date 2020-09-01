@@ -35,6 +35,7 @@ document.addEventListener('turbolinks:load', () => {
   currentLocation();
   newLocation();
   scanButtonClick();
+  buttonInputSwitch();
 
 
   // laisser fonction à la fin (ou corriger :) )
@@ -42,6 +43,5 @@ document.addEventListener('turbolinks:load', () => {
 
 });
 
-  buttonInputSwitch();
   crossAlertQuit();
 

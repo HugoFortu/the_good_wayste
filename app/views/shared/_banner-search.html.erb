@@ -1,5 +1,6 @@
+<% @city = Place.find(4) %>
 <% @city = Place.find_by(name: cookies[:city])  %>
-<div class="image-banner relative flex" style="background-image: linear-gradient(rgba(250,250,250,0.4),rgba(250,250,250,0.4)), url(' <%= @city.photo_url %>">
+<div class="image-banner relative flex" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)), url(' <%= @city.photo_url %>">
     <div class="container">
 
       <h2 id="city" class='font-black text-6xl text-white pt-40'> Bienvenue à <%= cookies[:city] %></h2>
@@ -8,12 +9,15 @@
           Vous n'êtes plus à <%= cookies[:city] %> ?
 
         </button>
-        <div class='input-search postcode-input pl-32 pt-10'>
-          <form><input id="input-search-style" type="text" placeholder="Ville, code postal ..." class="pl-8">
-          <button id="input-submit" type= "submit" class="bg-rose text-3xl text-white pb-4 pt-4 px-6 rounded-full">Ok</button></form>
+        <div class='hidden input-search postcode-input flex bg-white mt-3 justify-between'>
+          <form>
+            <input id="input-text" type="text" placeholder=" Ville, code postal ..." class="flex-grow bg-white w-48 h-8">
+            <button id="input-submit" type= "submit" class="rounded-full btn-pink-home">Ok</button>
+          </form>
         </div>
       </div>
         <div class="inner"></div>
       <div class="minilogo"><%= image_tag "logo.png", alt: "alttext"%></div>
     </div>
 </div>
+
