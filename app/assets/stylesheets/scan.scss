@@ -1,14 +1,15 @@
 #barcode-scanner video, canvas {
-  width: 100vw;
+  margin: auto;
+  width: 100%;
+  border-radius: 20px;
 
-  height: 50vh;
-  position: relative;
   canvas {
     width: 960px;
     border: 15px dashed white;
     position: absolute;
     left: 10px;
     bottom: 525px;
+    border-radius: 20px;
   }
 }
 
@@ -16,28 +17,42 @@
   display: none;
 }
 
+.divScanContainer {
+  position: relative;
+  width: 100%;
+}
+
+.divScan {
+  padding: 25px;
+
+}
+
 .scan-t-l {
+  // display: inline-block;
   position: absolute;
-  top: 720px;
-  left: 40px;
+  top:  0px;
+  left:  0px;
 }
 
 .scan-t-r {
-  position: absolute;
-  top: 725px;
-  right: 50px;
+  // display: inline-block;
+  position:  absolute;
+  top:  0px;
+  right: 0px;
 }
 
 .scan-b-l {
+  // display: inline-block;
   position: absolute;
-  top: 1225px;
-  left: 55px;
+  bottom:  20px;
+  left:  0px;
 }
 
 .scan-b-r {
+  // display: inline-block;
   position: absolute;
-  top: 1217px;
-  right: 49px;
+  bottom:  20px;
+  right: 0px;
 }
 
 
