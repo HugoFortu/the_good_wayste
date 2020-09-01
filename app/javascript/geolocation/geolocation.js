@@ -42,7 +42,7 @@ const currentLocation = () => {
       } else {
           const city = response.body.features[0].context[2].text;
           setCookie(city);
-          document.location.reload(true);
+          window.location.href = "/";
       }
     })
   }
@@ -52,11 +52,8 @@ const currentLocation = () => {
   }
 
   const div = document.querySelector('#geoloc')
-  // if (div && div.dataset.city == "") {
   if (div) {
     navigator.geolocation.getCurrentPosition(success, error, options);
-    // startTimer();
-    window.location.href = "/";
  };
 
 };
