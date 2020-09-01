@@ -3,7 +3,7 @@ Component.delete_all
 Material.delete_all
 Product.delete_all
 
-pet = Material.new(name: "Plastique PET-1'", long_name: "Polyéthylène Téréphtalate",
+pet = Material.new(name: "Plastique PET-1", long_name: "Polyéthylène Téréphtalate",
                   description: "Le plastique PET se recycle à 100% et ne perd pas en principe ses caractéristiques fondamentales et peut donc être réutilisé à plusieurs reprises. Le PET est souvent utilisé pour la production de bouteilles à boissons. Il est à noter que son recyclage exige une extrême pureté de la matière collectée.",
                   recyclability: "Se recycle à 100%", status: "vert")
 pet.save!
