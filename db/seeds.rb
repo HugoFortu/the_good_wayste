@@ -110,12 +110,12 @@ lyon = Place.new(name: 'Lyon', postcode: '69000', photo_url: "https://www.myexpa
 lyon.save!
 
 # BORDEAUX - Garbage
-slugged_mats = ["pet-1", "pehd-2", "pvc-3", "ldpe-4", "pp-5", "ps--6", "brique-alimentaire", "metal", "carton-fin", "carton-épais", "film-plastique", "aluminium", "papier", "papier-plastifié", "acier", "verre", "liège", "fer", "carton-ondulé"]
+slugged_mats = ["plastique-pet-1", "plastique-pehd-2", "plastique-pvc-3", "plastique-ldpe-4", "plastique-pp-5", "plastique-ps-6", "brique-alimentaire", "metal", "carton-fin", "carton-epais", "film-plastique", "aluminium", "papier", "acier", "verre", "liege", "carton-ondule"]
 
 b_green = Garbage.new(
   place_id: bordeaux.id,
   color: "verte",
-  accepted_materials: ["pet-1", "pehd-2", "brique-alimentaire", "metal", "carton-fin", "aluminium", "carton-fin", "carton-ondulé", "fer", "acier" ]
+  accepted_materials: ["plastique-pet-1", "plastique-pehd-2", "brique-alimentaire", "metal", "carton-fin", "aluminium", "carton-fin", "carton-ondule", "fer", "acier" ]
 )
 b_green.save!
 
@@ -166,7 +166,7 @@ lr_blue = Garbage.new(
 lr_blue.save!
 
 slugged_mats.each do |mat|
-  unless lr_paper.accepted_materials.include?(mat) || lr_glass.accepted_materials.include?(mat) || mat == 'liège'
+  unless lr_paper.accepted_materials.include?(mat) || lr_glass.accepted_materials.include?(mat) || mat == 'liege'
     lr_blue.accepted_materials << mat
     lr_blue.save!
   end
@@ -176,7 +176,7 @@ end
 h_yellow = Garbage.new(
   place_id: honfleur.id,
   color: 'jaune',
-  accepted_materials: ["pet-1", "pehd-2", "brique-alimentaire", "metal", "aluminium", "acier", "fer"]
+  accepted_materials: ["plastique-pet-1", "plastique-pehd-2", "brique-alimentaire", "metal", "aluminium", "acier", "fer"]
 )
 
 h_yellow.save!
@@ -184,7 +184,7 @@ h_yellow.save!
 h_blue = Garbage.new(
   place_id: honfleur.id,
   color: 'bleue',
-  accepted_materials: ['carton-ondulé', 'carton-fin', 'papier']
+  accepted_materials: ['carton-ondule', 'carton-fin', 'papier']
 )
 
 h_blue.save!
