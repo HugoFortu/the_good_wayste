@@ -28,6 +28,7 @@ import { createComponentFromForm  } from '../components/form_component'
 import { buttonInputSwitch } from '../components/postcode-input';
 import { crossAlertQuit } from '../components/alert-quit';
 import { scanButtonClick } from '../components/scan_button';
+import { learnMoreDropdown } from '../components/learn-more-dropdown';
 
 document.addEventListener('turbolinks:load', () => {
   quaggaScanner();
@@ -35,6 +36,7 @@ document.addEventListener('turbolinks:load', () => {
   currentLocation();
   newLocation();
   scanButtonClick();
+  learnMoreDropdown();
 
 
   // laisser fonction à la fin (ou corriger :) )

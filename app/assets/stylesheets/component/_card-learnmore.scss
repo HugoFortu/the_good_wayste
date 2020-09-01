@@ -1,0 +1,54 @@
+.card-learnmore {
+  background-color: white;
+  border-radius: 8px;
+}
+
+.card-learnmore.truncated {
+  text-overflow: ellipsis;
+  overflow : hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.title-status-bloc {
+  display: flex;
+  align-items: center;
+}
+
+.title-bloc {
+  flex-grow: 1;
+}
+
+.description-moreinfo {
+
+}
+
+.green-status {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background-color: #3CB9B7;
+  margin-right: 3px;
+}
+
+.yellow-status {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background-color: #F8D525;
+}
+
+.red-status {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background-color: #F27875;
+}
+
+
+#status-find {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 8px;
+}

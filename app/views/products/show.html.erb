@@ -31,11 +31,53 @@
   </div>
 
   <div class="card-scroll">
-    <h1>Infos sur les matériaux</h1>
-    <% @product.materials.each do |material| %>
-      <h2> <%= material.name %></h2>
-      <p><%= material.description %></p>
-    <% end %>
-  </div>
-</div>
+    <div class="container">
+      <h1 class="font-medium mb-12">En savoir plus</h1>
+      <% @product.materials.each do |material| %>
+      <div class="card-learnmore truncated mb-8">
+        <div class="title-status-bloc mb-12 mx-5">
+          <div class="title-bloc">
+            <h2 class="text-5xl font-bold"> <%= material.name %></h2>
+            <p class="text-4xl"> <%= material.long_name %> </p>
+          </div>
+          <div class="status-color mt-5">
+            <%case%>
+            <% when material.status == "vert" %>
+            <div class="green-status text-center text-white font-bold ">
+              <button class="font-bold status-find"><p id="status-find"> ? </p></button>
+            </div>
 
+            <% when material.status == "jaune"%>
+            <div class="yellow-status text-center text-white font-bold">
+              <button class="font-bold"><p>?</p></button>
+            </div>
+
+            <% when material.status == "rouge" %>
+            <div class="red-status text-center text-white font-bold">
+              <button class="font-bold"><p>?</p></button>
+            </div>
+            <div class="recyclability-alert">
+              <p><% material.recyclability %></p>
+            </div>
+            <% end %>
+          </div>
+        </div>
+
+
+        <div class="description-moreinfo text-justify mx-5">
+          <p><%= material.description %></p>
+        </div>
+
+
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
+<!--     <div class="card-scroll">
+      <p>test</p>
+    </div> -->
+</div>
