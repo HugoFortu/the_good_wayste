@@ -1,13 +1,30 @@
-<p>Retrouvez facilement les consignes de tri, même en vous déplaçant</p>
+<div class="card-fav bg-white flex my-5 shadow-2xl">
+  <% picture_product = product.photo_url %>
+  <%= image_tag picture_product, alt: "alttext", class:"rounded-full h-48 w-48 mx-10 my-auto" %>
 
-<div class="card-fav bg-white">
-  <%= image_tag "pastilles-jaune.png", alt: "alttext" %>
-  <div class="text">
-    <% @products.each do |product| %>
-      <h3><%= product.name %></h3>
+  <div class="text my-10 mr-8">
+    <h4 class="font-bold"><%= product.name %></h4>
+
+    <% product.materials.each do |material| %>
+      <div class="flex">
+        <% case material.status %>
+        <% when "vert" %>
+          <div class="my-12 mr-8 "><%= image_tag "pastilles-verte.png", width:"70", height:"70" %></div>
+        <% when "jaune"%>
+          <div class="my-12 mr-8 "><%= image_tag "pastilles-jaune.png", width:"70", height:"70" %></div>
+        <% when "rouge" %>
+          <div class="my-12 mr-8 "><%= image_tag "pastilles-rouge.png", width:"70", height:"70" %></div>
+        <% end %>
+
+        <p class="mt-5"> Ce composant est fait en <strong><%= material.name %></strong></p>
+      </div>
     <% end %>
-    <%# @product.materials.each do |material| %>
-      <p> Nom du matériau : description</p>
-    <%# end %>
+
   </div>
 </div>
+
+
+
+
+
+
