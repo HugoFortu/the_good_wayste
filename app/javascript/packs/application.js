@@ -38,11 +38,10 @@ document.addEventListener('turbolinks:load', () => {
   currentLocation();
   newLocation();
   scanButtonClick();
+  buttonInputSwitch();
   fillStar();
   map();
-
+  crossAlertQuit();
   // laisser fonction à la fin (ou corriger :) )
   loadDynamicBannerText();
-  buttonInputSwitch();
-  crossAlertQuit();
 });

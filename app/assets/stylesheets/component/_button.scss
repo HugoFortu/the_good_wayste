@@ -1,10 +1,12 @@
 .btn-green-js {
   background: #3CB9B7;
+  border-radius: 20px;
 }
 
 
 .form-green-js {
   background: #3CB9B7;
+  border-radius: 20px;
 
   button {
     color: #3CB9B7;
@@ -15,4 +17,32 @@
     // left: -42px;
     box-shadow: 2px 2px 10px #505050;
   }
+}
+
+
+.btn-pink-home {
+  height: 100%;
+  width: 51px;
+  background: #F27875;
+  color: white;
+  font-weight: bold;
+  box-shadow: 2px 2px 10px #505050;
+}
+
+
+.input-search {
+  width: 250px;
+  border: 1px solid #F27875;
+  border-radius: 3px;
+  background: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  input {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
 }
