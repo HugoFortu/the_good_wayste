@@ -1,7 +1,6 @@
-<div class="image-banner relative flex" style="background-image: linear-gradient(rgba(250,250,250,0.4),rgba(250,250,250,0.4)), url(' <%= @product.photo_url %>">
+<div class="city-banner relative">
     <div class="container">
-
-      <h2 id="city" class='font-black text-6xl text-white pt-40'> <%= product.name %></h2>
+      <h2 class='font-black text-6xl text-white ml-20 pt-40'> <%#= phrase %> Bienvenue à Besançon</h2>
 
       <div class="btn-star-block">
         <div id="star-empty" data-id="<%= @product.id %>" class="<%= 'hidden' if in_favorite?(@product.id) %> text-6xl text-body"><i class="far fa-star"></i></div>
