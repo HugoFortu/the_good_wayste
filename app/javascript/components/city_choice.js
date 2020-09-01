@@ -5,7 +5,7 @@ const newLocation = () => {
     console.log(document.cookie);
   }
   const btnInput = document.querySelector("#input-submit");
-  const input = document.querySelector("#input-search-style");
+  const input = document.querySelector("#input-text");
   if (btnInput){
     btnInput.addEventListener("click", () => {
       setCookie(input.value);
