@@ -1,9 +1,10 @@
 
 <div id="myNav" >
-  <nav class="navbar bg-white fixed-bottom h-40 mx-5 mb-16 rounded-lg shadow-2xl">
+  <nav class="navbar bg-white fixed-bottom h-40 mx-5 mb-16">
 
-    <%= link_to root_path, class: "#{ params[:controller] == 'places' && params[:action] == 'map' ? 'active-nav' : 'sleep-nav'}" do %>
-      <div class="flex flex-col ml-16"><i class="fas fa-map-pin text-6xl"></i><p class="text-2xl text-sleep mt-3">Map</p></div>
+
+    <%= link_to root_path, class: "#{ params[:controller] == 'pages' && params[:action] == 'home' ? 'active-nav' : 'sleep-nav'}" do %>
+      <div class="flex flex-col ml-16"><i class="fas fa-home text-6xl"></i><p class="text-2xl text-sleep mt-3">Home</p></div>
     <% end %>
 
     <div class="relative">
@@ -18,8 +19,8 @@
       <div class="flex flex-col"><i class="fas fa-star text-6xl"></i><p class="text-2xl text-sleep mt-3">Favoris</p></div>
     <% end %>
 
-    <%= link_to root_path, class: "#{ params[:controller] == 'pages' && params[:action] == 'home' ? 'active-nav' : 'sleep-nav'}" do %>
-      <div class="flex flex-col"><i class="fas fa-home mr-16 text-6xl"></i><p class="text-2xl text-sleep mt-3">Home</p></div>
+    <%= link_to root_path, class: "#{ params[:controller] == 'places' && params[:action] == 'map' ? 'active-nav' : 'sleep-nav'}" do %>
+      <div class="flex flex-col"><i class="fas fa-map-pin  mr-16  text-6xl"></i><p class="text-2xl text-sleep mt-3">Map</p></div>
     <% end %>
 
   </nav>
