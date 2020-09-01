@@ -6,7 +6,15 @@
 
         <% components_name = ["aerosol", "bocal", "boîte", "boîte de conserve", "bouchon", "bouteille", "brique alimentaire", "canette", "flacon", "sachet", "aerosol", "bocal", "boîte", "boîte de conserve", "bouchon", "bouteille"] %>
         <% components_name.each do |name| %>
-          <%= render 'component', name: name %>
+          <% @product.components.each do |compo| %>
+            <% if %>
+              <% name == compo %>
+              <% exist = true %>
+            <% else %>
+              <% exist = false %>
+            <% end %>
+          <%= render 'component', name: name, exist: exist %>
+          <% end %>
         <% end %>
 
       </div>
@@ -35,7 +43,7 @@
 
 
 <!-- fixed button si trop de components and scroll -->
-    <% unless @product.components.nil? %>
+    <% unless @product.components.length == 0 %>
       <div class="mx-48" id="btn-no-more">
         <%= render 'shared/pink_button', title: 'Je n\'ai plus de composants à ajouter', direction: product_path(@product) %>
       </div>
