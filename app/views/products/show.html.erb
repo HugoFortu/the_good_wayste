@@ -1,10 +1,11 @@
-<% city = Place.find_by(name: cookies[:city]) %>
+<% city = Place.find(1) %>
 
 <%= render 'shared/banner-product', product: @product %>
 
 <div class="scrolling-wrapper">
 
   <div class="card-scroll">
+
     <div class="container">
       <h1>Consignes de tri à <%= city.name %></h1>
       <% @product.components.each do |component| %>
@@ -17,6 +18,7 @@
           where("? = ANY (garbages.accepted_materials)", material.slug).
           first
       %>
+
 
       <% if garbage.color.include?("borne") %>
         <% sorting_instructions = " Rendez-vous à la #{garbage.color} la plus proche pour le jeter" %>

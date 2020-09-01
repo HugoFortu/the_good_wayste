@@ -8,10 +8,10 @@ const buttonInputSwitch = () => {
     inputDiv.classList.toggle("hidden");
   }
 
-if (inputDiv){
+  if (button) {
     button.addEventListener('click', toggle)
-
   }
+
 }
 
 export { buttonInputSwitch };

@@ -18,39 +18,39 @@
 # Arriver a faire le lien avec la current_loc ?
 
 class FavoritesController < ApplicationController
-
+  skip_before_action :verify_authenticity_token
   # GET "/favorites", to: "favorites#index", as: 'favorites'
   def index
     # Si on a deja des produits en favoris :
     if cookies[:favorites].present?
       # on affiche tous les product qui ont un params
-      @products = Product.find(cookies[:favorites])
+      @products = Product.where(id: JSON.parse(cookies[:favorites]))
       # sinon on affiche "Sorry you have not product in favorites yet"
       # (dans le html)
+    else
+      @products = []
     end
   end
 
-  # GET "/favorites/:id", to: "favorites#index", as: 'favorites'
-  def show
-    @favorites = Favorites.find(params[:id])
-  end
-
-  #POST 'products/product_id/favorites'
+  #POST 'products/id/favorites'
   def create
     # 1. On clique sur letoile dans la page #show product = "creer un fav"
     # 2. si il y a deja des cookies presents,
     if cookies[:favorites].present?
       # je rentre l'id du product dans mon array cookies[:favorites]
-      cookies[:favorites] << params[:product_id]
+      cookies_as_array = JSON.parse(cookies[:favorites])
+      cookies_as_array << params[:id]
+      cookies[:favorites] = cookies_as_array.to_json
     else
-      # Sinon, je cree une valeur pour la cle "favorites" = params[:product_id]
-      cookies[:favorites] = params[:product_id]
+      # Sinon, je cree une valeur pour la cle "favorites" = params[:id]
+      cookies[:favorites] = [params[:id]].to_json
     end
   end
 
-  #DELETE 'products/product_id/favorites'
+  #DELETE 'products/:id/favorites'
   def destroy
-    @favorites = Favorites.find(params[:id])
-    @favorites.delete
+    favorites = JSON.parse(cookies[:favorites])
+    favorites.delete(params[:id])
+    cookies[:favorites] = favorites.to_json
   end
-
+end
