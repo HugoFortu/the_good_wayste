@@ -1,9 +1,10 @@
-<%= render 'shared/banner-search', action: "Vous n'êtes plus à Bordeaux ?" %>
+<%= render 'shared/banner-search', action: "Vous n'êtes plus à #{} ?" %>
 
 <div class="container">
 
   <h2 class="font-black ml-16 my-10">Mes Favoris</h2>
-  <% if cookies[:favorites].present? %>
+
+  <% if @products.present? %>
     <%= render 'shared/card-fav' %>
   <% else %>
     <p class="text-justify"><%= "Vous n’avez aucun favoris pour le moment. Ajouter les en cliquant sur “*” sur chaque produit. Ainsi, vous retrouverz facilement les consignes de tri, même en vous déplaçant!" =%></p>

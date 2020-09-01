@@ -3,9 +3,9 @@
 <div class="card-fav bg-white">
   <%= image_tag "pastilles-jaune.png", alt: "alttext" %>
   <div class="text">
-    <%# @product.each do |product| %>
-      <h3>Nom du produit</h3>
-    <%# end %>
+    <% @products.each do |product| %>
+      <h3><%= product.name %></h3>
+    <% end %>
     <%# @product.materials.each do |material| %>
       <p> Nom du matériau : description</p>
     <%# end %>

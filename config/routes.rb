@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 
   resources :products, only: [:show] do
     resources :components, only: [:new, :create]
-    resources :favorites, only: [:create, :destroy]
+    member do
+      post '/favorites', to: 'favorites#create'
+      delete '/favorites', to: 'favorites#destroy'
+    end
   end
 
   resources :favorites, only: [:index]
