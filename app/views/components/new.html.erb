@@ -3,18 +3,15 @@
     <div class="w-4/5 mx-auto ">
       <p class="text-center my-24">Sélectionnez les composants de votre emballage </p>
       <div class="flex justify-between items-end flex-wrap my-6">
-
+        <% exist = nil %>
+        <% product_compo_name = [] %>
         <% components_name = ["aerosol", "bocal", "boîte", "boîte de conserve", "bouchon", "bouteille", "brique alimentaire", "canette", "flacon", "sachet", "aerosol", "bocal", "boîte", "boîte de conserve", "bouchon", "bouteille"] %>
         <% components_name.each do |name| %>
           <% @product.components.each do |compo| %>
-            <% if %>
-              <% name == compo %>
-              <% exist = true %>
-            <% else %>
-              <% exist = false %>
-            <% end %>
-          <%= render 'component', name: name, exist: exist %>
+            <% product_compo_name << compo.name %>
+            <% product_compo_name.include?(name) ? exist = true : exist = false %>
           <% end %>
+          <%= render 'component', name: name, exist: exist %>
         <% end %>
 
       </div>
