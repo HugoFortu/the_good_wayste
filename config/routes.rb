@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/scan', to: 'products#scan', as: 'scan'
   post '/scan/barcode', to: 'products#barcode'
   get '/scan/barcode', to: 'products#barcode'
+  get '/we_need_your_position_please', to: 'pages#position'
 
   resources :products, only: [:show] do
     resources :components, only: [:new, :create]

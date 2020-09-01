@@ -5,7 +5,7 @@ const loadDynamicBannerText = () => {
 
   if (typedText) {
     new Typed('#banner-typed-text', {
-      strings: ["Scannez ...", "Jouez ...", "& Trier ! "],
+      strings: ["Scannez ...", "Jouez ...", "&amp; Trier ! "],
       typeSpeed: 50,
       loop: true
     });
