@@ -1,4 +1,4 @@
-<% @city = Place.find_by(name: cookies[:city])  %>
+<% @city = Place.find(1)  %>
 <div class="image-banner relative flex" style="background-image: linear-gradient(rgba(250,250,250,0.4),rgba(250,250,250,0.4)), url(' <%= @city.photo_url %>">
     <div class="container">
 
