@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'map', to: 'places#map', as: 'map'
   get '/favorites', to: 'favorites#index', as: 'favorites'
   get '/scan', to: 'products#scan', as: 'scan'
   post '/scan/barcode', to: 'products#barcode'
@@ -16,11 +17,8 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index]
   root to: 'pages#home'
 
-  resources :places, only: [:show] do
-    member do
-      get 'map', to: 'places#map', as: 'map'
-    end
-  end
+  resources :places, only: [:show]
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

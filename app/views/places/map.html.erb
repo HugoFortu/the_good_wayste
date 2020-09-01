@@ -1,15 +1,15 @@
 <%= render 'shared/banner-search'  %>
 
 <div class="container">
-  <h1>Où jeter?</h1>
-  <div class="card flex align-items-center justify-center ">
-    <div><h2 class="bold component_name">Matériau :</h2></div>
-    <div class="flex bg-white rounded-r-full mt-3 form-component justify-between">
-      <input type="text" class= 'flex-grow bg-white w-48 h-8'>
-      <input type= "submit" value="OK" label= "Materiaux :" class= "rounded-full btn-component-form">
-    </div>
+  <h1 class= "mb-10">Où jeter?</h1>
 
-    <div class= "container" id="map">
+  <div class="map-card flex bg-white py-12 mt-3 justify-around items-center">
+    <div><p class="bold">Matériau :</p></div>
+    <div class="flex bg-white rounded-r-full map-form justify-between">
+      <input type="text" class= 'flex-grow bg-white w-100 h-12'>
+      <input type= "submit" value="OK" label= "Materiaux :" class= "rounded-full btn-map-form">
     </div>
+  </div>
+  <div class= "mb-5 mt-3" id="map">
   </div>
 </div>
