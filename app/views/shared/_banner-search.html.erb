@@ -1,7 +1,7 @@
 <% @city = Place.find_by_name_without_case(cookies[:city]) %>
 <div class="image-banner relative flex" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)), url(' <%= @city.photo_url %>">
 
-    <div class="container">
+    <div class="margin">
 
       <h2 id="city" class='font-black text-6xl text-white pt-40'> Bienvenue à <%= @city.name %></h2>
       <div id='btn-input-block'>
