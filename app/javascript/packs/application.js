@@ -17,6 +17,8 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import '../stylesheets/application.scss';
+import "mapbox-gl/dist/mapbox-gl.css";
+
 
 
 import { quaggaScanner } from '../scanner/scanner'
@@ -31,6 +33,7 @@ import { scanButtonClick } from '../components/scan_button';
 import { learnMoreDropdown } from '../components/learn-more-dropdown';
 import { fillStar } from '../cookies/cookies';
 import { map } from '../components/map';
+import { showmap } from '../components/map_show';
 
 document.addEventListener('turbolinks:load', () => {
   quaggaScanner();
@@ -42,6 +45,7 @@ document.addEventListener('turbolinks:load', () => {
   buttonInputSwitch();
   fillStar();
   map();
+  showmap();
   crossAlertQuit();
   // laisser fonction à la fin (ou corriger :) )
   loadDynamicBannerText();
