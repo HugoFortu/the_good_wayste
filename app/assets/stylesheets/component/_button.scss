@@ -1,6 +1,9 @@
 .btn-green-js {
-  background: #3CB9B7;
-  border-radius: 20px;
+  // background: #3CB9B7;
+  // border-radius: 20px;
+  border-bottom: 1px solid #718094;
+  width: 235px;
+  margin: auto
 }
 
 
@@ -11,10 +14,8 @@
   button {
     color: #3CB9B7;
     font-weight: bold;
+    width: 125px;
     background: white;
-    // position: relative;
-    // top: 0px;
-    // left: -42px;
     box-shadow: 2px 2px 10px #505050;
   }
 }
