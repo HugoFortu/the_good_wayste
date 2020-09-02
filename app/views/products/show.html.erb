@@ -39,6 +39,38 @@
             <button class="status-find"><p id="status-find" class="font-bold text-6xl"> ? </p></button>
           </div>
 
+          <div class="status-color mt-5">
+            <%case material.status %>
+              <% when "vert" %>
+              <div class="">
+                <div class="green-status text-center text-white font-bold ">
+                  <button class="font-bold status-find"><p id="status-find"> ? </p></button>
+                </div>
+<!--                 <div class="relative green-recycle recyclability-tooltip">
+                  <p><%= material.recyclability %></p>
+                </div> -->
+              </div>
+
+            <% when "jaune" %>
+              <div class="">
+                <div class="yellow-status text-center text-white font-bold">
+                  <button class="font-bold" id="tooltip"><p>?</p></button>
+                </div>
+<!--                 <div class="relative yellow-recycle recyclability-tooltip">
+                  <p><%= material.recyclability %></p>
+                </div> -->
+              </div>
+
+            <% when "rouge" %>
+              <div class="">
+                <div class="red-status text-center text-white font-bold">
+                  <button class="font-bold"><p>?</p></button>
+                </div>
+<!--                 <div class="relative red-recycle recyclability-tooltip">
+                  <p><%= material.recyclability %></p>
+                </div> -->
+              </div>
+            <% end %>
           <% when material.status == "jaune"%>
           <div class="yellow-status text-center text-white font-bold">
             <button><p class="font-bold text-6xl">?</p></button>

@@ -33,6 +33,7 @@ import { scanButtonClick } from '../components/scan_button';
 import { learnMoreDropdown } from '../components/learn-more-dropdown';
 import { fillStar } from '../cookies/cookies';
 import { map } from '../components/map';
+import { tooltipDisplay } from '../components/tooltip-recyclability';
 import { showmap } from '../components/map_show';
 
 document.addEventListener('turbolinks:load', () => {
@@ -47,6 +48,7 @@ document.addEventListener('turbolinks:load', () => {
   map();
   showmap();
   crossAlertQuit();
+  tooltipDisplay();
   // laisser fonction à la fin (ou corriger :) )
   loadDynamicBannerText();
 });

@@ -1,0 +1,28 @@
+.recyclability-tooltip {
+  // position: absolute;
+  // top: 85%;
+  // left: 1.5%;
+}
+
+.green-recycle {
+  border: solid #3CB9B7;
+  background-color: white;
+}
+
+
+.yellow-recycle {
+  border: solid #F8D525;
+  background-color: white;
+}
+
+.red-recycle {
+  border: solid #F27875;
+  background-color: white;
+}
+
+.relative {
+  position: relative;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 10px;
+}
