@@ -97,16 +97,25 @@ metal = Material.new(name: "Métal", long_name:"",
 metal.save!
 
 # PLACES
-bordeaux = Place.new(name: 'Bordeaux', postcode: '33000', photo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Place_de_la_Bourse%2C_Bordeaux%2C_France.jpg/1920px-Place_de_la_Bourse%2C_Bordeaux%2C_France.jpg")
+bordeaux = Place.new(name: 'Bordeaux', postcode: '33000', photo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Place_de_la_Bourse%2C_Bordeaux%2C_France.jpg/1920px-Place_de_la_Bourse%2C_Bordeaux%2C_France.jpg", instruction: {"Borne de tri": "verre", "Poubelle verte": "plastiques, brique alimentaire, carton, métal", "Poubelle grise": "reste des déchets ménagers"}, contact: "UNE QUESTION, UNE INFO?
+                                                                                                                                                                                                                                                                                                                                                                                              www.bordeaux-metropole.fr/gerer-ses-dechets
+                                                                                                                                                                                                                                                                                                                                                                                              Pour tout savoir sur le tri: 0800 22 21 20")
 bordeaux.save!
 
-les_rousses = Place.new(name: 'Les Rousses', postcode: '39600', photo_url: "https://www.jura-tourism.com/wp-content/uploads/wpetourisme/les-rousses-ete-290161.jpg")
+les_rousses = Place.new(name: 'Les Rousses', postcode: '39600', photo_url: "https://www.jura-tourism.com/wp-content/uploads/wpetourisme/les-rousses-ete-290161.jpg", instruction: { "Borne de tri - papier": "", "Borne de tri - verre": "", "Poubelle bleue": "reste des déchets ménagers"}, contact: "Pour des consignes de tri toujours à jour, rendez-vous à l’adresse:
+                                                                                                                                                                                                                                                                                                        www.letri.com
+                                                                                                                                                                                                                                                                                                        Le tri SYDOM DU JURA
+                                                                                                                                                                                                                                                                                                        03 84 47 44 41")
 les_rousses.save!
 
-honfleur = Place.new(name: 'Honfleur', postcode: '14600', photo_url: "https://www.normandie-tourisme.fr/wp-content/uploads/2020/02/6993-Vieux-bassin-dHonfleur-%C2%A9-aterrom-Fotolia.com-%C2%A9-aterrom-Fotolia.com_-1600x900.jpg")
+honfleur = Place.new(name: 'Honfleur', postcode: '14600', photo_url: "https://www.normandie-tourisme.fr/wp-content/uploads/2020/02/6993-Vieux-bassin-dHonfleur-%C2%A9-aterrom-Fotolia.com-%C2%A9-aterrom-Fotolia.com_-1600x900.jpg", instruction: {"Poubelle jaune": "plastiques pet-1 et pehd-2, brique alimentaire, métal", "Poubelle verte": "verre", "Poubelle grise": "reste des déchets ménagers"}, contact: "Consignes détaillées et emplacement des colonnes de tri:
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    www.sdomode.fr
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    UN DOUTE? UNE QUESTION ?
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    02 32 43 14 75")
 honfleur.save!
 
-lyon = Place.new(name: 'Lyon', postcode: '69000', photo_url: "https://www.myexpat.fr/wp-content/uploads/panorama-immobilier-lyon.jpeg" )
+lyon = Place.new(name: 'Lyon', postcode: '69000', photo_url: "https://www.myexpat.fr/wp-content/uploads/panorama-immobilier-lyon.jpeg", instruction: {"Poubelle jaune": "plastiques, métal, papier et carton", "Silo à verre": "verre", "Poubelle grise": "reste des déchets ménagers"}, contact: "RETROUVEZ LES VELLES CONSIGNES DE TRI SUR:
+                                                                                                                                                                                                                                                                                          www.grandlyon.com/tri")
 lyon.save!
 
 # BORDEAUX - Garbage
@@ -216,3 +225,4 @@ Material.all.each do |material|
   material.slug = material.name.parameterize
   material.save
 end
+

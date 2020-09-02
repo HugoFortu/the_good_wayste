@@ -1,4 +1,6 @@
 <%= render 'shared/banner-search'  %>
+<% @place = Place.find_by_name_without_case(cookies[:city]) %>
+
 
 <div class="container">
 
@@ -17,8 +19,14 @@
   </div>
 
   <%= render 'shared/card-consignes-green' %>
+<%= @place.name %>
+<%=  %>
   <%= render 'shared/card-consignes-rose' %>
 </div>
 
 
 
+<!-- afficher instruction dans la première carte
+afficher contact dans la deuxième carte -->
+<!-- component: componentjjfg,
+ -->
