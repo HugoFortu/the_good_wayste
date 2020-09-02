@@ -22,12 +22,6 @@
 </div>
 
 
-<% if borne  %>
-  <div class="map-borne">
-
-
-  </div>
-<% end %>
 
 <div class="margin recycling-infos">
   <h1 class="font-medium mb-12 mt-24">En savoir plus</h1>
@@ -66,7 +60,11 @@
     </div>
   <% end %>
 </div>
+<% if borne  %>
+  <div id="map2" class="map-card">
 
+  </div>
+<% end %>
 
 <div class="mt-64"></div>
 <%= render 'shared/navbar-mobile' %>
