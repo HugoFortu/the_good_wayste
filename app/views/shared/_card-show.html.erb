@@ -8,11 +8,11 @@
           <div><%= image_tag("#{name}.png", width:'90') %></div>
         <% end %>
       <% end %>
-    <div><%= material %> </div>
+    <div class="mt-4"><%= material %> </div>
   </div>
   <!-- Chevron -->
   <div>
-    <p><i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i><i class="fas fa-caret-right"></i></p>
+    <p class="text-6xl" ><i class="fas fa-caret-right"></i> <i class="fas fa-caret-right"></i> <i class="fas fa-caret-right"></i></p>
   </div>
   <!-- Poubelles -->
   <div class="flex flex-col items-center">
@@ -30,8 +30,8 @@
       <% when 'borne de tri - verre' %>
         <% image_name = "grey-borne" %>
     <% end %>
-    <div><%= image_tag "#{image_name}.png", width:'50', height: 'auto' ,class: '' %></div>
-    <div><%= sorting_instructions %> </div>
+    <div><%= image_tag "#{image_name}.png", width:'80' ,class: '' %></div>
+    <div class="mt-4"><%= sorting_instructions %> </div>
   </div>
 </div>
 
