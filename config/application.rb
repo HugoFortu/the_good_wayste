@@ -17,5 +17,6 @@ module TheGoodWayste
     # the framework and any gems in your application.
 
     config.hosts << /\w+\.ngrok\.io/
+    config.hosts << "the-good-wayste.herokuapp.com"
   end
 end

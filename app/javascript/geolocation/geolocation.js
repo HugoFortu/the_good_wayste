@@ -8,6 +8,15 @@ const currentLocation = () => {
   maximumAge: 0
   };
 
+  function startTimer () {
+       timer.start();
+       setTimeout(stopTimer,3000);
+  }
+
+  function stopTimer () {
+       timer.stop();
+  }
+
   function setCookie(valeur) {
     document.cookie = `city=${valeur}`;
     console.log(document.cookie);
@@ -33,7 +42,7 @@ const currentLocation = () => {
       } else {
           const city = response.body.features[0].context[2].text;
           setCookie(city);
-          document.location.reload(true);
+          window.location.href = "/";
       }
     })
   }
@@ -42,8 +51,8 @@ const currentLocation = () => {
     console.warn(`ERREUR (${err.code}): ${err.message}`);
   }
 
-  const div = document.querySelector('[data-city]')
-  if (div && div.dataset.city == "") {
+  const div = document.querySelector('#geoloc')
+  if (div) {
     navigator.geolocation.getCurrentPosition(success, error, options);
  };
 
