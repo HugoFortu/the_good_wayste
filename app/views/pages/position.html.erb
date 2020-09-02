@@ -1,2 +1,29 @@
-<div id="geoloc">
+<div class="bg-newbody h-screen relative">
+
+    <div id="geoloc"></div>
+
+    <div class="complete-logo">
+      <div class="label-welcome rounded-full bg-creme">
+        <div class="logo-welcome">
+          <%= image_tag "logo.png", alt: "alttext" %>
+        </div>
+      </div>
+    </div>
+    <div class="title-first p-32"><div> <%= image_tag "title-first-page.png", alt: "alttext" %> </div></div>
+
+    <div id="location-start">
+      <div class='input-search postcode-input flex bg-white justify-between'>
+        <form>
+          <input id="input-text" type="text" placeholder=" Ville, code postal ..." class="flex-grow bg-white w-48 h-8">
+          <button id="input-submit" type= "submit" class="rounded-full btn-pink-home">Ok</button>
+        </form>
+      </div>
+    </div>
+
+    <p class="user-request text-creme text-center font-medium mx-24">
+      <strong> Votre localisation est bloquée.
+        <br>Veuillez renseigner l'adresse de votre choix, afin d'en recevoir les informations correspondantes.
+      </strong> <br>TGW s'engage à ne pas partager, ni utiliser vos infos à une quelconque fin qui pourrait nuire à vos droits d'utilisateurs 😇
+    </p>
+
 </div>
