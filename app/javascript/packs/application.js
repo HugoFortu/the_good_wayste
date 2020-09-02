@@ -31,6 +31,8 @@ import { scanButtonClick } from '../components/scan_button';
 import { learnMoreDropdown } from '../components/learn-more-dropdown';
 import { fillStar } from '../cookies/cookies';
 import { map } from '../components/map';
+import { tooltipDisplay } from '../components/tooltip-recyclability';
+
 
 document.addEventListener('turbolinks:load', () => {
   quaggaScanner();
@@ -43,6 +45,7 @@ document.addEventListener('turbolinks:load', () => {
   fillStar();
   map();
   crossAlertQuit();
+  tooltipDisplay();
   // laisser fonction à la fin (ou corriger :) )
   loadDynamicBannerText();
 });
