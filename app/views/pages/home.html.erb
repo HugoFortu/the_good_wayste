@@ -25,11 +25,9 @@
         <h2 class="font-bold mb-4 text-5xl text-creme">
           Guide du tri
         </h2>
-        <p class="text-4xl text-creme font-medium">
           <% @place.instruction.each do |i| %>
-            <p class="text-creme"><%= i %></p>
+            <p class="text-creme text-4xl text-creme font-medium"><%= i %></p>
           <% end %>
-        </p>
     </div>
   </div>
 
@@ -39,11 +37,11 @@
         <h2 class="font-bold mb-4 text-5xl text-creme">
         Contact
         </h2>
-        <p class="text-4xl text-creme font-medium">
+
           <% @place.contact.each do |contact| %>
-            <p class="text-creme"><%= contact %></p>
+            <p class="text-4xl text-creme font-medium"><%= contact %></p>
           <% end %>
-        </p>
+
     </div>
   </div>
 
