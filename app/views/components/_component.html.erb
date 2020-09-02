@@ -1,5 +1,8 @@
-
+<% if exist == true  %>
+  <label class="w-56 h-56 flex flex-col mx-auto mb-5 clickable_components m-auto text-center exist-component">
+<% else %>
   <label class="w-56 h-56 flex flex-col mx-auto mb-5 clickable_components m-auto text-center">
+<% end %>
     <% if name == "boîte de conserve"  %>
       <% img_name = "boite-de-conserve" %>
       <div class="m-auto"><%= image_tag("#{img_name}.png", width:'90', data: {component: name }) %></div>
@@ -13,4 +16,3 @@
       <input type="radio" class="hidden" name="component[name]" value="<%= name %>">
   </label>
 
-<%= render 'shared/navbar-mobile' %>

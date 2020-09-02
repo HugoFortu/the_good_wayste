@@ -1,18 +1,18 @@
-<% @city = Place.find_by(name: cookies[:city])  %>
+<% @city = Place.find_by_name_without_case(cookies[:city]) %>
 <div class="image-banner relative flex" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)), url(' <%= @city.photo_url %>">
 
     <div class="container">
 
-      <h2 id="city" class='font-black text-6xl text-white pt-40'> Bienvenue à <%= cookies[:city] %></h2>
+      <h2 id="city" class='font-black text-6xl text-white pt-40'> Bienvenue à <%= @city.name %></h2>
       <div id='btn-input-block'>
-        <button id="btn-city" class="active btn-location mt-3 text-3xl text-white font-light hover:bold rounded underline">
-          Vous n'êtes plus à <%= cookies[:city] %> ?
+        <button id="btn-city" class="active btn-location mt-3 text-4xl text-white font-light hover:bold rounded underline">
+          Vous n'êtes plus à <%= @city.name %> ?
 
         </button>
         <div class='hidden input-search postcode-input flex bg-white mt-3 justify-between'>
           <form>
-            <input id="input-text" type="text" placeholder=" Ville, code postal ..." class="flex-grow bg-white w-48 h-8">
-            <button id="input-submit" type= "submit" class="rounded-full btn-pink-home">Ok</button>
+            <input id="input-text" type="text" placeholder="   Ville, code postal ..." class="flex-grow bg-white w-64 h-12">
+            <button id="input-submit" type= "submit" class="rounded-full btn-pink-home">OK</button>
           </form>
         </div>
       </div>
@@ -20,6 +20,3 @@
       <div class="minilogo"><%= image_tag "logo.png", alt: "alttext"%></div>
     </div>
 </div>
-
-<!-- <% @city = Place.find_by(name: cookies[:city])  %> -->
-

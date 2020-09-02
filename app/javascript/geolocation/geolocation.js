@@ -8,14 +8,14 @@ const currentLocation = () => {
   maximumAge: 0
   };
 
-  function startTimer () {
-       timer.start();
-       setTimeout(stopTimer,3000);
-  }
+  // function startTimer () {
+  //      timer.start();
+  //      setTimeout(stopTimer,3);
+  // }
 
-  function stopTimer () {
-       timer.stop();
-  }
+  // function stopTimer () {
+  //      timer.stop();
+  // }
 
   function setCookie(valeur) {
     document.cookie = `city=${valeur}`;
@@ -42,7 +42,9 @@ const currentLocation = () => {
       } else {
           const city = response.body.features[0].context[2].text;
           setCookie(city);
-          window.location.href = "/";
+          setTimeout(function(){
+            window.location.href = "/";
+         }, 4000);
       }
     })
   }

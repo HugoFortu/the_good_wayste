@@ -1,85 +1,73 @@
-<% city = Place.find_by(name: cookies[:city]) %>
+<% city = Place.find_by_name_without_case(cookies[:city]) %>
 
 <%= render 'shared/banner-product', product: @product %>
 
-<div class="scrolling-wrapper">
+<div class="margin instruction-cards">
+  <h1>Consignes de tri à <%= city.name %></h1>
+  <% borne = nil %>
+  <% @product.components.each do |component| %>
+    <% component_name = component.name %>
+    <% material = component.material %>
+    <% material_name = material.name.downcase %>
+    <% garbage = Garbage.where(place: city).where("? = ANY (garbages.accepted_materials)", material.slug).first %>
+    <% if garbage.color.include?("borne") %>
+      <% borne = true %>
+      <% sorting_instructions = " Rendez-vous à la #{garbage.color}" %>
+    <% else %>
+      <% sorting_instructions = "Poubelle #{garbage.color}" %>
+    <% end %>
 
-  <div class="card-scroll">
-
-    <div class="margin">
-      <h1>Consignes de tri à <%= city.name %></h1>
-      <% @product.components.each do |component| %>
-      <% component_name = component.name %>
-      <% material = component.material %>
-      <% material_name = material.name.downcase %>
-      <%
-        garbage = Garbage.
-          where(place: city).
-          where("? = ANY (garbages.accepted_materials)", material.slug).
-          first
-      %>
-
-
-      <% if garbage.color.include?("borne") %>
-        <% sorting_instructions = " Rendez-vous à la #{garbage.color} la plus proche pour le jeter" %>
-      <% else %>
-        <% sorting_instructions = "Jetez-le dans la poubelle #{garbage.color}" %>
-      <% end %>
+   <%= render 'shared/card-show' , component: component_name , material: material_name, sorting_instructions: sorting_instructions, color: garbage.color%>
+  <% end %>
+</div>
 
 
-     <%= render 'shared/card-show' , component: component_name , material: material_name, sorting_instructions: sorting_instructions, color: garbage.color%>
-      <% end %>
-    </div>
+<% if borne  %>
+  <div class="map-borne">
+
+
   </div>
+<% end %>
 
-  <div class="card-scroll">
-    <div class="container">
-      <h1 class="font-medium mb-12">En savoir plus</h1>
-      <% @product.materials.each do |material| %>
-      <div class="card-learnmore truncated mb-8">
-        <div class="title-status-bloc mb-12 mx-5">
-          <div class="title-bloc">
-            <h2 class="text-5xl font-bold"> <%= material.name %></h2>
-            <p class="text-4xl"> <%= material.long_name %> </p>
-          </div>
-          <div class="status-color mt-5">
-            <%case%>
-            <% when material.status == "vert" %>
-            <div class="green-status text-center text-white font-bold ">
-              <button class="font-bold status-find"><p id="status-find"> ? </p></button>
-            </div>
-
-            <% when material.status == "jaune"%>
-            <div class="yellow-status text-center text-white font-bold">
-              <button class="font-bold"><p>?</p></button>
-            </div>
-
-            <% when material.status == "rouge" %>
-            <div class="red-status text-center text-white font-bold">
-              <button class="font-bold"><p>?</p></button>
-            </div>
-            <div class="recyclability-alert">
-              <p><% material.recyclability %></p>
-            </div>
-            <% end %>
-          </div>
+<div class="margin recycling-infos">
+  <h1 class="font-medium mb-12 mt-24">En savoir plus</h1>
+  <% @product.materials.each do |material| %>
+    <div class="card-learnmore truncated mb-8">
+      <div class="title-status-bloc mb-12 mx-5">
+        <div class="title-bloc">
+          <h2 class="text-5xl font-bold"> <%= material.name %></h2>
+          <p class="text-4xl"> <%= material.long_name %> </p>
         </div>
+        <div class="status-color mt-5">
+          <%case%>
+          <% when material.status == "vert" %>
+          <div class="green-status text-center text-white font-bold ">
+            <button class="status-find"><p id="status-find" class="font-bold text-6xl"> ? </p></button>
+          </div>
 
+          <% when material.status == "jaune"%>
+          <div class="yellow-status text-center text-white font-bold">
+            <button><p class="font-bold text-6xl">?</p></button>
+          </div>
 
-        <div class="description-moreinfo text-justify mx-5">
-          <p><%= material.description %></p>
+          <% when material.status == "rouge" %>
+          <div class="red-status text-center text-white font-bold">
+            <button><p class="font-bold text-6xl">?</p></button>
+          </div>
+          <div class="recyclability-alert">
+            <p><% material.recyclability %></p>
+          </div>
+          <% end %>
         </div>
-
-
       </div>
-      <% end %>
+      <div class="description-moreinfo text-justify mx-5">
+        <p><%= material.description %></p>
+      </div>
     </div>
-  </div>
+  <% end %>
+</div>
 
+
+<div class="mt-64"></div>
 <%= render 'shared/navbar-mobile' %>
 
-
-<!--     <div class="card-scroll">
-      <p>test</p>
-    </div> -->
-</div>
