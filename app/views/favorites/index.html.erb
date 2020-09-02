@@ -2,15 +2,15 @@
 
 <div class="margin">
 
-  <h2 class="font-black mt-10 mb-5 ">Mes Favoris</h2>
+  <h1 class="font-black my-10 ">Mes Favoris</h1>
 
   <% if @products.present? %>
-      <p class="my-5">Retrouvez facilement les consignes de tri, même en vous déplaçant</p>
+      <p class="mb-10 font-light text-gray-600 ">Retrouvez facilement les consignes de tri, même en vous déplaçant</p>
       <% @products.each do |product| %>
         <%= render 'shared/card-fav', product: product %>
       <% end %>
   <% else %>
-    <p class="text-justify"><%= "Vous n’avez aucun favoris pour le moment. Ajouter les en cliquant sur “*” sur chaque produit. Ainsi, vous retrouverz facilement les consignes de tri, même en vous déplaçant!" =%></p>
+    <p class="text-justify font-light text-gray-600 "><%= "Vous n’avez aucun favoris pour le moment. Ajouter les en cliquant sur “*” sur chaque produit. Ainsi, vous retrouverz facilement les consignes de tri, même en vous déplaçant!" =%></p>
   <% end %>
 
 </div>

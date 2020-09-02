@@ -3,7 +3,7 @@
 <%= render 'shared/banner-product', product: @product %>
 
 <div class="margin instruction-cards">
-  <h1>Consignes de tri à <%= city.name %></h1>
+  <h2 class="font-bold mt-10" >Consignes de tri à <%= city.name %></h2>
   <% borne = nil %>
   <% @product.components.each do |component| %>
     <% component_name = component.name %>
@@ -22,21 +22,15 @@
 </div>
 
 
-<% if borne  %>
-  <div class="map-borne">
-
-
-  </div>
-<% end %>
 
 <div class="margin recycling-infos">
-  <h1 class="font-medium mb-12 mt-24">En savoir plus</h1>
+  <h2 class="font-bold mb-10 mt-24">En savoir plus</h2>
   <% @product.materials.each do |material| %>
     <div class="card-learnmore truncated mb-8">
-      <div class="title-status-bloc mb-12 mx-5">
+      <div class="title-status-bloc mb-8 mx-5">
         <div class="title-bloc">
-          <h2 class="text-5xl font-bold"> <%= material.name %></h2>
-          <p class="text-4xl"> <%= material.long_name %> </p>
+          <h3 class="text-5xl font-black "> <%= material.name %></h2>
+          <p class="text-4xl font-light text-gray-600"> <%= material.long_name %> </p>
         </div>
         <div class="status-color mt-5">
           <%case%>
@@ -93,12 +87,16 @@
         </div>
       </div>
       <div class="description-moreinfo text-justify mx-5">
-        <p><%= material.description %></p>
+        <p class="text-gray-600 font-light"><%= material.description %></p>
       </div>
     </div>
   <% end %>
 </div>
+<% if borne  %>
+  <div id="map2" class="map-card">
 
+  </div>
+<% end %>
 
 <div class="mt-64"></div>
 <%= render 'shared/navbar-mobile' %>
