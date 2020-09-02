@@ -19,11 +19,11 @@
         <% when "rouge" %>
           <div class="my-12 mr-8 "><%= image_tag "pastilles-rouge.png", width:"70", height:"70" %></div>
         <% end %>
-
-        <p class="mt-5 font-light text-gray-600"> Ce composant est fait en <strong><%= material.name %></strong></p>
-      </div>
+      <% product.components.each do |component| %>
+          <p class="mt-5"> <%= component.name %>: Ce composant est fait en <strong><%= material.name.downcase %></strong></p>
+      <% end %>
     <% end %>
-
+    </div>
   </div>
 </div>
 <% end %>

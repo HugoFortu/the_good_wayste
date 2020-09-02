@@ -9,21 +9,35 @@
         </div>
       </div>
     </div>
-    <div class="title-first p-32"><div> <%= image_tag "title-first-page.png", alt: "alttext" %> </div></div>
 
-    <div id="location-start">
-      <div class='input-search postcode-input flex bg-white justify-between'>
-        <form>
-          <input id="input-text" type="text" placeholder=" Ville, code postal ..." class="flex-grow bg-white w-48 h-8">
-          <button id="input-submit" type= "submit" class="rounded-full btn-pink-home">Ok</button>
-        </form>
+    <div class="title-first p-32">
+      <div> <%= image_tag "title-first-page.png", alt: "alttext" %></div>
+    </div>
+
+    <div id="first-loc" class="overflow-hidden bg-white">
+      <div class="mx-12 my-8">
+
+        <p class="mb-10 user-request font-thin text-sleep text-center font-medium">
+          Nous avons besoin de votre localisation, vous pouvez la saisir ici :
+        </p>
+
+        <div id="location-start" class="ml-40">
+          <div class='input-search postcode-input flex bg-white justify-between'>
+            <form>
+              <input id="input-text" type="text" class="px-2 py-2" placeholder=" Ville, code postal ..." class="flex-grow bg-white w-48 h-8">
+              <button id="input-submit" type= "submit" class="rounded-full btn-pink-home">Ok</button>
+            </form>
+          </div>
+        </div>
+
+        <p class="mt-10 user-request font-thin text-sleep text-center font-medium">
+          <strong> TGW RESPECTE VOS DROITS D'UTILSATEURS.</strong>
+          <br> Promis, on ne diffuse pas les datas 😇
+        </p>
+
       </div>
     </div>
 
-    <p class="user-request text-creme text-center font-medium mx-24">
-      <strong> Votre localisation est bloquée.
-        <br>Veuillez renseigner l'adresse de votre choix, afin d'en recevoir les informations correspondantes.
-      </strong> <br>TGW s'engage à ne pas partager, ni utiliser vos infos à une quelconque fin qui pourrait nuire à vos droits d'utilisateurs 😇
-    </p>
-
 </div>
+
+
