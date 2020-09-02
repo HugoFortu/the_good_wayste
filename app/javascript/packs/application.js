@@ -48,7 +48,7 @@ document.addEventListener('turbolinks:load', () => {
   map();
   showmap();
   crossAlertQuit();
-  tooltipDisplay();
+  // tooltipDisplay();
   // laisser fonction à la fin (ou corriger :) )
   loadDynamicBannerText();
 });

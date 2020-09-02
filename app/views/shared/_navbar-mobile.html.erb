@@ -4,7 +4,7 @@
     <%= link_to root_path, class: "#{ params[:controller] == 'pages' && params[:action] == 'home' ? 'active-nav' : 'sleep-nav'}" do %>
       <div class="flex flex-col ml-16"><i class="fas fa-home text-6xl"></i><p class="text-2xl text-sleep mt-3">Home</p></div>
       <% end %>
-    <div class="relative">
+    <div class="relative" style="top: 0px; left: 0px;">
       <div id="top-banner-arch" class="bg-white" ></div>
       <%= link_to scan_path, class: "#{ params[:controller] == 'products' && params[:action] == 'scan' ? 'active-nav' : 'sleep-nav'}" do %>
         <div class="flex flex-col"><i class="fas fa-barcode text-6xl"></i><p class="text-2xl text-sleep mt-3">Scan</p></div>
