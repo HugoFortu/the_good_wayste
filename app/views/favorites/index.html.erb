@@ -1,11 +1,11 @@
 <%= render 'shared/banner-search', action: "Vous n'êtes plus à #{} ?" %>
 
-<div class="container">
+<div class="margin">
 
   <h2 class="font-black mt-10 mb-5 ">Mes Favoris</h2>
 
   <% if @products.present? %>
-      <p class="mb-10">Retrouvez facilement les consignes de tri, même en vous déplaçant</p>
+      <p class="my-5">Retrouvez facilement les consignes de tri, même en vous déplaçant</p>
       <% @products.each do |product| %>
         <%= render 'shared/card-fav', product: product %>
       <% end %>
@@ -14,3 +14,5 @@
   <% end %>
 
 </div>
+<div class="mt-64"></div>
+<%= render 'shared/navbar-mobile' %>

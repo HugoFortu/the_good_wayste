@@ -2,6 +2,7 @@ import Typed from 'typed.js';
 
 const loadDynamicBannerText = () => {
 
+
   if (document.querySelector('#banner-typed-text') == null)
     return
 
@@ -11,6 +12,7 @@ const loadDynamicBannerText = () => {
     backSpeed: 0,
     loop: true
   });
+
 }
 
 export { loadDynamicBannerText };

@@ -2,7 +2,7 @@
 <% @place = Place.find_by_name_without_case(cookies[:city]) %>
 
 
-<div class="container">
+<div class="margin">
 
   <div data-city= <%=cookies[:city]%> >
     <p class='text-left text-gray-600 font-black' style='font-size: 95px'>
@@ -10,11 +10,11 @@
     </p>
 
     <p class='text-4xl text-white font-normal pt-10 text-gray-600'>
-      Souriez, le tri diffcile c'est fini!
+      Souriez, le tri difficile c'est fini!
     </p>
 
     <p class='text-4xl text-white font-normal pt-10 text-gray-600'>
-      The Good Wayste, vous simplifie la vie : apprennez à trier vite et bien quelle que soit votre localisation !
+      The Good Wayste, vous simplifie la vie : apprenez à trier vite et bien quelle que soit votre localisation !
     </p>
   </div>
 
@@ -22,6 +22,8 @@
 <%= @place.name %>
 <%=  %>
   <%= render 'shared/card-consignes-rose' %>
+  <div class="mt-64"></div>
+  <%= render 'shared/navbar-mobile' %>
 </div>
 
 

@@ -30,7 +30,10 @@ body {
   }
 }
 
-
+.margin {
+  margin-left: 50px !important;
+  margin-right: 50px !important;
+}
 /* Pour la font-weight vous pouvez rajouter ça direct
 dans votre class html*/
 /*
@@ -66,6 +69,11 @@ p {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
+  &:hover {
+    color: #718096;
+  }
 }
+
+
 
