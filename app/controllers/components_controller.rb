@@ -14,7 +14,7 @@ class ComponentsController < ApplicationController
     # passer en force et changer le statut clean du produit
     if @component.save
       @product.update_columns(clean: true)
-      redirect_to new_product_component_path(@product) ,notice: "Le composant est bien créé"
+      redirect_to new_product_component_path(@product)
     else
       redirect_to new_product_component_path(@product) ,notice: "Merci de recommencer"
     end
