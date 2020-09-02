@@ -8,6 +8,7 @@ module.exports = {
         creme:    '#EDF2F7',
         fushia:   '#FF9F9C',
         navbar:   '#b2f5ea',
+        newbody:  '#3CB9B7',
         rose:     '#F27875',
         sleep:    '#718096',
         typo:     '#505050'
