@@ -18,17 +18,46 @@
     </p>
   </div>
 
-  <%= render 'shared/card-consignes-green' %>
-<%= @place.name %>
-<%=  %>
-  <%= render 'shared/card-consignes-rose' %>
+
+
+  <div class="card-consigne bg-rose flex content-center my-10">
+    <div class="card-product-infos mx-12 my-10">
+        <h2 class="font-bold mb-4 text-4xl text-creme">
+          Guide du tri
+        </h2>
+        <p class="text-3xl text-creme">
+          <% @place.instruction.each do |i| %>
+            <p class="text-creme"><%= i %></p>
+          <% end %>
+        </p>
+    </div>
+  </div>
+
+
+  <div class="card-consigne bg-body flex content-center my-10">
+    <div class="card-product-infos mx-12 my-10">
+        <h2 class="font-bold mb-4 text-4xl text-creme">
+        Contact
+        </h2>
+        <p class="text-3xl text-creme">
+          <% @place.contact.each do |contact| %>
+            <p class="text-creme"><%= contact %></p>
+          <% end %>
+        </p>
+    </div>
+  </div>
+
+
+
+
+
+
   <div class="mt-64"></div>
   <%= render 'shared/navbar-mobile' %>
 </div>
-
-
 
 <!-- afficher instruction dans la première carte
 afficher contact dans la deuxième carte -->
 <!-- component: componentjjfg,
  -->
+
