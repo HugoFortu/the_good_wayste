@@ -1,5 +1,5 @@
 <%= link_to product_path(product) do %>
-<div class="card-fav bg-white flex my-5 shadow-2xl relative" data-product-id="<%= product.id %>">
+<div class="card-fav bg-white flex my-5 relative" data-product-id="<%= product.id %>">
   <% picture_product = product.photo_url %>
   <%= image_tag picture_product, alt: "alttext", class:"rounded-full h-48 w-48 mx-10 my-auto" %>
 
@@ -7,7 +7,7 @@
   <div><i class="delete-cross text-6xl fas fa-times"></i></div>
 
   <div class="text my-10 mr-12">
-    <h4 class="font-bold"><%= product.name %></h4>
+    <h3 class="text-5xl font-black "><%= product.name %></h3>
 
     <% product.materials.each do |material| %>
       <div class="flex">
