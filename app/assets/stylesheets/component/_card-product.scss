@@ -13,8 +13,6 @@
 
 }
 
-
-
 @keyframes color-change-a-one {
   0% {color: rgba(60,185,183,0.5);}
   50% {color: rgba(60,185,183,1);}
@@ -50,3 +48,37 @@
   100% {color: rgba(60,185,183,0.5);}
 }
 
+#first-loc {
+  border-radius: 25px;
+  width: 650px;
+  position: absolute;
+  top: 1100px;
+  left: 160px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+  animation-name: search-appear;
+  animation-duration: 4s;
+}
+
+@keyframes search-appear {
+  0% { opacity: 0.01; }
+  5% { opacity: 0.05; }
+  10% { opacity: 0.1; }
+  15% { opacity: 0.15; }
+  20% { opacity: 0.2; }
+  25% { opacity: 0.25; }
+  30% { opacity: 0.3; }
+  35% { opacity: 0.35; }
+  40% { opacity: 0.4; }
+  45% { opacity: 0.45; }
+  50% { opacity: 0.5; }
+  55% { opacity: 0.5(); }
+  60% { opacity: 0.6; }
+  65% { opacity: 0.65; }
+  70% { opacity: 0.7; }
+  75% { opacity: 0.75; }
+  80% { opacity: 0.8; }
+  85% { opacity: 0.85; }
+  90% { opacity: 0.9; }
+  95% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
