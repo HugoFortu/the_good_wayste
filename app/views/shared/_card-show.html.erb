@@ -8,7 +8,7 @@
           <div><%= image_tag("#{name}.png", width:'100') %></div>
         <% end %>
       <% end %>
-    <div class="mt-4 text-3xl"><%= material.capitalize %> </div>
+    <div class="mt-4"> <p class="text-3xl font-light text-gray-600" ><%= material.capitalize %> </p>  </div>
   </div>
   <!-- Chevron -->
   <div>
@@ -31,9 +31,10 @@
         <% image_name = "grey-borne" %>
     <% end %>
     <div><%= image_tag "#{image_name}.png", width:'85' ,class: '' %></div>
-    <div class="mt-4 text-3xl"><%= sorting_instructions %> </div>
+    <div class="mt-4"> <p class="text-3xl font-light text-gray-600" ><%= sorting_instructions %> </p> </div>
   </div>
 </div>
+
 
 
 

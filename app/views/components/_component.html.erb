@@ -12,7 +12,7 @@
     <% else %>
       <div class="m-auto"><%= image_tag("#{name}.png", width:'90', data: {component: name }) %></div>
     <% end %>
-      <div><p class="component_name m-auto pt-3 text-2xl w-32 leading-none"><%= name %></p></div>
+      <div><p class="component_name m-auto pt-3 text-2xl w-32 text-gray-600 leading-none font-light"><%= name %></p></div>
       <input type="radio" class="hidden" name="component[name]" value="<%= name %>">
   </label>
 
