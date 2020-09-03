@@ -1,0 +1,5 @@
+meta_product_name: "The Good Wayste"
+meta_title: "The Good Wayste - Scannez & Triez !"
+meta_description: "The Good Wayste vous simplifie la vie: apprenez à trier vite et bien quelle que soit votre localisation !"
+meta_image: "image-tag.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
