@@ -51,6 +51,36 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  .first-four {
+    font-weight: bolder;
+    font-size: 130px;
+    color: #3CB9B7;
+    margin-right: 200px;
+  }
+
+  .sec-four {
+    font-weight: bolder;
+    font-size: 130px;
+    color: #3CB9B7;
+    margin-left: 200px;
+  }
+
+  .logo-error{
+    width: 130px;
+    animation: roll 3s infinite;
+    transform: rotate(30deg);
+  }
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
   </style>
 </head>
 
@@ -62,6 +92,11 @@
       <p>You may have mistyped the address or the page may have moved.</p>
     </div>
     <p>If you are the application owner check the logs for more information.</p>
+  </div>
+  <div class="error">
+    <div class="first-four">4</div>
+    <img class="logo-error" src="images/logo-error.png" alt="">
+    <div class="sec-four">4</div>
   </div>
 </body>
 </html>
