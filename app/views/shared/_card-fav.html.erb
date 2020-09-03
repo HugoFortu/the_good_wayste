@@ -16,11 +16,11 @@
         <div class="flex items-center">
           <% case material.status %>
           <% when "vert" %>
-            <div class=""><%= image_tag "pastilles-verte.png", width:"50" %></div>
+            <div class=""><%= image_tag "pastilles-verte.png", width:"45" %></div>
           <% when "jaune"%>
-            <div class=""><%= image_tag "pastilles-jaune.png", width:"50" %></div>
+            <div class=""><%= image_tag "pastilles-jaune.png", width:"45" %></div>
           <% when "rouge" %>
-            <div class=""><%= image_tag "pastilles-rouge.png", width:"50" %></div>
+            <div class=""><%= image_tag "pastilles-rouge.png", width:"45" %></div>
           <% end %>
           <% material.components.each do |component| %>
               <div class="my-2 ml-4 flex-grow">

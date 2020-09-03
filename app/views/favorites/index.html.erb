@@ -5,14 +5,14 @@
   <h1 class="font-black my-10 ">Mes Favoris</h1>
 
   <% if @products.present? %>
-      <p class="mb-10 font-light text-gray-600 ">Retrouvez facilement les consignes de tri, même en vous déplaçant</p>
+      <p class="mb-10 font-normal text-gray-600 ">Retrouvez facilement les consignes de tri, même en vous déplaçant</p>
       <% @products.each do |product| %>
         <%= render 'shared/card-fav', product: product %>
       <% end %>
   <% else %>
     <div >
-      <p class="text-justify font-light text-gray-600 mb-4 ">Vous n’avez aucun favoris pour le moment. </p>
-      <p class="text-justify font-light text-gray-600 ">Ajouter les en cliquant sur <i class="far fa-star" style="color: #3CB9B7;"></i> sur chaque produit. Ainsi, vous retrouverez facilement les consignes de tri, même en vous déplaçant!</p>
+      <p class="text-justify font-normal text-gray-600 mb-4 ">Vous n’avez aucun favoris pour le moment. </p>
+      <p class="text-justify font-normal text-gray-600 ">Ajouter les en cliquant sur <i class="far fa-star" style="color: #3CB9B7;"></i> sur chaque produit. Ainsi, vous retrouverez facilement les consignes de tri, même en vous déplaçant!</p>
     </div>
   <% end %>
 

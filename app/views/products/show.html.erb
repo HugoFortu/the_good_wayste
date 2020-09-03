@@ -26,36 +26,28 @@
   <% @product.materials.each do |material| %>
     <div class="card-learnmore truncated mb-8">
 
-      <div class="title-status-bloc mb-8 mx-5">
-
-        <div class="title-bloc">
+      <div class="flex items-start justify-between mb-8 mx-5">
+        <div>
           <h3 class="text-5xl font-black "> <%= material.name %></h3>
-          <p class="text-4xl font-light text-gray-600"> <%= material.long_name %> </p>
+          <p class="text-4xl font-normal text-gray-600"> <%= material.long_name %> </p>
         </div>
+        <div class="status-color">
+          <%case material.status%>
+          <% when "vert" %>
+            <p class="green-status text-center text-white font-bold "></p>
 
-      <div class="status-color mt-5">
-        <%case material.status%>
-        <% when "vert" %>
-          <div class="green-status text-center text-white font-bold ">
-            <button class="font-bold status-find"></button>
-          </div>
+          <% when "jaune" %>
+            <p class="yellow-status text-center text-white font-bold"></p>
 
-        <% when "jaune" %>
-          <div class="yellow-status text-center text-white font-bold">
-            <button class="font-bold" id="tooltip"></button>
-          </div>
-
-        <% when "rouge" %>
-          <div class="red-status text-center text-white font-bold">
-            <button class="font-bold"><p>?</p></button>
-          </div>
-
-        <% end %>
+          <% when "rouge" %>
+            <p class="red-status text-center text-white font-bold"></p>
+          <% end %>
         </div>
 
       </div>
+
       <div class="description-moreinfo text-justify mx-5">
-        <p class="text-gray-600 font-light"><%= material.description %></p>
+        <p class="text-gray-600 font-normal"><%= material.description %></p>
       </div>
     </div>
   <% end %>
