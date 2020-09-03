@@ -37,13 +37,13 @@
         <div class=" flex flex-col items-center">
           <div id="component_image" class="mb-12" ></div>
           <div><p class="font-normal" >Choisissez le matériau de </p></div>
-          <div><h2 class="font-medium" id="component_name"></h2></div>
-          <div class="flex bg-white rounded-r-full my-12 form-component justify-between">
-            <%= f.association :material, label: false, input_html: {class: 'flex-grow bg-white w-64 h-auto mt-2 text-2xl'} %>
+          <div><h2 class="font-medium text-center" id="component_name"></h2></div>
+          <div class="flex bg-white my-16 form-component justify-between">
+            <%= f.association :material, label: false, input_html: {class: 'flex-grow bg-white h-auto mt-2'} %>
             <%= f.submit "OK", class: "rounded-full btn-component-form text-2xl" %>
           </div>
           <div >
-            <p class="text-2xl mt-8 font-normal"><em><strong>TIP :</strong> Pour les matériaux en plastique, cherchez le symbole <i class="fas fa-recycle"></i> sur l'emballage</em> 😉</p>
+            <p class="text-3xl font-normal"><em><strong>TIP :</strong> Pour les matériaux en plastique, cherchez le symbole <i class="fas fa-recycle"></i> sur l'emballage, sauf pour les sachets en plastiques, qui sont du PP-5</em> 😉</p>
           </div>
         </div>
       </div>

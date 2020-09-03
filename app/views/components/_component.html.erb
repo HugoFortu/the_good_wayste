@@ -5,7 +5,7 @@
 <% end %>
   <div class="m-auto"><%= image_tag("#{name.parameterize}.png", width:'90', data: {component: name, paramname: name.parameterize }) %></div>
 
-  <div><p class="component_name m-auto pt-3 text-2xl w-32 text-gray-600 leading-none font-light"><%= name %></p></div>
+  <div><p class="component_name m-auto pt-3 text-3xl w-40 text-gray-600 leading-none font-light text-center"><%= name %></p></div>
   <input type="radio" class="hidden" name="component[name]" value="<%= name %>">
 </label>
 
