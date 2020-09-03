@@ -13,9 +13,13 @@
 }
 
 .delete-cross {
-  position: absolute;
-  right: 25px;
-  top: 15px;
   color: #F27875;
 }
 
+.card-fav-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+
+}
