@@ -1,15 +1,14 @@
-<% city = Place.find_by_name_without_case(cookies[:city]) %>
 
 <%= render 'shared/banner-product', product: @product %>
 
 <div class="margin instruction-cards">
-  <h2 class="font-bold mt-10" >Consignes de tri à <%= city.name %></h2>
+  <h2 class="font-bold mt-10" >Consignes de tri à <%= @city.name %></h2>
   <% borne = nil %>
   <% @product.components.each do |component| %>
     <% component_name = component.name %>
     <% material = component.material %>
     <% material_name = material.name.downcase %>
-    <% garbage = Garbage.where(place: city).where("? = ANY (garbages.accepted_materials)", material.slug).first %>
+    <% garbage = Garbage.where(place: @city).where("? = ANY (garbages.accepted_materials)", material.slug).first %>
     <% if garbage.color.include?("borne") %>
       <% borne = true %>
       <% sorting_instructions = " Rendez-vous à la #{garbage.color}" %>
@@ -93,7 +92,10 @@
   <% end %>
 </div>
 <% if borne  %>
-  <div id="map2" class="map-card">
+  <div id="map" class="map-card"
+    data-center="<%= @city.attributes.slice('latitude', 'longitude').to_json %>"
+    data-markers="<%= @markers.to_json %>"
+ >
 
   </div>
 <% end %>
