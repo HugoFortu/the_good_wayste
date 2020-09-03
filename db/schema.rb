@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_02_135249) do
+ActiveRecord::Schema.define(version: 2020_09_03_091119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 2020_09_02_135249) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["place_id"], name: "index_garbages_on_place_id"
+  end
+
+  create_table "maps", force: :cascade do |t|
+    t.bigint "place_id", null: false
+    t.string "name"
+    t.text "coordinates", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["place_id"], name: "index_maps_on_place_id"
   end
 
   create_table "materials", force: :cascade do |t|
@@ -69,4 +78,5 @@ ActiveRecord::Schema.define(version: 2020_09_02_135249) do
   add_foreign_key "components", "materials"
   add_foreign_key "components", "products"
   add_foreign_key "garbages", "places"
+  add_foreign_key "maps", "places"
 end

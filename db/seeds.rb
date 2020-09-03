@@ -226,3 +226,51 @@ Material.all.each do |material|
   material.save
 end
 
+m = Map.new(
+  place_id: les_rousses.id,
+  name: "Verre",
+  coordinates: ["360-774 D29E2, 39220, Les Rousses",
+   "339-189 Route des Rousses d'Amont,39220 Les Rousses",
+   "32-250 Rue des Narcisses, 39220",
+   "22-164 Rue du Prechavin, 39220",
+   "165 Route des Rousses en Bas, 39220 Les Rousses",
+   "372 Route du Noirmont, 39220",
+   "793 Route du Noirmont, 39220",
+   "2-86 Montée du Rochat, 39220"]
+ )
+m.save!
+
+m_d = Map.new(
+  place_id: les_rousses.id,
+  name: "Déchèterie",
+  coordinates: ["Déchetterie des Rousses, 39220, Les Rousses"]
+  )
+m_d.save!
+
+m_e = Map.new(
+  place_id: les_rousses.id,
+  name: "Déchèts verts",
+  coordinates: ["Déchetterie des Rousses, 39220, Les Rousses"]
+  )
+m_e.save!
+
+m_a = Map.new(
+  place_id: les_rousses.id,
+  name: "Ampoules",
+  coordinates: ["Déchetterie des Rousses, 39220, Les Rousses"]
+  )
+m_a.save!
+
+m_b = Map.new(
+  place_id: les_rousses.id,
+  name: "Batteries",
+  coordinates: ["Déchetterie des Rousses, 39220, Les Rousses"]
+  )
+m_b.save!
+
+m_t = Map.new(
+  place_id: les_rousses.id,
+  name: "Tissus",
+  coordinates: ["Déchetterie des Rousses, 39220, Les Rousses"]
+  )
+m_t.save!
