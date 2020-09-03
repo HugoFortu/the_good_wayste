@@ -114,7 +114,7 @@ honfleur = Place.new(name: 'Honfleur', postcode: '14600', photo_url: "https://ww
                                                                                                                                                                                                                                                                                                                                                                                                                                                     "02 32 43 14 75"])
 honfleur.save!
 
-lyon = Place.new(name: 'Lyon', postcode: '69000', photo_url: "https://www.myexpat.fr/wp-content/uploads/panorama-immobilier-lyon.jpeg", instruction: ["Poubelle jaune: plastiques, métal, papier et carton", "Silo à verre: verre", "Poubelle grise: reste des déchets ménagers"], contact: ["RETROUVEZ LES VELLES CONSIGNES DE TRI SUR:",
+lyon = Place.new(name: 'Lyon', postcode: '69000', photo_url: "https://www.myexpat.fr/wp-content/uploads/panorama-immobilier-lyon.jpeg", instruction: ["Poubelle jaune: plastiques, métal, papier et carton", "Silo à verre: verre", "Poubelle grise: reste des déchets ménagers"], contact: ["RETROUVEZ LES NOUVELLES CONSIGNES DE TRI SUR:",
                                                                                                                                                                                                                                                                                           "www.grandlyon.com/tri"])
 lyon.save!
 
