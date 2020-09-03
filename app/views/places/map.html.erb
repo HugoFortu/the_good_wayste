@@ -6,21 +6,20 @@
 
 
   <div class="map-card flex bg-white py-12 mt-3 justify-around items-center">
-    <div><p class="bold text-gray-600 font-normal ">Matériau :</p></div>
-    <div class="flex bg-white rounded-r-full map-form justify-between">
-      <select id="materiau" name="Materiaux" class= 'flex-grow bg-white w-100 h-12'>
-      <input type= "submit" value="OK" label= "Materiaux :" class= "rounded-full btn-map-form">
-    </div>
+    <div><p class="bold text-gray-600 font-light ">Matériau :</p></div>
+      <div class="flex bg-white rounded-r-full mt-6 form-component justify-between">
+        <%= select_tag "filter", options_for_select(Map.distinct.order(:name).pluck(:name), ''), prompt: "Select something" %>
+      </div>
   </div>
-  <div class= "mb-5 mt-3" id="map">
+
+ <div id="map" class="mb-5 mt-3"
+    data-center="<%= @place.attributes.slice('latitude', 'longitude').to_json %>"
+    data-markers="<%= @markers.to_json %>"
+    data-filter-element-id="filter"
+ >
+
   </div>
 </div>
 <div class="mt-64"></div>
 <%= render 'shared/navbar-mobile' %>
 
-<!-- <select id="cars" name="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="fiat">Fiat</option>
-  <option value="audi">Audi</option>
-</select> -->

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_02_135249) do
+ActiveRecord::Schema.define(version: 2020_09_03_125200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 2020_09_02_135249) do
     t.index ["product_id"], name: "index_components_on_product_id"
   end
 
+  create_table "containers", force: :cascade do |t|
+    t.string "address"
+    t.bigint "map_id"
+    t.float "longitude"
+    t.float "latitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["map_id"], name: "index_containers_on_map_id"
+  end
+
   create_table "garbages", force: :cascade do |t|
     t.string "color"
     t.bigint "place_id", null: false
@@ -32,6 +42,14 @@ ActiveRecord::Schema.define(version: 2020_09_02_135249) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["place_id"], name: "index_garbages_on_place_id"
+  end
+
+  create_table "maps", force: :cascade do |t|
+    t.bigint "place_id", null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["place_id"], name: "index_maps_on_place_id"
   end
 
   create_table "materials", force: :cascade do |t|
@@ -53,6 +71,8 @@ ActiveRecord::Schema.define(version: 2020_09_02_135249) do
     t.string "photo_url"
     t.string "instruction", array: true
     t.string "contact", array: true
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "products", force: :cascade do |t|
@@ -69,4 +89,5 @@ ActiveRecord::Schema.define(version: 2020_09_02_135249) do
   add_foreign_key "components", "materials"
   add_foreign_key "components", "products"
   add_foreign_key "garbages", "places"
+  add_foreign_key "maps", "places"
 end

@@ -32,7 +32,7 @@ import { crossAlertQuit } from '../components/alert-quit';
 import { scanButtonClick } from '../components/scan_button';
 import { learnMoreDropdown } from '../components/learn-more-dropdown';
 import { fillStar } from '../cookies/cookies';
-import { map } from '../components/map';
+import { initMap } from '../components/map';
 import { tooltipDisplay } from '../components/tooltip-recyclability';
 import { showmap } from '../components/map_show';
 
@@ -45,7 +45,7 @@ document.addEventListener('turbolinks:load', () => {
   learnMoreDropdown();
   buttonInputSwitch();
   fillStar();
-  map();
+  initMap();
   showmap();
   crossAlertQuit();
   // tooltipDisplay();

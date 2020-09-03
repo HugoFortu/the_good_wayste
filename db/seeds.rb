@@ -1,4 +1,6 @@
 # MATERIAL
+Container.delete_all
+Map.delete_all
 Component.delete_all
 Material.delete_all
 Product.delete_all
@@ -226,3 +228,60 @@ Material.all.each do |material|
   material.save
 end
 
+m = Map.new(
+  place_id: les_rousses.id,
+  name: "Verre"
+ )
+m.save!
+
+["360-774 D29E2, 39220, Les Rousses",
+   "339-189 Route des Rousses d'Amont,39220 Les Rousses",
+   "32-250 Rue des Narcisses, 39220",
+   "22-164 Rue du Prechavin, 39220",
+   "165 Route des Rousses en Bas, 39220 Les Rousses",
+   "372 Route du Noirmont, 39220",
+   "793 Route du Noirmont, 39220",
+   "2-86 Montée du Rochat, 39220"].each do |address|
+    ap "#{address} ..."
+    m.containers.create!(address: address)
+   end
+
+m_d = Map.new(
+  place_id: les_rousses.id,
+  name: "Déchèterie"
+  )
+m_d.save!
+
+["Déchetterie des Rousses, 39220, Les Rousses"].each { |address| m_d.containers.create!(address: address)}
+
+m_e = Map.new(
+  place_id: les_rousses.id,
+  name: "Déchèts verts"
+  )
+m_e.save!
+
+["Déchetterie des Rousses, 39220, Les Rousses"].each { |address| m_e.containers.create!(address: address)}
+
+m_a = Map.new(
+  place_id: les_rousses.id,
+  name: "Ampoules"
+  )
+m_a.save!
+
+["Déchetterie des Rousses, 39220, Les Rousses"].each { |address| m_a.containers.create!(address: address)}
+
+m_b = Map.new(
+  place_id: les_rousses.id,
+  name: "Batteries"
+  )
+m_b.save!
+
+["Déchetterie des Rousses, 39220, Les Rousses"].each { |address| m_b.containers.create!(address: address)}
+
+m_t = Map.new(
+  place_id: les_rousses.id,
+  name: "Tissus"
+  )
+m_t.save!
+
+["Déchetterie des Rousses, 39220, Les Rousses"].each { |address| m_t.containers.create!(address: address)}

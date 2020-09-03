@@ -3,6 +3,14 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @city = Place.find_by_name_without_case(cookies[:city])
+
+    @markers = Map.where(name: @product.materials.pluck(:name), place: @city).map do |map|
+      map.containers.map do |container|
+        container.slice(:longitude, :latitude).merge(type: map.name)
+      end
+    end.flatten
+
   end
 
   def scan
