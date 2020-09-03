@@ -1,4 +1,3 @@
-// import mapboxgl from 'mapbox-gl';
 
 
 const currentLocation = () => {
@@ -7,15 +6,6 @@ const currentLocation = () => {
   timeout: 5000,
   maximumAge: 0
   };
-
-  // function startTimer () {
-  //      timer.start();
-  //      setTimeout(stopTimer,3);
-  // }
-
-  // function stopTimer () {
-  //      timer.stop();
-  // }
 
   function setCookie(valeur) {
     document.cookie = `city=${valeur}`;
@@ -44,7 +34,7 @@ const currentLocation = () => {
           setCookie(city);
           setTimeout(function(){
             window.location.href = "/";
-         }, 4000);
+         }, 2000);
       }
     })
   }
