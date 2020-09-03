@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>We’re sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
@@ -21,7 +22,7 @@
     border-right-color: #999;
     border-left-color: #999;
     border-bottom-color: #BBB;
-    border-top: #F27875 solid 4px;
+    border-top: #3CB9B7 solid 4px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
     background-color: white;
@@ -30,13 +31,13 @@
   }
   .rails-default-error-page h1 {
     font-size: 100%;
-    color: #F27875;
+    color: #3CB9B7;
     line-height: 1.5em;
   }
   .rails-default-error-page div.dialog > p {
     margin: 0 0 1em;
     padding: 1em;
-    background-color: #F7F7F7;
+    background-color: #3cb9b773;
     border: 1px solid #CCC;
     border-right-color: #999;
     border-left-color: #999;
@@ -47,17 +48,68 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  .oupsi {
+    background-color: #3cb9b773;
+    width: 100px;
+    height: 20px;
+    margin-left: 90px;
+
+  }
+
+  #link-back {
+    color: black;
+    font-weight: bold;
+  }
+
+    .five {
+      font-weight: bolder;
+      font-size: 130px;
+      color: #3CB9B7;
+      margin-right: 200px;
+    }
+
+    .logo-error-1{
+      width: 130px;
+      animation: roll 3s infinite;
+      transform: rotate(30deg);
+    }
+
+    .logo-error-2{
+      width: 130px;
+      animation: roll 3s infinite;
+      transform: rotate(30deg);
+      margin-left: 200px;
+    }
+
+  @keyframes roll {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
   </style>
 </head>
 <body class="rails-default-error-page">
   <!-- This file lives in public/500.html -->
   <div class="dialog">
     <div>
-      <h1>We’re sorry, but something went wrong.</h1>
-    <p> Revenir a la <a href="https://www.the-good-wayste.co">page d'accueil</a></p>
+      <div class="oupsi"><h2>Oupsi..</h2></div>
+      <h1>Erreur interne du serveur.</h1>
+        <p> Revenir à la <a id="link-back" href="https://www.the-good-wayste.co">page d'accueil</a></p>
+      </div>
+      <p>Si vous êtes administrateur de l'application, verifiez vos logs pour plus d'informations.</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+    <div class="error">
+      <div class="five">5</div>
+      <img class="logo-error-1" src="images/logo-error.png" alt="">
+      <img class="logo-error-2" src="images/logo-error.png" alt="">
+    </div>
 </body>
 </html>
 
