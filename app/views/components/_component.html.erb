@@ -3,16 +3,9 @@
 <% else %>
   <label class="w-56 h-56 flex flex-col mx-auto mb-5 clickable_components m-auto text-center">
 <% end %>
-    <% if name == "boîte de conserve"  %>
-      <% img_name = "boite-de-conserve" %>
-      <div class="m-auto"><%= image_tag("#{img_name}.png", width:'90', data: {component: name }) %></div>
-    <% elsif name == "brique alimentaire"  %>
-      <% img_name = "brique-alimentaire" %>
-      <div class="m-auto"><%= image_tag("#{img_name}.png", width:'90', data: {component: name }) %></div>
-    <% else %>
-      <div class="m-auto"><%= image_tag("#{name}.png", width:'90', data: {component: name }) %></div>
-    <% end %>
-      <div><p class="component_name m-auto pt-3 text-2xl w-32 text-gray-600 leading-none font-light"><%= name %></p></div>
-      <input type="radio" class="hidden" name="component[name]" value="<%= name %>">
-  </label>
+  <div class="m-auto"><%= image_tag("#{name.parameterize}.png", width:'90', data: {component: name, paramname: name.parameterize }) %></div>
+
+  <div><p class="component_name m-auto pt-3 text-3xl w-40 text-gray-600 leading-none font-light text-center"><%= name %></p></div>
+  <input type="radio" class="hidden" name="component[name]" value="<%= name %>">
+</label>
 

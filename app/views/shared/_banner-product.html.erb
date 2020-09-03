@@ -1,15 +1,21 @@
-<div class="image-banner relative flex" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)), url(' <%= @product.photo_url %>'); background-size: cover; background-position: center;" >
-    <div class="margin">
+<div class="image-banner relative flex" style="margin:30px !important; background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)), url(' <%= @product.photo_url %>'); background-size: cover; background-position: center;" >
+  <div class="margin w-100">
 
-      <h2 id="city" class='font-black text-6xl text-white pt-40'> <%= product.name %></h2>
-
-      <div class="btn-star-block">
-        <div id="star-empty" data-id="<%= @product.id %>" class="<%= 'hidden' if in_favorite?(@product.id) %> text-6xl text-body"><i class="far fa-star"></i></div>
-        <div id="star-full" class="<%= 'hidden' unless in_favorite?(@product.id) %> text-6xl text-body"><i class="fas fa-star"></i></div>
+    <div class="flex justify-end">
+      <div class="pt-20">
+        <div id="star-empty" data-id="<%= @product.id %>" class=" btn-star-block <%= 'hidden ' if in_favorite?(@product.id) %> text-white"><i class="far fa-star"></i></div>
+        <div id="star-full" class=" btn-star-block <%= 'hidden' unless in_favorite?(@product.id) %> text-white"><i class="fas fa-star"></i></div>
       </div>
-
-      <div class="inner"></div>
-      <div class="minilogo"><%= image_tag "logo.png", alt: "alttext"%></div>
     </div>
+    <div><h2 id="city" class='font-black text-6xl text-white pt-16'> <%= product.name %></h2></div>
+
+  </div>
+  <div class="inner"></div>
+  <div class="minilogo"><%= image_tag "logo.png", alt: "alttext"%></div>
+
 </div>
+
+
+
+
 

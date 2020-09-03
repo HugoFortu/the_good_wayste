@@ -19,7 +19,8 @@
     <meta name="twitter:image:src" content="<%= meta_image %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/403e13c706.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -50,18 +51,7 @@
 
       <%= yield %>
 
-      <div class='fixed-position-alert'>
-        <% flash.each do |type, msg| %>
-          <div class="flash flash-warning alert alert-dismissible fade show" role="alert">
-            <span><%= msg %></span>
-            <a class='alert-quit' data-dismiss="alert" aria-label="Close">
-              <i class="alert-quit fas fa-times"></i>
-            </a>
-          </div>
-        <% end %>
 
 
-
-    </div>
   </body>
 </html>
