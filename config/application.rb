@@ -18,5 +18,6 @@ module TheGoodWayste
 
     config.hosts << /\w+\.ngrok\.io/
     config.hosts << "the-good-wayste.herokuapp.com"
+    config.hosts << "www.the-good-wayste.co"
   end
 end
