@@ -26,7 +26,7 @@
           Guide du tri
         </h2>
           <% @place.instruction.each do |i| %>
-            <p class="text-creme text-4xl text-creme font-medium"><%= i %></p>
+            <p class="text-creme text-4xl text-creme font-medium"><%= i.gsub('_', ' ') %></p>
           <% end %>
     </div>
   </div>
