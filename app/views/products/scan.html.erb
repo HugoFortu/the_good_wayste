@@ -1,9 +1,20 @@
 
 <div class="margin">
   <h1 class="font-black mt-24">Scannez l'emballage</h1>
-  <p class="text-4xl font-light pt-10 text-gray-600"> Positionnez le code-barre immobile au centre de l'écran et patientez quelques instants</p>
+  <p class="text-4xl font-normal pt-10 text-gray-600"> Positionnez le code-barre immobile au centre de l'écran et patientez quelques instants</p>
 
 </div>
+
+<div class='fixed-position-alert'>
+  <% flash.each do |type, msg| %>
+    <div class="flash flash-warning alert alert-dismissible fade show" role="alert">
+      <span><%= msg %></span>
+      <a class='alert-quit' data-dismiss="alert" aria-label="Close">
+        <i class="alert-quit fas fa-times"></i>
+      </a>
+    </div>
+  <% end %>
+
 
 <div class="my-24 divScanContainer" style="width:680px; margin: auto;">
     <div class= 'divScan'  id="barcode-scanner">
@@ -14,7 +25,7 @@
     </div>
 </div>
 
-  <div class="mx-32 ">
+  <div class="mx-24 ">
     <div class="btn-green-js text-center text-3xl text-gray-600">
       <button>
         <p class="font-light text-gray-600" >Besoin d'aide ?</p>
@@ -35,6 +46,7 @@
   </div>
 
 
-<div class="mt-64"></div>
+<div class="mt-64"> </div>
+<div class="mb-64"> </div>
     <%= render 'shared/navbar-mobile' %>
 

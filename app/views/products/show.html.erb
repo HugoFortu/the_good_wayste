@@ -16,80 +16,41 @@
       <% sorting_instructions = "Poubelle #{garbage.color}" %>
     <% end %>
 
-   <%= render 'shared/card-show' , component: component_name , material: material_name, sorting_instructions: sorting_instructions, color: garbage.color%>
+    <%= render 'shared/card-show' , component: component_name , material: material_name, sorting_instructions: sorting_instructions, color: garbage.color%>
   <% end %>
 </div>
-
-
 
 <div class="margin recycling-infos">
   <h2 class="font-bold mb-10 mt-24">En savoir plus</h2>
   <% @product.materials.each do |material| %>
     <div class="card-learnmore truncated mb-8">
-      <div class="title-status-bloc mb-8 mx-5">
-        <div class="title-bloc">
-          <h3 class="text-5xl font-black "> <%= material.name %></h2>
-          <p class="text-4xl font-light text-gray-600"> <%= material.long_name %> </p>
+
+      <div class="flex items-start justify-between mb-8 mx-5">
+        <div>
+          <h3 class="text-5xl font-black "> <%= material.name %></h3>
+          <p class="text-4xl font-normal text-gray-600"> <%= material.long_name %> </p>
         </div>
-        <div class="status-color mt-5">
-          <%case%>
-          <% when material.status == "vert" %>
-          <div class="green-status text-center text-white font-bold ">
-            <button class="status-find"><p id="status-find" class="font-bold text-6xl"> ? </p></button>
-          </div>
+        <div class="status-color">
+          <%case material.status%>
+          <% when "vert" %>
+            <p class="green-status text-center text-white font-bold "></p>
 
-          <div class="status-color mt-5">
-            <%case material.status %>
-              <% when "vert" %>
-              <div class="">
-                <div class="green-status text-center text-white font-bold ">
-                  <button class="font-bold status-find"><p id="status-find"> ? </p></button>
-                </div>
-<!--                 <div class="relative green-recycle recyclability-tooltip">
-                  <p><%= material.recyclability %></p>
-                </div> -->
-              </div>
+          <% when "jaune" %>
+            <p class="yellow-status text-center text-white font-bold"></p>
 
-            <% when "jaune" %>
-              <div class="">
-                <div class="yellow-status text-center text-white font-bold">
-                  <button class="font-bold" id="tooltip"><p>?</p></button>
-                </div>
-<!--                 <div class="relative yellow-recycle recyclability-tooltip">
-                  <p><%= material.recyclability %></p>
-                </div> -->
-              </div>
-
-            <% when "rouge" %>
-              <div class="">
-                <div class="red-status text-center text-white font-bold">
-                  <button class="font-bold"><p>?</p></button>
-                </div>
-<!--                 <div class="relative red-recycle recyclability-tooltip">
-                  <p><%= material.recyclability %></p>
-                </div> -->
-              </div>
-            <% end %>
-          <% when material.status == "jaune"%>
-          <div class="yellow-status text-center text-white font-bold">
-            <button><p class="font-bold text-6xl">?</p></button>
-          </div>
-
-          <% when material.status == "rouge" %>
-          <div class="red-status text-center text-white font-bold">
-            <button><p class="font-bold text-6xl">?</p></button>
-          </div>
-          <div class="recyclability-alert">
-            <p><% material.recyclability %></p>
-          </div>
+          <% when "rouge" %>
+            <p class="red-status text-center text-white font-bold"></p>
           <% end %>
         </div>
+
       </div>
+
       <div class="description-moreinfo text-justify mx-5">
-        <p class="text-gray-600 font-light"><%= material.description %></p>
+        <p class="text-gray-600 font-normal"><%= material.description %></p>
       </div>
     </div>
   <% end %>
+
 </div>
 <% if borne  %>
   <div id="map" class="map-card"
@@ -97,8 +58,14 @@
     data-markers="<%= @markers.to_json %>"
  >
 
+  <div class="margin" id="map-show">
+    <% if borne  %>
+      <h2 class="font-bold mb-10 mt-24">Trouver la borne de tri - verre</h2>
+      <div id="map2" class="map-card">
+
+      </div>
+    <% end %>
   </div>
-<% end %>
 
 <div class="mt-64"></div>
 <%= render 'shared/navbar-mobile' %>

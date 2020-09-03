@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
@@ -40,7 +41,7 @@
   .rails-default-error-page div.dialog > p {
     margin: 0 0 1em;
     padding: 1em;
-    background-color: #F7F7F7;
+    background-color: #3cb9b773;
     border: 1px solid #CCC;
     border-right-color: #999;
     border-left-color: #999;
@@ -51,6 +52,49 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  .first-four {
+    font-weight: bolder;
+    font-size: 130px;
+    color: #3CB9B7;
+    margin-right: 200px;
+  }
+
+  .sec-four {
+    font-weight: bolder;
+    font-size: 130px;
+    color: #3CB9B7;
+    margin-left: 200px;
+  }
+
+  .logo-error{
+    width: 130px;
+    animation: roll 3s infinite;
+    transform: rotate(30deg);
+  }
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.oupsi {
+  background-color: #3cb9b773;
+  width: 100px;
+  height: 20px;
+  margin-left: 90px;
+
+}
+
+#link-back {
+  color: black;
+  font-weight: bold;
+}
+
   </style>
 </head>
 
@@ -58,10 +102,17 @@
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+
+      <div class="oupsi"><h2>Oupsi..</h2></div>
+      <h1>Cette page n'est pas disponible pour le moment.</h1>
+      <p> Revenir à la <a id="link-back" href="https://www.the-good-wayste.co">page d'accueil</a></p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <p>Si vous êtes administrateur de l'application, verifiez vos logs pour plus d'informations.</p>
+  </div>
+  <div class="error">
+    <div class="first-four">4</div>
+    <img class="logo-error" src="images/logo-error.png" alt="">
+    <div class="sec-four">4</div>
   </div>
 </body>
 </html>

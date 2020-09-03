@@ -3,24 +3,35 @@
   border-radius: 50%;
   background: white;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
-  padding: 36px 0;
+  padding: 32px 0;
 }
 
 
 .form-component {
-  width: 360px;
+  width: 400px;
   border: 1px solid #3CB9B7;
-  border-radius: 3px;
   background: white;
-  height: 45px;
+  height: 50px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+
+  select {
+    width: 300px;
+    height: 36px;
+    margin: auto;
+    margin-left: 3px
+  }
 
 }
 
 .btn-component-form {
-  width: 70px;
+  width: 80px;
   background: #3CB9B7;
   color: white;
   font-weight: bold;
+  font-size: 28px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
 
 }

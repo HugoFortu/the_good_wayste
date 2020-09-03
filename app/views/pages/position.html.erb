@@ -1,43 +1,43 @@
-<div class="bg-newbody h-screen relative">
+<div class="bg-newbody h-screen ">
+  <div id="geoloc"></div>
 
-    <div id="geoloc"></div>
-
-    <div class="complete-logo">
-      <div class="label-welcome rounded-full bg-creme">
-        <div class="logo-welcome">
-          <%= image_tag "logo.png", alt: "alttext" %>
-        </div>
+<div class="flex flex-col items-center">
+  <div class="complete-logo">
+    <div class="label-welcome rounded-full bg-creme">
+      <div class="logo-welcome">
+        <%= image_tag "logo.png", alt: "alttext" %>
       </div>
     </div>
+  </div>
 
-    <div class="title-first p-32">
-      <div> <%= image_tag "title-first-page.png", alt: "alttext" %></div>
-    </div>
+  <div class="title-first p-24">
+    <div> <%= image_tag "title-first-page.png", alt: "alttext" %></div>
+  </div>
 
-    <div id="first-loc" class="overflow-hidden bg-white">
-      <div class="mx-12 my-8">
-
-        <p class="mb-10 user-request font-thin text-sleep text-center font-medium">
+  <div id="first-loc" class="overflow-hidden bg-white mx-12 my-8 flex flex-col items-center justify-between">
+      <div>
+        <p class="user-request font-thin text-sleep text-center font-medium">
           Nous avons besoin de votre localisation, vous pouvez la saisir ici :
         </p>
+      </div>
 
-        <div id="location-start" class="ml-40">
-          <div class='input-search postcode-input flex bg-white justify-between'>
-            <form>
-              <input id="input-text" type="text" class="px-2 py-2" placeholder=" Ville, code postal ..." class="flex-grow bg-white w-48 h-8">
-              <button id="input-submit" type= "submit" class="rounded-full btn-pink-home">Ok</button>
-            </form>
-          </div>
+      <div id="location-start" class="">
+        <div class='input-search postcode-input flex bg-white justify-between'>
+          <form>
+            <input id="input-text" type="text" class="px-2 py-2" placeholder=" Ville, code postal ..." class="flex-grow bg-white w-48 h-8">
+            <button id="input-submit" type= "submit" class="rounded-full btn-pink-home">Ok</button>
+          </form>
         </div>
+      </div>
 
-        <p class="mt-10 user-request font-thin text-sleep text-center font-medium">
+      <div>
+        <p class="user-request font-thin text-sleep text-center font-medium">
           <strong> TGW RESPECTE VOS DROITS D'UTILSATEURS.</strong>
           <br> Promis, on ne diffuse pas les datas 😇
         </p>
-
       </div>
-    </div>
-
+  </div>
+</div>
 </div>
 
 
