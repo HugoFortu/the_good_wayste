@@ -17,7 +17,7 @@
       <div class="flex justify-between items-end flex-wrap my-6 mt-24">
         <% exist = nil %>
         <% product_compo_name = [] %>
-        <% components_name = ["aerosol", "barquette", "bocal", "boîte", "boîte de conserve", "bouchon", "bouteille", "brique alimentaire", "canette", "flacon", "sachet"] %>
+        <% components_name = ["aerosol", "barquette", "bocal", "boîte", "boîte de conserve", "bouchon", "bouteille", "brique alimentaire", "canette", "flacon", "sachet", "autre"] %>
         <% components_name.each do |name| %>
           <% @product.components.each do |compo| %>
             <% product_compo_name << compo.name %>
