@@ -151,7 +151,36 @@ slugged_mats.each do |mat|
     b_grey.save!
   end
 end
+# lyon - garbages
 
+lyon_yellow = Garbage.new(
+  place_id: lyon.id,
+  color: "jaune",
+  accepted_materials: ["plastique-pet-1", "plastique-pehd-2", "plastique-pvc-3", "plastique-ldpe-4", "plastique-pp-5", "plastique-ps-6", "brique-alimentaire", "metal", "aluminium", "carton-fin", "carton-ondule", "fer", "acier" ]
+)
+lyon_yellow.save!
+
+lyon_glass = Garbage.new(
+  place_id: lyon.id,
+  color: "borne de tri - verre",
+  accepted_materials: ["verre"]
+)
+
+lyon_glass.save
+
+lyon_grey = Garbage.new(
+  place_id: lyon.id,
+  color: "grise",
+  accepted_materials: []
+)
+
+lyon_grey.save!
+slugged_mats.each do |mat|
+  unless lyon_yellow.accepted_materials.include?(mat) || lyon_glass.accepted_materials.include?(mat)
+    lyon_grey.accepted_materials << mat
+    lyon_grey.save!
+  end
+end
 # Les Rousses - garbages
 
 lr_paper = Garbage.new(
@@ -285,3 +314,23 @@ m_t = Map.new(
 m_t.save!
 
 ["Déchetterie des Rousses, 39220, Les Rousses"].each { |address| m_t.containers.create!(address: address)}
+
+m_l = Map.new(
+  place_id: lyon.id,
+  name: "Verre"
+  )
+m_l.save!
+
+filepath = 'storage/lyon_verre.json'
+benne_lyon = []
+
+JSON.parse(File.read(filepath))["features"].each do |x|
+  voie = x["properties"]["voie"]
+  cp = x["properties"]["code_postal"]
+  benne_lyon << "#{voie}, #{cp}"
+  end
+
+benne_lyon.each do |address|
+  ap "#{address} ..."
+  m_l.containers.create!(address: address)
+end

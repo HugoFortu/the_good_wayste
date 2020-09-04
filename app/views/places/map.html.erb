@@ -8,7 +8,7 @@
   <div class="map-card flex bg-white py-12 mt-3 justify-around items-center">
     <div><p class="bold text-gray-600 font-light ">Matériau :</p></div>
       <div class="flex bg-white rounded-r-full mt-6 form-component justify-between">
-        <%= select_tag "filter", options_for_select(Map.distinct.order(:name).pluck(:name), ''), prompt: "Select something" %>
+        <%= select_tag "filter", options_for_select(Map.distinct.order(:name).pluck(:name), ''), prompt: "Choisir un materiau..." %>
       </div>
   </div>
 
