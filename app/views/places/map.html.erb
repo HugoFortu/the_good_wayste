@@ -1,18 +1,20 @@
 <%= render 'shared/banner-search'  %>
 
 <div class="margin">
-  <h2 class= "my-10 font-bold">Déchèteries & points de collecte</h2>
-  <p class="mb-10 font-normal text-gray-600 ">De nombreux déchets nécessitent d'être déposés dans des lieux spécialisées. Retrouvez-ici les adresses utiles autour de vous !</p>
+  <h2 class= "my-10 font-bold">Déchèteries & points de collecte ♻️</h2>
+  <p class="font-normal text-gray-600 ">De nombreux déchets nécessitent d'être déposés dans des lieux spécialisées. </p>
+  <p class="mb-10 font-normal text-gray-600 ">📍 Retrouvez-ici les adresses utiles autour de vous ! </p>
 
 
   <div class="map-card flex bg-white py-12 mt-3 justify-around items-center">
-    <div><p class="bold text-gray-600 font-light ">Matériau :</p></div>
-      <div class="flex bg-white rounded-r-full mt-6 form-component justify-between">
-        <%= select_tag "filter", options_for_select(Map.distinct.order(:name).pluck(:name), ''), prompt: "Select something" %>
+    <div><p class="text-gray-600 font-normal text-4xl">Matériau :</p></div>
+      <div class="bg-white material-form flex justify-around items-center text-gray-600 text-3xl">
+        <div> <%= select_tag "filter", options_for_select(Map.distinct.order(:name).pluck(:name), ''), prompt: " " %></div>
+        <div><i class="fas fa-caret-down"></i></div>
       </div>
   </div>
 
- <div id="map" class="mb-5 mt-3"
+ <div id="map" class="mb-5"
     data-center="<%= @place.attributes.slice('latitude', 'longitude').to_json %>"
     data-markers="<%= @markers.to_json %>"
     data-filter-element-id="filter"

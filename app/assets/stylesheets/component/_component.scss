@@ -40,3 +40,23 @@
   border: 12px solid #3CB9B7;
 
 }
+
+.material-form {
+  width: 500px;
+  border: 1px solid #3CB9B7;
+  background: white;
+  height: 80px;
+  border-radius: 20px;
+
+
+  select {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 35px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+  }
+
+}
