@@ -54,7 +54,7 @@
 <!-- fixed button si trop de components and scroll -->
     <% unless @product.components.length == 0 %>
       <button id="btn-no-more" class=" text-4xl bg-rose text-white py-4 px-6 btn-component-pink">
-        <%=  link_to 'Plus aucun composants à ajouter ?' , product_path(@product)  %>
+        <%=  link_to 'Plus aucun composant à ajouter ?' , product_path(@product)  %>
       </button>
     <% end %>
   </div>
