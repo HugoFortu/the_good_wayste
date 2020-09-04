@@ -57,7 +57,7 @@
 <div class="margin" id="map-show">
   <% if borne  %>
       <h2 class="font-bold mb-10 mt-24">Trouver la borne de tri - verre</h2>
-      <div id="map" class="map-card"
+      <div id="map" class="map-card map-show-css"
         data-center="<%= @city.attributes.slice('latitude', 'longitude').to_json %>"
         data-markers="<%= @markers.to_json %>">
       </div>
