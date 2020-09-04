@@ -12,7 +12,8 @@
         <div><h3 class="text-5xl font-black "><%= product.name %></h3></div>
         <div><i class="delete-cross text-6xl fas fa-times text-right"></i></div>
       </div>
-      <% product.materials.each do |material| %>
+      <% product.components.each do |component| %>
+        <% material = component.material %>
         <div class="flex items-center">
           <% case material.status %>
           <% when "vert" %>
@@ -22,12 +23,11 @@
           <% when "rouge" %>
             <div class=""><%= image_tag "pastilles-rouge.png", width:"45" %></div>
           <% end %>
-          <% material.components.each do |component| %>
+
               <div class="my-2 ml-4 flex-grow">
                 <p> <%= component.name.capitalize %></p>
                 <p>en <strong><%= material.name.downcase %></strong></p>
               </div>
-          <% end %>
         </div>
       <% end %>
     </div>

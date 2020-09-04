@@ -5,7 +5,7 @@
   <h1 class="font-black my-10 ">Mes Favoris</h1>
 
   <% if @products.present? %>
-      <p class="mb-10 font-normal text-gray-600 ">Retrouvez facilement les consignes de tri, même en vous déplaçant</p>
+      <p class="mb-10 font-normal text-gray-600 ">Retrouvez facilement les consignes de tri, même en vous déplaçant.</p>
       <% @products.each do |product| %>
         <%= render 'shared/card-fav', product: product %>
       <% end %>

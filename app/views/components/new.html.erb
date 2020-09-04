@@ -39,8 +39,8 @@
           <div><p class="font-normal" >Choisissez le matériau de </p></div>
           <div><h2 class="font-medium text-center" id="component_name"></h2></div>
           <div class="flex bg-white my-16 form-component justify-between">
-            <%= f.association :material, label: false, input_html: {class: 'flex-grow bg-white h-auto mt-2'} %>
-            <%= f.submit "OK", class: "rounded-full btn-component-form text-2xl" %>
+            <%= f.association :material, label: false, input_html: {class: 'flex-grow bg-white text-4xl mt-2'} %>
+            <%= f.submit "OK", class: "rounded-full btn-component-form text-4xl" %>
           </div>
           <div >
             <p class="text-3xl font-normal"><em><strong>TIP :</strong> Pour les matériaux en plastique, cherchez le symbole <i class="fas fa-recycle"></i> sur l'emballage, sauf pour les sachets en plastiques, qui sont du PP-5</em> 😉</p>
@@ -54,7 +54,7 @@
 <!-- fixed button si trop de components and scroll -->
     <% unless @product.components.length == 0 %>
       <button id="btn-no-more" class=" text-4xl bg-rose text-white py-4 px-6 btn-component-pink">
-        <%=  link_to 'Plus de composants à ajouter ?' , product_path(@product)  %>
+        <%=  link_to 'Plus aucun composants à ajouter ?' , product_path(@product)  %>
       </button>
     <% end %>
   </div>

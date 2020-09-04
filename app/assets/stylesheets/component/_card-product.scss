@@ -57,6 +57,7 @@
   animation-name: search-appear;
   animation-duration: 4s;
   padding: 40px;
+  animation-iteration-count: 1;
 }
 
 @keyframes search-appear {
