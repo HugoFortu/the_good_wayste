@@ -321,7 +321,7 @@ m_l = Map.new(
   )
 m_l.save!
 
-filepath = 'storage/lyon_verre.json'
+filepath = 'lib/lyon_verre.json'
 benne_lyon = []
 
 JSON.parse(File.read(filepath))["features"].each do |x|
