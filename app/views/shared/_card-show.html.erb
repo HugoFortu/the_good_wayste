@@ -2,7 +2,7 @@
   <!-- FLEXBOX Composants + matériau -->
   <div class="flex flex-col items-center" style="width:350px;">
   <!-- AFFICHAGE DU LOGO COMPOSANTS -->
-    <% components_names = ["aerosol", "bocal", "boite", "boite-de-conserve", "bouchon", "bouteille", "brique-alimentaire", "canette", "flacon", "sachet"] %>
+    <% components_names = ["aerosol", "barquette", "bocal", "boite", "boite-de-conserve", "bouchon", "bouteille", "brique-alimentaire", "canette", "couvercle", "flacon", "sachet", "autre"] %>
     <% components_names.each do |name| %>
       <% if name == component.parameterize %>
           <div><%= image_tag("#{name}.png", width:'120') %></div>
