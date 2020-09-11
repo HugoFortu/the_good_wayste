@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     @place = Place.find_by_name_without_case(cookies[:city])
 
     if @place.blank?
-      @place = Place.last
+      @place = Place.find_by(name: "Lyon")
     end
   end
 
