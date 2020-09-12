@@ -1,12 +1,12 @@
-<% @city = Place.find_by_name_without_case(cookies[:city]) %>
-<div class="image-banner relative flex" style="margin:30px !important; background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)), url(' <%= @city.photo_url %>">
+<!--<% @city = Place.find_by_name_without_case(cookies[:city]) %>-->
+<div class="image-banner relative flex" style="margin:30px !important; background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)), url(' <%= @place.photo_url %>">
 
     <div class="margin">
 
-      <h5 id="city" class='font-medium text-white pt-40'> Bienvenue à <%= @city.name %></h5>
+      <h5 id="city" class='font-medium text-white pt-40'> Bienvenue à <%= @place.name %></h5>
       <div id='btn-input-block'>
         <button id="btn-city" class="active btn-location mt-3 text-4xl text-white font-light hover:bold rounded underline">
-          Vous n'êtes plus à <%= @city.name %> ?
+          Vous n'êtes plus à <%= @place.name %> ?
 
         </button>
         <div class='hidden input-search postcode-input flex bg-white mt-3 justify-between'>
