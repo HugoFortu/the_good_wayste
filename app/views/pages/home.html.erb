@@ -1,7 +1,11 @@
 <%= render 'shared/banner-search'  %>
 
 <div class="margin">
-
+  <% flash.each do |type, msg| %>
+    <div class="flash flash-warning alert alert-dismissible fade show" role="alert">
+      <span><%= msg %></span>
+    </div>
+  <% end %>
   <div data-city= <%=cookies[:city]%> >
     <h1 class='font-black' style='font-size: 95px'>
       <span id='banner-typed-text' style='font-size: 95px' class='pt-50'></span>
