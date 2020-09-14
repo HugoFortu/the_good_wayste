@@ -40,10 +40,10 @@ class FavoritesController < ApplicationController
       # je rentre l'id du product dans mon array cookies[:favorites]
       cookies_as_array = JSON.parse(cookies[:favorites])
       cookies_as_array << params[:id]
-      cookies[:favorites] = cookies_as_array.to_json
+      cookies.permanent[:favorites] = cookies_as_array.to_json
     else
       # Sinon, je cree une valeur pour la cle "favorites" = params[:id]
-      cookies[:favorites] = [params[:id]].to_json
+      cookies.permanent[:favorites] = [params[:id]].to_json
     end
   end
 
