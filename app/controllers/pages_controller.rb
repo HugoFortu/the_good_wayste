@@ -4,6 +4,8 @@ class PagesController < ApplicationController
 
     if @place.blank?
       @place = Place.find_by(name: "Lyon")
+      cookies[:city] = "Lyon"
+      flash.alert = "Désolé, votre ville n'est pas encore référencée.."
     end
   end
 
